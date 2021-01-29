@@ -8,6 +8,8 @@ public abstract class Activity {
         this.dedicatedPercentage = dedicatedPercentage;
     }
 
+    //GETTERS AND SETTERS
+
     public int getDedicatedPercentage() {
         return this.dedicatedPercentage;
     }
@@ -16,6 +18,13 @@ public abstract class Activity {
         this.dedicatedPercentage = dedicatedPercentage;
     }
 
+    //METHODS
+
+    /**
+     * augmente le pourcentage du nombre passé en paramètres et limite à 100
+     *
+     * @param nbAdd
+     */
     public void increaseDedicatedPercentage(int nbAdd) {
         this.dedicatedPercentage += nbAdd;
         if(this.dedicatedPercentage > 100) {
@@ -23,6 +32,11 @@ public abstract class Activity {
         }
     }
 
+    /**
+     * diminue le pourcentage du nombre passé en paramètres et limite à 0
+     *
+     * @param nbRemove
+     */
     public void decreaseDedicatedPercentage(int nbRemove) {
         this.dedicatedPercentage -= nbRemove;
         if(this.dedicatedPercentage < 0) {

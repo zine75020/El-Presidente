@@ -5,7 +5,7 @@ public enum FactionType {
     COMMUNISTES,
     LIBERAUX,
     RELIGIEUX,
-    MILITAIRES,
+    MILITARISTES,
     ECOLOGISTES,
     NATIONALISTES,
     LOYALISTES

@@ -85,12 +85,12 @@ public class ActivityTest {
 
     @Test
     public void should_generate_money() {
-        assertEquals(100, agriculture.generateMoney());
+        assertEquals(200, industry.generateMoney());
     }
 
     @Test
     public void should_generate_food_units() {
-        assertEquals(800, industry.generateFoodUnits());
+        assertEquals(400, agriculture.generateFoodUnits());
     }
 
 }

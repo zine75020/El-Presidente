@@ -8,7 +8,14 @@ public class Agriculture extends Activity {
         super(dedicatedPercentage);
     }
 
-    public int generateMoney() {
-        return 10 * this.dedicatedPercentage;
+    //METHODS
+
+    /**
+     * génération de 40 unités par pourcentage de l'agriculture sur l'île
+     *
+     * @return
+     */
+    public int generateFoodUnits() {
+        return 40 * this.dedicatedPercentage;
     }
 }
