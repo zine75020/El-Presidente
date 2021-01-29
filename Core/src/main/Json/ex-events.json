@@ -1,0 +1,160 @@
+/*
+EVENEMENTS LIES ENTRE EUX ??????
+*/
+{
+  "events": [
+    {
+      "description": "L’Organisation des Caraïbes-Unies souhaite que vous accueillez des réfugiés climatiques suite aux récentes inondations dans la région"
+      "decisions": [
+        {
+          "name": "Décliner poliment au motif que vous n’avez pas les infrastructures pour eux",
+          "effects": [
+            {
+              "easy": {
+                "CAPITALISTS": {
+                  "supporters": "",
+                  "satisfaction": ""
+                },
+                "COMMUNISTS": "",
+                "LIBERALS": "-15",
+                "RELIGIOUS": "-15",
+                "MILITARIES": "",
+                "ECOLOGISTS": "",
+                "NATIONALISTS": "",
+                "LOYALISTS": "",
+                "FOOD": "",
+                "TRESORERY": ""
+              },
+              "normal": {
+              },
+              "difficult": {
+              },
+              "seasons": {
+                "spring": "true",
+                "summer": "true",
+                "autumn": "false",
+                "winter": "false"
+              },
+              "scenarios": {
+                "1": "true",
+                "2": "false",
+                // ...
+              }
+            },
+            {
+            }
+          ]
+        },{
+          "name": "Décliner au motif qu’ils ne sont pas du même culte que vous",
+          "effects": [
+            {
+              "easy": {
+                "CAPITALISTS": "",
+                "COMMUNISTS": "",
+                "LIBERALS": "-30",
+                "RELIGIOUS": "+15",
+                "MILITARIES": "",
+                "ECOLOGISTS": "",
+                "NATIONALISTS": "",
+                "LOYALISTS": "",
+                "FOOD": "",
+                "TRESORERY": "",
+                "INDUSTRY": "",
+                "AGRICULTURE": ""
+              },
+              "normal": {
+              },
+              "difficult": {
+              },
+              "seasons": {
+                "spring": "true",
+                "summer": "true",
+                "autumn": "false",
+                "winter": "false"
+              },
+              "scenarios": {
+                "1": "true",
+                "2": "false",
+                // ...
+              }
+            },
+            {
+            }
+          ]
+        },{
+          "name": "Accepter sans condition",
+          "effects": [
+            {
+              "easy": {
+                "CAPITALISTS": "",
+                "COMMUNISTS": "",
+                "LIBERALS": "+10",
+                "RELIGIOUS": "+10",
+                "MILITARIES": "",
+                "ECOLOGISTS": "",
+                "NATIONALISTS": "",
+                "LOYALISTS": "-30",
+                "FOOD": "",
+                "TRESORERY": ""
+              },
+              "normal": {
+              },
+              "difficult": {
+              },
+              "seasons": {
+                "spring": "true",
+                "summer": "true",
+                "autumn": "false",
+                "winter": "false"
+              },
+              "scenarios": {
+                "1": "true",
+                "2": "false",
+                // ...
+              }
+            },
+            {
+            }
+          ]
+        },{
+          "name": "Accepter sous condition d’aide financière de la part de l’OCU",
+          "effects": [
+            {
+              "easy": {
+                "CAPITALISTS": "+10",
+                "COMMUNISTS": "",
+                "LIBERALS": "",
+                "RELIGIOUS": "",
+                "MILITARIES": "",
+                "ECOLOGISTS": "",
+                "NATIONALISTS": "-20",
+                "LOYALISTS": "",
+                "FOOD": "",
+                "TRESORERY": "+200"
+              },
+              "normal": {
+              },
+              "difficult": {
+              },
+              "seasons": {
+                "spring": "true",
+                "summer": "true",
+                "autumn": "false",
+                "winter": "false"
+              },
+              "scenarios": {
+                "1": "true",
+                "2": "false",
+                // ...
+              }
+            },
+            {
+            }
+          ]
+        }
+      ]
+    },
+    {
+    }
+  ]
+}
