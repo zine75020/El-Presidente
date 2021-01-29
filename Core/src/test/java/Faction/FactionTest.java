@@ -7,9 +7,9 @@ import static org.junit.jupiter.api.Assertions.*;
 
 public class FactionTest {
 
-    Faction faction = new Faction(FactionType.COMMUNISTES, 15, 80);
-    Faction faction2 = new Faction(FactionType.COMMUNISTES, 0, 100);
-    Faction faction3 = new Faction(FactionType.COMMUNISTES, 15, 0);
+    Faction faction = new Faction(FactionType.COMMUNISTS, 15, 80);
+    Faction faction2 = new Faction(FactionType.COMMUNISTS, 0, 100);
+    Faction faction3 = new Faction(FactionType.COMMUNISTS, 15, 0);
 
     @Test
     public void should_increase_nb_supporters() {

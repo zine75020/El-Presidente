@@ -116,14 +116,14 @@ public class Isle {
     //TODO ajouter un paramètre pour initialiser selon les paramètres du jeu et modifier la méthode en conséquence
     private List<Faction> initialiseFactionList() {
         List<Faction> factionList = new ArrayList<>();
-        factionList.add(new Faction(FactionType.CAPITALISTES, 0, 0));
-        factionList.add(new Faction(FactionType.COMMUNISTES, 0, 0));
-        factionList.add(new Faction(FactionType.LIBERAUX, 0, 0));
-        factionList.add(new Faction(FactionType.RELIGIEUX, 0, 0));
-        factionList.add(new Faction(FactionType.MILITARISTES, 0, 0));
-        factionList.add(new Faction(FactionType.ECOLOGISTES, 0, 0));
-        factionList.add(new Faction(FactionType.NATIONALISTES, 0, 0));
-        factionList.add(new Faction(FactionType.LOYALISTES, 0, 100));
+        factionList.add(new Faction(FactionType.CAPITALISTS, 0, 0));
+        factionList.add(new Faction(FactionType.COMMUNISTS, 0, 0));
+        factionList.add(new Faction(FactionType.LIBERALS, 0, 0));
+        factionList.add(new Faction(FactionType.RELIGIOUS, 0, 0));
+        factionList.add(new Faction(FactionType.MILITARIES, 0, 0));
+        factionList.add(new Faction(FactionType.ECOLOGISTS, 0, 0));
+        factionList.add(new Faction(FactionType.NATIONALISTS, 0, 0));
+        factionList.add(new Faction(FactionType.LOYALISTS, 0, 100));
         return factionList;
     }
 

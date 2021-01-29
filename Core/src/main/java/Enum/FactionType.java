@@ -1,12 +1,11 @@
 package Enum;
 
-public enum FactionType {
-    CAPITALISTES,
-    COMMUNISTES,
-    LIBERAUX,
-    RELIGIEUX,
-    MILITARISTES,
-    ECOLOGISTES,
-    NATIONALISTES,
-    LOYALISTES
+public enum FactionType {CAPITALISTS,
+    COMMUNISTS,
+    LIBERALS,
+    RELIGIOUS,
+    MILITARIES,
+    ECOLOGISTS,
+    NATIONALISTS,
+    LOYALISTS
 }
