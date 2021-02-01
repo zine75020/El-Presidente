@@ -8,8 +8,15 @@ public class Industry extends Activity {
         super(dedicatedPercentage);
     }
 
-    public int generateFoodUnits() {
-        return 40 * this.dedicatedPercentage;
+    //METHODS
+
+    /**
+     * génération de 10$ pour chaque pourcentage d'industrie sur l'île
+     *
+     * @return
+     */
+    public int generateMoney() {
+        return 10 * this.dedicatedPercentage;
     }
 
 }

@@ -17,6 +17,8 @@ public class Faction {
         this.percentageApproval = percentageApproval;
     }
 
+    //GETTERS AND SETTERS
+
     public FactionType getName() {
         return this.name;
     }
@@ -41,10 +43,22 @@ public class Faction {
         this.percentageApproval = percentageApproval;
     }
 
+    //METHODS
+
+    /**
+     * augmente le nombre de partisants du nombre passé en paramètres
+     *
+     * @param nbAdd
+     */
     public void increaseNbSupporters(int nbAdd) {
         this.nbSupporters += nbAdd;
     }
 
+    /**
+     * diminue le nombre de partisants du nombre passé en paramètres et limite à 0
+     *
+     * @param nbRemove
+     */
     public void decreaseNbSupporters(int nbRemove) {
         this.nbSupporters -= nbRemove;
         if(this.nbSupporters < 0) {
@@ -64,6 +78,11 @@ public class Faction {
         }
     }
 
+    /**
+     * diminue le pourcentage du nombre passé en paramètres et limite à 0
+     *
+     * @param nbRemove
+     */
     public void decreasePercentageApproval(int nbRemove) {
         this.percentageApproval -= nbRemove;
         if(this.percentageApproval < 0) {
@@ -71,6 +90,12 @@ public class Faction {
         }
     }
 
+    /**
+     * vérifie si le pourcentage d'approbation est à 0
+     * (un pourcentage à 0 ne peut pas réaugmenter)
+     *
+     * @return
+     */
     public boolean isPercentageApprovalAt0() {
         return this.percentageApproval == 0;
     }
