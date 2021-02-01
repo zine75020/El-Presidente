@@ -1,0 +1,29 @@
+/*
+Difficultés différentes (impact évènements augmentés)
+facile (satisfactionMinimale = 10%)
+normal (satisfactionMinimale = 30%)
+difficile (satisfactionMinimale = 50%)
+*/
+{
+  "configurations": [
+    {
+      "type": "",
+      "satifaction": "",
+      "suporters": "",
+      "industry": "",
+      "agriculture": "",
+      "tresorery": "",
+      "difficulty": ""
+    },
+    {
+      "type": "",
+      "satifaction": "",
+      "suporters": "",
+      "industry": "",
+      "agriculture": "",
+      "tresorery": "",
+      "difficulty": ""
+    }
+    // ...
+  ]
+}

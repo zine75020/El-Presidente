@@ -4,8 +4,8 @@ import Enum.FactionType;
 public class Faction {
 
     /**
-     * nom de la faction : capitalistes, communistes, libéraux,
-     * religieux, militaristes, écologistes, nationalistes, loyalistes
+     * nom de la faction : CAPITALISTS, COMMUNISTS, libéraux,
+     * RELIGIOUS, militaristes, écologistes, NATIONALISTS, loyalistes
      */
     private FactionType name;
     private int nbSupporters;
