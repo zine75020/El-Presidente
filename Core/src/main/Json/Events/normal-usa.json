@@ -6,7 +6,7 @@
         "name": "La montée en puissance des communistes dans votre pays se fait de plus en plus proche.",
         "scenarios": [
           {
-            "id": "2"
+            "id": 2
           }
         ],
         "choices": [
@@ -73,7 +73,7 @@
         "name": "Des pays vous proposent une alliance millitaire",
         "scenarios": [
           {
-            "id": "2"
+            "id": 2
           }
         ],
         "choices": [
@@ -159,7 +159,7 @@
         "name": "Les Soviétiques font un blocus autour du mur de Berlin, il faut nourir vos concitoyens! Que faites-vous?",
         "scenarios": [
           {
-            "id": "2"
+            "id": 2
           }
         ],
         "choices": [
@@ -235,7 +235,7 @@
         "name": "Une guerre civile démarre en Chine, les Soviétiques envoient leurs alliés",
         "scenarios": [
           {
-            "id": "2"
+            "id": 2
           }
         ],
         "choices": [
@@ -280,7 +280,7 @@
         "name": "Une dictature pro-communnistes s'installe dans un de vos pays alliés",
         "scenarios": [
           {
-            "id": "2"
+            "id": 2
           }
         ],
         "choices": [
@@ -349,7 +349,7 @@
         "name": "Les Soviétiques envoient des sous marins nucléaires vers votre pays",
         "scenarios": [
           {
-            "id": "2"
+            "id": 2
           }
         ],
         "choices": [
