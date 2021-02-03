@@ -1,0 +1,66 @@
+{
+  "easy": [
+    {
+      "choice": "Je mets en place une doctrine: le containment pour les contenir",
+      "effects": [
+        {
+          "actionOnFaction": {
+            "COMMUNISTS": -20,
+            "NATIONALISTS": 10,
+            "CAPITALISTS": 20
+          }
+        }
+      ],
+      "relatedEvents": [
+        {
+          "name": "Les Soviétiques ripostent et créent le rapport Jdanov vous désignant coupable",
+          "choices": [
+            {
+              "choice": "Je riposte plus fort en mettant en place un système anti-communistes",
+              "effects": [
+                {
+                  "actionOnFaction": {
+                    "CAPITALISTS": 30,
+                    "RELIGIOUS": -5,
+                    "MILITARISTS": 10,
+                    "NATIONALISTS": -5,
+                    "COMMUNISTS": -40,
+                    "LIBERALS": 30
+                  }
+                },
+                {
+                  "actionOnFactor": {
+                    "TREASURY": -150
+                  }
+                }
+              ]
+            },
+            {
+              "choice": "Je ne riposte pas car les risques sont gros, j'attends",
+              "effects": [
+                {
+                  "actionOnFaction": {
+                    "CAPITALISTS": -10,
+                    "LIBERALS": -5
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "choice": "Je ne fais rien j'attends que ça passe",
+      "effects": [
+        {
+          "actionOnFaction": {
+            "LIBERALS": -10,
+            "CAPITALISTS": -20,
+            "COMMUNISTS": 5
+          }
+        }
+      ]
+    }
+  ]
+}
