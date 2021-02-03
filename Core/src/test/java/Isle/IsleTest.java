@@ -4,6 +4,7 @@ import Agriculture.Agriculture;
 import Faction.Faction;
 import Industry.Industry;
 import Enum.Season;
+import Enum.DifficultyChoice;
 
 import org.junit.Test;
 
@@ -12,9 +13,9 @@ import static org.junit.jupiter.api.Assertions.*;
 public class IsleTest {
 
     Isle isle = new Isle(new Industry(10), new Agriculture(20),
-            100, 30);
+            100, DifficultyChoice.normal, 30);
     Isle isle2 = new Isle(new Industry(10), new Agriculture(20),
-            0, 30);
+            0, DifficultyChoice.normal, 30);
 
     @Test
     public void should_have_8_factions() {
