@@ -23,31 +23,31 @@ public class IsleTest {
     }
 
     @Test
-    public void should_increase_tresorery() {
-        isle.increaseTresorery(100);
+    public void should_increase_treasury() {
+        isle.increaseTreasury(100);
 
-        assertEquals(200, isle.getTresorery());
+        assertEquals(200, isle.getTreasury());
     }
 
     @Test
-    public void should_decrease_tresorery() {
-        isle.decreaseTresorery(50);
+    public void should_decrease_treasury() {
+        isle.decreaseTreasury(50);
 
-        assertEquals(50, isle.getTresorery());
+        assertEquals(50, isle.getTreasury());
     }
 
     @Test
-    public void should_decrease_tresorery_and_limit_at_0() {
-        isle.decreaseTresorery(120);
+    public void should_decrease_treasury_and_limit_at_0() {
+        isle.decreaseTreasury(120);
 
-        assertEquals(0, isle.getTresorery());
+        assertEquals(0, isle.getTreasury());
     }
 
     @Test
-    public void should_not_decrease_tresorery_because_its_at_0() {
-        isle2.decreaseTresorery(20);
+    public void should_not_decrease_treasury_because_its_at_0() {
+        isle2.decreaseTreasury(20);
 
-        assertEquals(0, isle2.getTresorery());
+        assertEquals(0, isle2.getTreasury());
     }
 
     @Test
@@ -120,9 +120,9 @@ public class IsleTest {
     @Test
     public void should_make_bribe() {
         isle.getFactionList().get(3).increaseNbSupporters(10);
-        isle.increaseTresorery(150);
+        isle.increaseTreasury(150);
         assertTrue(isle.bribe(3));
-        assertEquals(100, isle.getTresorery());
+        assertEquals(100, isle.getTreasury());
         assertEquals(10, isle.getFactionList().get(3).getPercentageApproval());
         assertEquals(85, isle.getFactionList().get(7).getPercentageApproval());
     }
@@ -136,18 +136,18 @@ public class IsleTest {
     @Test
     public void should_make_food_mart() {
         assertEquals(5, isle.foodMart(5));
-        assertEquals(60, isle.getTresorery());
+        assertEquals(60, isle.getTreasury());
     }
 
     @Test
     public void should_make_max_food_mart() {
         assertEquals(12, isle.foodMart(15));
-        assertEquals(4, isle.getTresorery());
+        assertEquals(4, isle.getTreasury());
     }
 
     @Test
     public void should_not_make_food_mart() {
-        isle.decreaseTresorery(100);
+        isle.decreaseTreasury(100);
         assertEquals(0, isle.foodMart(5));
     }
 
