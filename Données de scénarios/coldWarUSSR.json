@@ -372,14 +372,14 @@
                   "effects": [
                     {
                       "actionOnFaction": {
-                        "ECOLOGISTS": -100,
-                        "CAPITALISTS": -100,
-                        "LOYALISTS": -100,
-                        "LIBERALS": -100,
-                        "RELIGIOUS": -100,
-                        "MILITARISTS": -100,
-                        "NATIONALISTS": -100,
-                        "COMMUNISTS": -100
+                        "ECOLOGISTS": -80,
+                        "CAPITALISTS": -80,
+                        "LOYALISTS": -80,
+                        "LIBERALS": -80,
+                        "RELIGIOUS": -80,
+                        "MILITARISTS": -80,
+                        "NATIONALISTS": -80,
+                        "COMMUNISTS": -80
                       }
                     }
                   ]
