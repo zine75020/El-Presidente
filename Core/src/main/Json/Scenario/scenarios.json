@@ -5,6 +5,9 @@
       "name": "Attack on Titans",
       "story": "Dans un monde ravagé par des titans mangeurs d’homme depuis plus d’un siècle, les rares survivants de l’Humanité n’ont d’autre choix pour survivre que de se barricader dans une cité-forteresse. Jeune, témoin de la mort de plusieurs de vos concitoyens dévorés par des titans, vous n’avez qu’un rêve : devinir le meilleur président de ce pays et découvrir l’origine des Titans afin de les annihiler jusqu’au dernier…",
       "gameStartParameters": {
+        "EASY": {
+
+        },
         "NORMAL": {
           "agriculturePercentage": 40,
           "industryPercentage": 35,
@@ -52,6 +55,9 @@
               "numberOfPartisans": 10
             }
           }
+        },
+        "DIFFICULT": {
+
         }
       }
     },
@@ -60,6 +66,9 @@
       "name": "Cold War: The USA version",
       "story": "1947: Dans un monde bipolaire, la tension fait rage... Deux blocs mènent une guerre indirecte et systématique dans tous les domaines. D'une part, le bloc bleu des États Unis et ses alliés et d'autre part le bloc rouge mené par l'URSS. Saurez-vous gérer la tension et éviter un affrontement direct entre ces deux superpuissances?",
       "gameStartParameters": {
+        "EASY": {
+
+        },
         "NORMAL": {
           "agriculturePercentage": 25,
           "industryPercentage": 35,
@@ -107,6 +116,9 @@
               "partisans": 16
             }
           }
+        },
+        "DIFFICULT": {
+
         }
       }
     },
@@ -115,6 +127,9 @@
       "name": "Cold War: The USSR version",
       "story": "1947: Dans un monde bipolaire, la tension fait rage... Deux blocs mènent une guerre indirecte et systématique dans tous les domaines. D'une part, le bloc bleu des États Unis et ses alliés et d'autre part le bloc rouge mené par l'URSS. Saurez-vous gérer la tension et éviter un affrontement direct entre ces deux superpuissances?",
       "gameStartParameters": {
+        "EASY": {
+
+        },
         "NORMAL": {
           "agriculturePercentage": 45,
           "industryPercentage": 25,
@@ -162,6 +177,9 @@
               "numberOfPartisans": 16
             }
           }
+        },
+        "DIFFICULT": {
+
         }
       }
     },
@@ -170,6 +188,9 @@
       "name": "Bac à sable",
       "story": "Mode de jeu sans scénario avec des événements aléatoires",
       "gameStartParameters": {
+        "EASY": {
+
+        },
         "NORMAL": {
           "agriculturePercentage": 15,
           "industryPercentage": 15,
@@ -217,6 +238,9 @@
               "numberOfPartisans": 15
             }
           }
+        },
+        "DIFFICULT": {
+
         }
       }
     }
