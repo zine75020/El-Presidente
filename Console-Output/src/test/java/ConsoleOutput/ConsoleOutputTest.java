@@ -12,7 +12,6 @@ class ConsoleOutputTest {
 
     @Test
     public void should_display_rules() {
-        ByteArrayOutputStream outContent = new ByteArrayOutputStream();
 
         String expectedOutput = "Bienvenue sur El Presidente\n";
 
@@ -32,7 +31,6 @@ class ConsoleOutputTest {
 
     @Test
     public void should_display_value_of_menu_error() {
-        ByteArrayOutputStream outContent = new ByteArrayOutputStream();
 
         String expectedOutput = "Veuillez saisir une valeur présente dans le menu\n";
 

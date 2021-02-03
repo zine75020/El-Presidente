@@ -1,0 +1,518 @@
+{
+  "events": [
+    {
+      "name": "Des monstres géants approchent le royaume... Que faites-vous ?",
+      "scenarios": [
+        {
+          "id": "1"
+        }
+      ],
+      "choices": [
+        {
+          "easy": [
+            {
+              "choice": "J'envoie toute la force militaire du pays pour les éradiquer",
+              "effects": [
+                {
+                  "actionOnFaction": {
+                    "MILITARISTS": 30,
+                    "RELIGIOUS": -10
+                  }
+                },
+                {
+                  "actionOnFactor": {
+                    "AGRICULTURE": 40
+                  }
+                }
+              ]
+            },
+            {
+              "choice": "Je mets en place une défense basée sur des canons",
+              "effects": [
+                {
+                  "actionOnFaction": {
+                    "ECOLOGISTS": -20,
+                    "CAPITALISTS": 20
+                  }
+                },
+                {
+                  "actionOnFactor": {
+                    "INDUSTRY": -40
+                  }
+                }
+              ]
+            }
+          ],
+          "normal": [
+            {
+              "choice": "J'envoie toute la force militaire du pays pour les éradiquer",
+              "effects": [
+                {
+                  "actionOnFaction": {
+                    "MILITARISTS": 20,
+                    "RELIGIOUS": -20
+                  }
+                },
+                {
+                  "actionOnFactor": {
+                    "AGRICULTURE": 30
+                  }
+                }
+              ]
+            },
+            {
+              "choice": "Je mets en place une défense basée sur des canons",
+              "effects": [
+                {
+                  "actionOnFaction": {
+                    "ECOLOGISTS": -30,
+                    "CAPITALISTS": 10
+                  }
+                },
+                {
+                  "actionOnFactor": {
+                    "INDUSTRY": -30
+                  }
+                }
+              ]
+            },
+            {
+              "choice": "Je laisse ces créatures béantes se délecter de mes adorables villageois",
+              "effects": [
+                {
+                  "actionOnFaction": {
+                    "ECOLOGISTS": -80,
+                    "CAPITALISTS": -80,
+                    "LOYALISTS": -80,
+                    "LIBERALS": -80,
+                    "RELIGIOUS": -80,
+                    "MILITARISTS": -80,
+                    "NATIONALISTS": -80,
+                    "COMMUNISTS": -80
+                  }
+                },
+                {
+                  "partisans": -800
+                }
+              ]
+            }
+          ],
+          "difficult": [
+            {
+              "choice": "J'envoie toute la force militaire du pays pour les éradiquer",
+              "effects": [
+                {
+                  "actionOnFaction": {
+                    "MILITARISTS": 10,
+                    "RELIGIOUS": -30
+                  }
+                },
+                {
+                  "actionOnFactor": {
+                    "AGRICULTURE": 20
+                  }
+                }
+              ]
+            },
+            {
+              "choice": "Je laisse ces créatures béantes se délecter de mes adorables villageois",
+              "effects": [
+                {
+                  "actionOnFaction": {
+                    "ECOLOGISTS": -100,
+                    "CAPITALISTS": -100,
+                    "LOYALISTS": -100,
+                    "LIBERALS": -100,
+                    "RELIGIOUS": -100,
+                    "MILITARISTS": -100,
+                    "NATIONALISTS": -100,
+                    "COMMUNISTS": -100
+                  }
+                },
+                {
+                  "partisans": -1000
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Ils détournent leur chemin ! Ils s'attaquent à l'agriculture à l'avant du Royaume...",
+      "scenarios": [
+        {
+          "id": "1"
+        }
+      ],
+      "choices": [
+        {
+          "easy": [
+            {
+              "choice": "J'élabore une stratégie pour combattre",
+              "effects": [
+                {
+                  "actionOnFaction": {
+                    "ECOLOGISTS": 30,
+                    "NATIONALISTS": 30
+                  }
+                }
+              ]
+            },
+            {
+              "choice": "Je laisse tomber en me disant que j'ai d'autres champs et réserves de provisions",
+              "effects": [
+                {
+                  "actionOnFaction": {
+                    "ECOLOGISTS": -10,
+                    "LOYALISTS": 40
+                  }
+                },
+                {
+                  "actionOnFactor": {
+                    "AGRICULTURE": -20
+                  }
+                }
+              ]
+            }
+          ],
+          "normal": [
+            {
+              "choice": "J'élabore une stratégie pour combattre",
+              "effects": [
+                {
+                  "actionOnFaction": {
+                    "ECOLOGISTS": 20,
+                    "NATIONALISTS": 20
+                  }
+                }
+              ]
+            },
+            {
+              "choice": "Je laisse tomber en me disant que j'ai d'autres champs et réserves de provisions",
+              "effects": [
+                {
+                  "actionOnFaction": {
+                    "ECOLOGISTS": -20,
+                    "LOYALISTS": 30
+                  }
+                },
+                {
+                  "actionOnFactor": {
+                    "AGRICULTURE": -30
+                  }
+                }
+              ]
+            }
+          ],
+          "difficult": [
+            {
+              "choice": "Je laisse tomber en me disant que j'ai d'autres champs et réserves de provisions",
+              "effects": [
+                {
+                  "actionOnFaction": {
+                    "ECOLOGISTS": -30,
+                    "LOYALISTS": 20
+                  }
+                },
+                {
+                  "actionOnFactor": {
+                    "AGRICULTURE": -40
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Un valeureux soldat du nom de Rivaille se propose d'aller tuer ces bêtes sauvages...",
+      "scenarios": [
+        {
+          "id": "1"
+        }
+      ],
+      "choices": [
+        {
+          "easy": [
+            {
+              "choice": "Je le laisse aller défendre ma patrie, celle d'El Presidente, dans le risque que Rivaille décède",
+              "effects": [
+                {
+                  "actionOnFaction": {
+                    "MILITARISTS": -20,
+                    "NATIONALISTS": 30,
+                    "CAPITALISTS": 30
+                  }
+                }
+              ]
+            },
+            {
+              "choice": "J'empèche Rivaille d'aller affronter ces bêtes farouches tout seul",
+              "effects": [
+                {
+                  "actionOnFaction": {
+                    "MILITARISTS": 30,
+                    "LOYALISTS": 20,
+                    "NATIONALISTS": -10,
+                    "CAPITALISTS": -10
+                  }
+                }
+              ]
+            }
+          ],
+          "normal": [
+            {
+              "choice": "Je le laisse aller défendre ma patrie, celle d'El Presidente, dans le risque que Rivaille décède",
+              "effects": [
+                {
+                  "actionOnFaction": {
+                    "MILITARISTS": -30,
+                    "NATIONALISTS": 20,
+                    "CAPITALISTS": 20
+                  }
+                }
+              ]
+            },
+            {
+              "choice": "J'empèche Rivaille d'aller affronter ces bêtes farouches tout seul",
+              "effects": [
+                {
+                  "actionOnFaction": {
+                    "MILITARISTS": 20,
+                    "LOYALISTS": 10,
+                    "NATIONALISTS": -20,
+                    "CAPITALISTS": -20
+                  }
+                }
+              ]
+            }
+          ],
+          "difficult": [
+            {
+              "choice": "Je le laisse aller défendre ma patrie, celle d'El Presidente, dans le risque que Rivaille décède",
+              "effects": [
+                {
+                  "actionOnFaction": {
+                    "MILITARISTS": -40,
+                    "NATIONALISTS": 10,
+                    "CAPITALISTS": 10
+                  }
+                }
+              ]
+            },
+            {
+              "choice": "J'empèche Rivaille d'aller affronter ces bêtes farouches tout seul",
+              "effects": [
+                {
+                  "actionOnFaction": {
+                    "MILITARISTS": 10,
+                    "LOYALISTS": 5,
+                    "NATIONALISTS": -30,
+                    "CAPITALISTS": -30
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Le commandant Pixis propose d'utiliser 20$ de notre trésorerie pour améliorer et adapter l'armement de nos militaires",
+      "scenarios": [
+        {
+          "id": "1"
+        }
+      ],
+      "choices": [
+        {
+          "easy": [
+            {
+              "choice": "J'accepte !",
+              "effects": [
+                {
+                  "actionOnFaction": {
+                    "MILITARISTS": 40,
+                    "NATIONALISTS": 20,
+                    "CAPITALISTS": -10
+                  }
+                },
+                {
+                  "actionOnFactor": {
+                    "TREASURY": -10
+                  }
+                }
+              ]
+            },
+            {
+              "choice": "Je refuse !",
+              "effects": [
+                {
+                  "actionOnFaction": {
+                    "MILITARISTS": -20,
+                    "NATIONALISTS": -5,
+                    "CAPITALISTS": 30
+                  }
+                }
+              ]
+            }
+          ],
+          "normal": [
+            {
+              "choice": "J'accepte !",
+              "effects": [
+                {
+                  "actionOnFaction": {
+                    "MILITARISTS": 30,
+                    "NATIONALISTS": 10,
+                    "CAPITALISTS": -20
+                  }
+                },
+                {
+                  "actionOnFactor": {
+                    "TREASURY": -20
+                  }
+                }
+              ]
+            },
+            {
+              "choice": "Je refuse !",
+              "effects": [
+                {
+                  "actionOnFaction": {
+                    "MILITARISTS": -30,
+                    "NATIONALISTS": -10,
+                    "CAPITALISTS": 20
+                  }
+                }
+              ]
+            }
+          ],
+          "difficult": [
+            {
+              "choice": "J'accepte !",
+              "effects": [
+                {
+                  "actionOnFaction": {
+                    "MILITARISTS": 20,
+                    "NATIONALISTS": 5,
+                    "CAPITALISTS": -30
+                  }
+                },
+                {
+                  "actionOnFactor": {
+                    "TREASURY": -30
+                  }
+                }
+              ]
+            },
+            {
+              "choice": "Je refuse !",
+              "effects": [
+                {
+                  "actionOnFaction": {
+                    "MILITARISTS": -40,
+                    "NATIONALISTS": -20,
+                    "CAPITALISTS": 10
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Le capitaine Magath propose de rassembler nos ressources pour bâtir un mur de protection contre les titans",
+      "scenarios": [
+        {
+          "id": "1"
+        }
+      ],
+      "choices": [
+        {
+          "easy": [
+            {
+              "choice": "J'accepte !",
+              "effects": [
+                {
+                  "actionOnFaction": {
+                    "COMMUNISTS": 30,
+                    "ECOLOGISTS": -5,
+                    "CAPITALISTS": -10
+                  }
+                }
+              ]
+            },
+            {
+              "choice": "Je refuse !",
+              "effects": [
+                {
+                  "actionOnFaction": {
+                    "COMMUNISTS": -10,
+                    "ECOLOGISTS": 20,
+                    "CAPITALISTS": 30
+                  }
+                }
+              ]
+            }
+          ],
+          "normal": [
+            {
+              "choice": "J'accepte !",
+              "effects": [
+                {
+                  "actionOnFaction": {
+                    "COMMUNISTS": 20,
+                    "ECOLOGISTS": -10,
+                    "CAPITALISTS": -20
+                  }
+                }
+              ]
+            },
+            {
+              "choice": "Je refuse !",
+              "effects": [
+                {
+                  "actionOnFaction": {
+                    "COMMUNISTS": -20,
+                    "ECOLOGISTS": 10,
+                    "CAPITALISTS": 20
+                  }
+                }
+              ]
+            }
+          ],
+          "difficult": [
+            {
+              "choice": "J'accepte !",
+              "effects": [
+                {
+                  "actionOnFaction": {
+                    "COMMUNISTS": 10,
+                    "ECOLOGISTS": -5,
+                    "CAPITALISTS": -20
+                  }
+                }
+              ]
+            },
+            {
+              "choice": "Je refuse !",
+              "effects": [
+                {
+                  "actionOnFaction": {
+                    "COMMUNISTS": -10,
+                    "ECOLOGISTS": 5,
+                    "CAPITALISTS": 10
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
