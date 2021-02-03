@@ -1,4 +1,4 @@
-package Output;
+package Enum;
 
 public enum DifficultyChoice {
     easy("Partie facile"),

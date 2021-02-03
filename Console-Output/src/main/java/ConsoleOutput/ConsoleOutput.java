@@ -1,15 +1,16 @@
 package ConsoleOutput;
 
 import Output.Output;
-import Output.DifficultyChoice;
+import Enum.DifficultyChoice;
 
 public class ConsoleOutput implements Output {
-    String newLine = System.getProperty("line.separator");
 
+    @Override
     public String welcome() {
         return "Bienvenue sur El Presidente\n";
     }
 
+    @Override
     public StringBuilder difficultyMenu() {
         StringBuilder introduction = new StringBuilder("Avec quelle difficulté voulez-vous jouer ?\n");
         int index = 0;
@@ -19,5 +20,9 @@ public class ConsoleOutput implements Output {
             introduction.append(index).append(": ").append(choice).append("\n");
         }
         return introduction;
+    }
+
+    public String valueOfMenuError() {
+        return "Veuillez saisir une valeur présente dans le menu\n";
     }
 }

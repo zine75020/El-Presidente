@@ -29,4 +29,13 @@ class ConsoleOutputTest {
 
         assertEquals(expectedOutput, consoleOutput.difficultyMenu().toString());
     }
+
+    @Test
+    public void should_display_value_of_menu_error() {
+        ByteArrayOutputStream outContent = new ByteArrayOutputStream();
+
+        String expectedOutput = "Veuillez saisir une valeur présente dans le menu\n";
+
+        assertEquals(expectedOutput, consoleOutput.valueOfMenuError());
+    }
 }

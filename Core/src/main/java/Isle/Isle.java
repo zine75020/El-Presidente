@@ -5,6 +5,7 @@ import Faction.Faction;
 import Industry.Industry;
 import Enum.Season;
 import Enum.FactionType;
+import Enum.DifficultyChoice;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -16,18 +17,20 @@ public class Isle {
     private Agriculture agriculture;
     private Integer tresorery;
     private Season season;
+    private DifficultyChoice difficultyOfGame;
     private Integer foodUnits;
     private Integer turn;
     private Integer minSatisfactionPercentage;
     private Integer score;
 
     public Isle(Industry industry, Agriculture agriculture, Integer tresorery,
-                Integer minSatisfactionPercentage) {
+                DifficultyChoice difficultyChoice, Integer minSatisfactionPercentage) {
         this.factionList = this.initialiseFactionList();
         this.industry = industry;
         this.agriculture = agriculture;
         this.tresorery = tresorery;
         this.season = Season.SPRING;
+        this.difficultyOfGame = difficultyChoice;
         this.foodUnits = 0;
         this.turn = 0;
         this.minSatisfactionPercentage = minSatisfactionPercentage;
@@ -74,6 +77,14 @@ public class Isle {
 
     public void setSeason(Season season) {
         this.season = season;
+    }
+
+    public DifficultyChoice getDifficultyOfGame() {
+        return this.difficultyOfGame;
+    }
+
+    public void setDifficultyOfGame(DifficultyChoice difficultyOfGame) {
+        this.difficultyOfGame = difficultyOfGame;
     }
 
     public Integer getFoodUnits() {
