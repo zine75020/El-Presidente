@@ -1,0 +1,67 @@
+{
+  "events": [
+    {
+      "name": "",
+      "seasons": {
+        "spring": true,
+        "summer": true,
+        "autumn": false,
+        "winter": false
+      },
+      "choices": [
+        {
+          "choice": "",
+          "effects": [
+            {
+              "actionOnFaction": {
+                "MILITARISTS": 20,
+                "RELIGIOUS": -20
+              }
+            },
+            {
+              "actionOnFactor": {
+                "AGRICULTURE": 30
+              }
+            }
+          ]
+        },
+        {
+          "choice": "",
+          "effects": [
+            {
+              "actionOnFaction": {
+                "ECOLOGISTS": -30,
+                "CAPITALISTS": 10
+              }
+            },
+            {
+              "actionOnFactor": {
+                "INDUSTRY": -30
+              }
+            }
+          ]
+        },
+        {
+          "choice": "",
+          "effects": [
+            {
+              "actionOnFaction": {
+                "ECOLOGISTS": -80,
+                "CAPITALISTS": -80,
+                "LOYALISTS": -80,
+                "LIBERALS": -80,
+                "RELIGIOUS": -80,
+                "MILITARISTS": -80,
+                "NATIONALISTS": -80,
+                "COMMUNISTS": -80
+              }
+            },
+            {
+              "partisans": -800
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
