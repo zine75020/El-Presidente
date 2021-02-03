@@ -14,19 +14,19 @@ public class Isle {
     private List<Faction> factionList;
     private Industry industry;
     private Agriculture agriculture;
-    private Integer tresorery;
+    private Integer treasury;
     private Season season;
     private Integer foodUnits;
     private Integer turn;
     private Integer minSatisfactionPercentage;
     private Integer score;
 
-    public Isle(Industry industry, Agriculture agriculture, Integer tresorery,
-                Integer minSatisfactionPercentage) {
+    public Isle(Industry industry, Agriculture agriculture, Integer treasury,
+                DifficultyChoice difficultyChoice, Integer minSatisfactionPercentage) {
         this.factionList = this.initialiseFactionList();
         this.industry = industry;
         this.agriculture = agriculture;
-        this.tresorery = tresorery;
+        this.treasury = treasury;
         this.season = Season.SPRING;
         this.foodUnits = 0;
         this.turn = 0;
@@ -60,12 +60,12 @@ public class Isle {
         this.agriculture = agriculture;
     }
 
-    public Integer getTresorery() {
-        return this.tresorery;
+    public Integer getTreasury() {
+        return this.treasury;
     }
 
-    public void setTresorery(Integer tresorery) {
-        this.tresorery = tresorery;
+    public void setTreasury(Integer treasury) {
+        this.treasury = treasury;
     }
 
     public Season getSeason() {
@@ -132,8 +132,8 @@ public class Isle {
      *
      * @param nbAdd
      */
-    public void increaseTresorery(int nbAdd) {
-        this.tresorery += nbAdd;
+    public void increaseTreasury(int nbAdd) {
+        this.treasury += nbAdd;
     }
 
     /**
@@ -141,10 +141,10 @@ public class Isle {
      *
      * @param nbRemove
      */
-    public void decreaseTresorery(int nbRemove) {
-        this.tresorery -= nbRemove;
-        if (this.tresorery < 0) {
-            this.tresorery = 0;
+    public void decreaseTreasury(int nbRemove) {
+        this.treasury -= nbRemove;
+        if (this.treasury < 0) {
+            this.treasury = 0;
         }
     }
 
@@ -229,9 +229,9 @@ public class Isle {
         int amount = 15 * this.factionList.get(indexFaction).getNbSupporters();
         boolean bribeIsPossible = false;
         //déduire l'argent pour chaque partisan de la faction
-        if (this.tresorery - amount > 0) {
+        if (this.treasury - amount > 0) {
             bribeIsPossible = true;
-            this.decreaseTresorery(amount);
+            this.decreaseTreasury(amount);
             //augmenter la satisfaction de la faction
             this.factionList.get(indexFaction).increasePercentageApproval(10);
             //diminuer satisfaction loyalistes
@@ -249,14 +249,14 @@ public class Isle {
     public int foodMart(int nbUnitsPurchased) {
         int nbUnitsReallyPurchased = 0;
         //si il y a suffisamment d'argent pour acheter toutes les unités, on achète la totalité
-        if (this.tresorery - 8 * nbUnitsPurchased >= 0) {
+        if (this.treasury - 8 * nbUnitsPurchased >= 0) {
             nbUnitsReallyPurchased = nbUnitsPurchased;
-            this.decreaseTresorery(8 * nbUnitsReallyPurchased);
+            this.decreaseTreasury(8 * nbUnitsReallyPurchased);
         } else {
             //on achète autant que possible, tant que la trésorerie le permet
-            while (nbUnitsPurchased > nbUnitsReallyPurchased && this.tresorery - 8 >= 0) {
+            while (nbUnitsPurchased > nbUnitsReallyPurchased && this.treasury - 8 >= 0) {
                 nbUnitsReallyPurchased += 1;
-                this.decreaseTresorery(8);
+                this.decreaseTreasury(8);
             }
         }
         return nbUnitsReallyPurchased;
@@ -274,7 +274,7 @@ public class Isle {
      */
     public void endOfYearReview() {
         //génère l'argent de l'industrie
-        this.increaseTresorery(this.industry.getDedicatedPercentage() * 10);
+        this.increaseTreasury(this.industry.getDedicatedPercentage() * 10);
         //génère la nourriture de l'agriculture
         this.increaseFoodUnits(this.agriculture.getDedicatedPercentage() * 40);
         //vérification des partisants de l'île
