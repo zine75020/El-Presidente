@@ -17,9 +17,9 @@
                 "effects": [
                   {
                     "actionOnFaction": {
-                      "COMMUNISTS": -20,
-                      "NATIONALISTS": 10,
-                      "CAPITALISTS": 20
+                      "COMMUNISTS": -10,
+                      "NATIONALISTS": 20,
+                      "CAPITALISTS": 30
                     }
                   }
                 ],
@@ -32,17 +32,17 @@
                         "effects": [
                           {
                             "actionOnFaction": {
-                              "CAPITALISTS": 30,
+                              "CAPITALISTS": 40,
                               "RELIGIOUS": -5,
-                              "MILITARISTS": 10,
+                              "MILITARISTS": 20,
                               "NATIONALISTS": -5,
-                              "COMMUNISTS": -40,
-                              "LIBERALS": 30
+                              "COMMUNISTS": -30,
+                              "LIBERALS": 40
                             }
                           },
                           {
                             "actionOnFactor": {
-                              "TREASURY": -150
+                              "TREASURY": -140
                             }
                           }
                         ]
@@ -52,7 +52,7 @@
                         "effects": [
                           {
                             "actionOnFaction": {
-                              "CAPITALISTS": -10,
+                              "CAPITALISTS": -5,
                               "LIBERALS": -5
                             }
                           }
@@ -67,9 +67,9 @@
                 "effects": [
                   {
                     "actionOnFaction": {
-                      "LIBERALS": -10,
-                      "CAPITALISTS": -20,
-                      "COMMUNISTS": 5
+                      "LIBERALS": -5,
+                      "CAPITALISTS": -10,
+                      "COMMUNISTS": 15
                     }
                   }
                 ]
@@ -97,14 +97,14 @@
                   {
                     "actionOnFaction": {
                       "MILITARISTS": 20,
-                      "NATIONALISTS": 20,
-                      "RELIGIOUS": -10
+                      "NATIONALISTS": 30,
+                      "RELIGIOUS": -5
                     }
                   },
                   {
                     "actionOnFactor": {
-                      "TREASURY": -200,
-                      "INDUSTRY": 10
+                      "TREASURY": -190,
+                      "INDUSTRY": 20
                     }
                   }
                 ],
@@ -117,17 +117,17 @@
                         "effects": [
                           {
                             "actionOnFaction": {
-                              "CAPITALISTS": 15,
+                              "CAPITALISTS": 25,
                               "RELIGIOUS": -5,
-                              "MILITARISTS": 10,
-                              "NATIONALISTS": 10,
-                              "COMMUNISTS": -40,
-                              "LIBERALS": 10
+                              "MILITARISTS": 20,
+                              "NATIONALISTS": 20,
+                              "COMMUNISTS": -30,
+                              "LIBERALS": 20
                             }
                           },
                           {
                             "actionOnFactor": {
-                              "TREASURY": 250
+                              "TREASURY": 260
                             }
                           }
                         ]
@@ -137,9 +137,9 @@
                         "effects": [
                           {
                             "actionOnFaction": {
-                              "CAPITALISTS": -20,
-                              "LIBERALS": -10,
-                              "RELIGIOUS": 10
+                              "CAPITALISTS": -10,
+                              "LIBERALS": -5,
+                              "RELIGIOUS": 20
                             }
                           }
                         ]
@@ -153,9 +153,9 @@
                 "effects": [
                   {
                     "actionOnFaction": {
-                      "ECOLOGISTS": 10,
-                      "RELIGIOUS": 5,
-                      "MILITARISTS": -15
+                      "ECOLOGISTS": 20,
+                      "RELIGIOUS": 15,
+                      "MILITARISTS": -5
                     }
                   }
                 ]
@@ -182,9 +182,9 @@
                 "effects": [
                   {
                     "actionOnFaction": {
-                      "MILITARISTS": -10,
-                      "NATIONALISTS": -20,
-                      "CAPITALISTS": -20
+                      "MILITARISTS": -5,
+                      "NATIONALISTS": -10,
+                      "CAPITALISTS": -10
                     }
                   }
                 ],
@@ -197,19 +197,19 @@
                         "effects": [
                           {
                             "actionOnFaction": {
-                              "CAPITALISTS": -20,
-                              "MILITARISTS": -15,
-                              "NATIONALISTS": -15,
-                              "COMMUNISTS": 10
+                              "CAPITALISTS": -10,
+                              "MILITARISTS": -5,
+                              "NATIONALISTS": -5,
+                              "COMMUNISTS": 20
                             }
                           },
                           {
                             "actionOnFactor": {
-                              "TREASURY": -150
+                              "TREASURY": -140
                             }
                           },
                           {
-                            "partisans": -10
+                            "partisans": -5
                           }
                         ]
                       }
@@ -222,16 +222,16 @@
                 "effects": [
                   {
                     "actionOnFaction": {
-                      "MILITARISTS": 20,
-                      "LOYALISTS": 10,
-                      "NATIONALISTS": 10,
-                      "CAPITALISTS": 10
+                      "MILITARISTS": 30,
+                      "LOYALISTS": 20,
+                      "NATIONALISTS": 20,
+                      "CAPITALISTS": 20
                     }
                   },
                   {
                     "actionOnFactor": {
-                      "INDUSTRY": 10,
-                      "TREASURY": -250
+                      "INDUSTRY": 20,
+                      "TREASURY": -240
                     }
                   }
                 ]
@@ -258,13 +258,13 @@
                 "effects": [
                   {
                     "actionOnFaction": {
-                      "MILITARISTS": 30,
-                      "NATIONALISTS": 10,
-                      "CAPITALISTS": 20,
-                      "RELIGIOUS": -10
+                      "MILITARISTS": 40,
+                      "NATIONALISTS": 20,
+                      "CAPITALISTS": 30,
+                      "RELIGIOUS": -5
                     },
                     "actionOnFactor": {
-                      "TREASURY": -50
+                      "TREASURY": -40
                     }
                   }
                 ]
@@ -274,9 +274,9 @@
                 "effects": [
                   {
                     "actionOnFaction": {
-                      "MILITARISTS": -30,
-                      "NATIONALISTS": -10,
-                      "CAPITALISTS": -20
+                      "MILITARISTS": -20,
+                      "NATIONALISTS": -5,
+                      "CAPITALISTS": -10
                     }
                   }
                 ]
@@ -303,15 +303,15 @@
                 "effects": [
                   {
                     "actionOnFaction": {
-                      "COMMUNISTS": -10,
-                      "ECOLOGISTS": -10,
-                      "CAPITALISTS": 20,
-                      "MILITARISTS": 20
+                      "COMMUNISTS": -5,
+                      "ECOLOGISTS": -5,
+                      "CAPITALISTS": 10,
+                      "MILITARISTS": 10
                     }
                   },
                   {
                     "actionOnFactor": {
-                      "TREASURY": -150
+                      "TREASURY": -140
                     }
                   }
                 ],
@@ -324,13 +324,13 @@
                         "effects": [
                           {
                             "actionOnFaction": {
-                              "CAPITALISTS": -10,
-                              "MILITARISTS": -20,
-                              "LIBERALS": -10
+                              "CAPITALISTS": -5,
+                              "MILITARISTS": -10,
+                              "LIBERALS": -5
                             }
                           },
                           {
-                            "partisans": -8
+                            "partisans": -5
                           }
                         ]
                       }
@@ -343,9 +343,9 @@
                 "effects": [
                   {
                     "actionOnFaction": {
-                      "CAPITALISTS": -18,
-                      "NATIONALISTS": -15,
-                      "LIBERALS": -12
+                      "CAPITALISTS": -8,
+                      "NATIONALISTS": -5,
+                      "LIBERALS": -2
                     }
                   }
                 ]
@@ -372,9 +372,9 @@
                 "effects": [
                   {
                     "actionOnFaction": {
-                      "MILITARISTS": 13,
-                      "CAPITALISTS": 15,
-                      "RELIGIOUS": 7
+                      "MILITARISTS": 23,
+                      "CAPITALISTS": 25,
+                      "RELIGIOUS": 17
                     }
                   }
                 ],
@@ -387,18 +387,18 @@
                         "effects": [
                           {
                             "actionOnFaction": {
-                              "CAPITALISTS": 23,
-                              "RELIGIOUS": 6,
-                              "MILITARISTS": 10,
-                              "NATIONALISTS": 5,
-                              "COMMUNISTS": -12,
-                              "LIBERALS": 17
+                              "CAPITALISTS": 33,
+                              "RELIGIOUS": 16,
+                              "MILITARISTS": 20,
+                              "NATIONALISTS": 15,
+                              "COMMUNISTS": -2,
+                              "LIBERALS": 27
                             }
                           },
                           {
                             "actionOnFactor": {
-                              "TREASURY": 150,
-                              "INDUSTRY": 3
+                              "TREASURY": 140,
+                              "INDUSTRY": 13
                             }
                           }
                         ]
@@ -412,15 +412,15 @@
                 "effects": [
                   {
                     "actionOnFaction": {
-                      "ECOLOGISTS": -20,
-                      "CAPITALISTS": 10,
-                      "NATIONALISTS": 8,
-                      "RELIGIOUS": -35
+                      "ECOLOGISTS": -10,
+                      "CAPITALISTS": 20,
+                      "NATIONALISTS": 18,
+                      "RELIGIOUS": -45
                     }
                   },
                   {
                     "actionOnFactor": {
-                      "TREASURY": -350
+                      "TREASURY": -340
                     }
                   }
                 ],
@@ -433,14 +433,14 @@
                         "effects": [
                           {
                             "actionOnFaction": {
-                              "ECOLOGISTS": -100,
-                              "CAPITALISTS": -100,
-                              "LOYALISTS": -100,
-                              "LIBERALS": -100,
-                              "RELIGIOUS": -100,
-                              "MILITARISTS": -100,
-                              "NATIONALISTS": -100,
-                              "COMMUNISTS": -100
+                              "ECOLOGISTS": -90,
+                              "CAPITALISTS": -90,
+                              "LOYALISTS": -90,
+                              "LIBERALS": -90,
+                              "RELIGIOUS": -90,
+                              "MILITARISTS": -90,
+                              "NATIONALISTS": -90,
+                              "COMMUNISTS": -70
                             }
                           }
                         ]
