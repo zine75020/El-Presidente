@@ -7,6 +7,7 @@
       <module fileurl="file://$PROJECT_DIR$/Console-Output/Console-Output.iml" filepath="$PROJECT_DIR$/Console-Output/Console-Output.iml" />
       <module fileurl="file://$PROJECT_DIR$/Core/Core.iml" filepath="$PROJECT_DIR$/Core/Core.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/El-Presidente.iml" filepath="$PROJECT_DIR$/.idea/El-Presidente.iml" />
+      <module fileurl="file://$PROJECT_DIR$/JsonRepository/JSonRepository.iml" filepath="$PROJECT_DIR$/JsonRepository/JSonRepository.iml" />
     </modules>
   </component>
 </project>
