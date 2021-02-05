@@ -19,6 +19,8 @@ public class Game {
         //affichage menu + choix difficulté
         int difficulty = difficultyTreatment();
 
+        int minimumSatisfaction = getMinimumSatisfactionByDifficulty(difficulty);
+
         //affichage menu scénario (+ bac à sable)
 
         //une fois toutes les données nécessaires à l'initialisation de l'île
@@ -40,6 +42,24 @@ public class Game {
             }
         } while (difficulty < 0);
         return difficulty;
+    }
+
+    private static int getMinimumSatisfactionByDifficulty(int difficulty) {
+        int minimumSatisfaction;
+        switch (difficulty) {
+            case 1:
+                minimumSatisfaction = 10;
+                break;
+            case 2:
+                minimumSatisfaction = 30;
+                break;
+            case 3:
+                minimumSatisfaction = 50;
+                break;
+            default:
+                minimumSatisfaction = 30;
+        }
+        return minimumSatisfaction;
     }
 
 }

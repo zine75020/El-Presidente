@@ -1,0 +1,26 @@
+{
+  "effects": [
+    {
+      "actionOnFaction": {
+        "ECOLOGISTS": -80,
+        "CAPITALISTS": -80,
+        "LOYALISTS": -80,
+        "LIBERALS": -80,
+        "RELIGIOUS": -80,
+        "MILITARISTS": -80,
+        "NATIONALISTS": -80,
+        "COMMUNISTS": -80
+      }
+    },
+    {
+      "actionOnFactor": {
+        "AGRICULTURE": 30,
+        "INDUSTRY": -40,
+        "TREASURY": -10
+      }
+    },
+    {
+      "partisans": -8
+    }
+  ]
+}
