@@ -1,0 +1,437 @@
+{
+  "events": [
+    {
+      "name": "En arrivant sur terre, Clarke, Finn, Octavia et d'autres membres des 100 veulent faire un trek terrrestre à travers la forêt pour tenter de trouver de la nourriture au Mont Weather.",
+      "scenarios": [
+        {
+          "id": 7
+        }
+      ],
+      "choices": [
+        {
+          "choice": "Accepter qu'ils partent en un petit groupe",
+          "effects": [
+            {
+              "actionOnFaction": {
+                "MILITARISTS": 5,
+                "COMMUNISTS": 10,
+                "NATIONALISTS": -30
+              }
+            },
+            {
+              "actionOnFactor": {
+                "AGRICULTURE": 7
+              }
+            }
+          ],
+          "relatedEvents": [
+            {
+              "name": "Des natifs vous attaquent alors que vous êtes en plein milieu de la forêt",
+              "choices": [
+                {
+                  "choice": "Vous aidez les blessés et tentez de fuir comme vous pouvez",
+                  "effects": [
+                    {
+                      "actionOnFaction": {
+                        "COMMUNISTS": 5,
+                        "LIBERALS": -20,
+                        "RELIGIOUS": 5
+                      }
+                    },
+                    {
+                      "partisans": -12
+                    }
+                  ]
+                },
+                {
+                  "choice": "Vous fuiez le plus vite possible en abandonnant les blessés",
+                  "effects": [
+                    {
+                      "actionOnFaction": {
+                        "COMMUNISTS": -20,
+                        "MILITARISTS": 5,
+                        "RELIGIOUS": -20
+                      }
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "choice": "Refuser, c'est trop dangereux !",
+          "effects": [
+            {
+              "actionOnFaction": {
+                "MILITARISTS": -20,
+                "LOYALISTS": 5,
+                "RELIGIOUS": 5
+              }
+            },
+            {
+              "actionOnFactor": {
+                "AGRICULTURE": -20
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Certains des 100 essaies d'enlever leurs bracelets afin que l'Arche ne puisse plus avoir d'informations sur eux.",
+      "scenarios": [
+        {
+          "id": 7
+        }
+      ],
+      "choices": [
+        {
+          "choice": "Vous les en empêchez, quitte à vous battre",
+          "effects": [
+            {
+              "actionOnFaction": {
+                "CAPITALISTS": -30,
+                "LOYALISTS": 10
+              }
+            },
+            {
+              "partisans": -5
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "La fusée qui vous a servi à venir sur Terre s'avère être trop petite pour abriter confortablement tout le monde",
+      "scenarios": [
+        {
+          "id": 7
+        }
+      ],
+      "choices": [
+        {
+          "choice": "Vous construisez des abris avec du bois, des feuilles et divers matériaux que vous trouvez",
+          "effects": [
+            {
+              "actionOnFaction": {
+                "ECOLOGISTS": -30,
+                "LIBERALS": 5,
+                "NATIONALISTS": 5
+              }
+            },
+            {
+              "actionOnFactor": {
+                "INDUSTRY": 10
+              }
+            }
+          ]
+        },
+        {
+          "choice": "Vous laissez ceux qui n'ont pas d'abri se débrouiller",
+          "effects": [
+            {
+              "actionOnFaction": {
+                "MILITARISTS": 10,
+                "LOYALISTS": 10,
+                "NATIONALISTS": -30,
+                "CAPITALISTS": -20
+              }
+            }
+          ],
+          "relatedEvents": [
+            {
+              "name": "Une tempête a frappé durant la nuit et certains de ceux qui n'ont pas pu s'abriter ne s'en sont pas sorti",
+              "choices": [
+                {
+                  "choice": "Vous constatez les dégâts au réveil",
+                  "effects": [
+                    {
+                      "actionOnFaction": {
+                        "RELIGIOUS": -30,
+                        "LIBERALS": 10
+                      }
+                    },
+                    {
+                      "partisans": -12
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Il est temps de se développer pour pouvoir survivre !",
+      "scenarios": [
+        {
+          "id": 7
+        }
+      ],
+      "choices": [
+        {
+          "choice": "Vous faites en sorte de produire de la nourriture pour tout le monde",
+          "effects": [
+            {
+              "actionOnFaction": {
+                "ECOLOGISTS": 5
+              }
+            },
+            {
+              "actionOnFactor": {
+                "AGRICULTURE": 10,
+                "TREASURY": -20
+              }
+            }
+          ]
+        },
+        {
+          "choice": "Vous choisissez plutôt de développer de quoi résister et éventuellement se battre",
+          "effects": [
+            {
+              "actionOnFaction": {
+                "MILITARISTS": 5,
+                "NATIONALISTS": -20,
+                "CAPITALISTS": 10
+              }
+            },
+            {
+              "actionOnFactor": {
+                "INDUSTRY": 20
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Vous avez trouvé beaucoup de matériaux en explorant les alentours !",
+      "scenarios": [
+        {
+          "id": 7
+        }
+      ],
+      "choices": [
+        {
+          "choice": "Je les récupère",
+          "effects": [
+            {
+              "actionOnFaction": {
+                "COMMUNISTS": 10,
+                "CAPITALISTS": 10
+              }
+            },
+            {
+              "actionOnFactor": {
+                "TREASURY": 30
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Les natifs vous attaquent directement au camp ! Que faire ?",
+      "scenarios": [
+        {
+          "id": 7
+        }
+      ],
+      "choices": [
+        {
+          "choice": "Vous envoyez les plus forts pour résister",
+          "effects": [
+            {
+              "actionOnFaction": {
+                "MILITARISTS": 10,
+                "RELIGIOUS": -20,
+                "COMMUNISTS": -20,
+                "LOYALISTS": -30
+              }
+            },
+            {
+              "actionOnFactor": {
+                "INDUSTRY": -20
+              }
+            },
+            {
+              "partisans": -20
+            }
+          ]
+        },
+        {
+          "choice": "Vous vous protégez dans la fusée, et les faites bruler en démarrant le propulseur",
+          "effects": [
+            {
+              "actionOnFaction": {
+                "ECOLOGISTS": -30,
+                "MILITARISTS": -30,
+                "LIBERALS": -20
+              }
+            },
+            {
+              "actionOnFactor": {
+                "AGRICULTURE": -30
+              }
+            }
+          ]
+        },
+        {
+          "choice": "Chacun pour sa peau, tant que je suis en sécurité !",
+          "effects": [
+            {
+              "actionOnFaction": {
+                "ECOLOGISTS": -100,
+                "CAPITALISTS": -100,
+                "LOYALISTS": -100,
+                "LIBERALS": -100,
+                "RELIGIOUS": -100,
+                "MILITARISTS": -100,
+                "NATIONALISTS": -100,
+                "COMMUNISTS": -100
+              }
+            },
+            {
+              "partisans": -1200
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Un brouillard acide et mortel se répend sur le camp !",
+      "scenarios": [
+        {
+          "id": 7
+        }
+      ],
+      "choices": [
+        {
+          "choice": "Fuiez !",
+          "effects": [
+            {
+              "actionOnFaction": {
+                "LIBERALS": 10,
+                "ECOLOGISTS": -20
+              }
+            },
+            {
+              "actionOnFactor": {
+                "AGRICULTURE": -30,
+                "INDUSTRY": -30
+              }
+            },
+            {
+              "partisans": -10
+            }
+          ]
+        },
+        {
+          "choice": "Tout le monde dans la fusée !",
+          "effects": [
+            {
+              "actionOnFaction": {
+                "LIBERALS": -20,
+                "NATIONALISTS": 10,
+                "CAPITALISTS": -10
+              }
+            },
+            {
+              "actionOnFactor": {
+                "AGRICULTURE": -20,
+                "INDUSTRY": -20
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Après beaucoup d'insistance, vous trouvez le moyen d'entrer au Mont Weater",
+      "scenarios": [
+        {
+          "id": 7
+        }
+      ],
+      "choices": [
+        {
+          "choice": "C'est peut-être un piège, c'est hors de question",
+          "effects": [
+            {
+              "actionOnFaction": {
+                "LOYALISTS": 10,
+                "NATIONALISTS": -30
+              }
+            },
+            {
+              "actionOnFactor": {
+                "TREASURY": 5,
+                "AGRICULTURE": 10,
+                "INDUSTRY": 10
+              }
+            }
+          ]
+        },
+        {
+          "choice": "Nous serrons à l'abri là-bas",
+          "effects": [
+            {
+              "actionOnFaction": {
+                "RELIGIOUS": 10,
+                "NATIONALISTS": 10
+              }
+            },
+            {
+              "actionOnFactor": {
+                "TREASURY": 10,
+                "AGRICULTURE": 10,
+                "INDUSTRY": 20
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Octavia s'étant fortement rapprochée d'un natif vous suggère de s'associer à eux",
+      "scenarios": [
+        {
+          "id": 7
+        }
+      ],
+      "choices": [
+        {
+          "choice": "C'est une bonne idée, nous serons plus forts",
+          "effects": [
+            {
+              "actionOnFaction": {
+                "MILITARISTS": 10,
+                "NATIONALISTS": -30,
+                "COMMUNISTS": -30,
+                "LOYALISTS": -30
+              }
+            },
+            {
+              "partisans": 30
+            }
+          ]
+        },
+        {
+          "choice": "C'est hors de question ! Ils ont tenté de nous tuer !",
+          "effects": [
+            {
+              "actionOnFaction": {
+                "MILITARISTS": -20,
+                "NATIONALISTS": 10,
+                "RELIGIOUS": -20,
+                "LOYALISTS": 15
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
