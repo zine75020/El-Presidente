@@ -11,12 +11,7 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="library" name="java-json" level="project" />
-    <orderEntry type="library" name="json-simple-1.1" level="project" />
-    <orderEntry type="library" name="gson-2.8.2" level="project" />
-    <orderEntry type="module" module-name="Console-Input" />
     <orderEntry type="module" module-name="Core" />
-    <orderEntry type="module" module-name="Console-Output" />
-    <orderEntry type="module" module-name="Json" />
+    <orderEntry type="library" name="gson-2.8.2" level="project" />
   </component>
 </module>

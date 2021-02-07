@@ -1,6 +1,5 @@
 package Game;
 
-import Faction.Faction;
 import JsonScenarioRepository.JsonScenarioRepository;
 import ConsoleOutput.ConsoleOutput;
 import ConsoleInput.ConsoleInput;
