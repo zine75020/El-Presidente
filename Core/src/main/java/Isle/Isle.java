@@ -37,6 +37,21 @@ public class Isle {
         this.score = 0;
     }
 
+    public Isle(Industry industry, Agriculture agriculture, Integer treasury,
+                DifficultyChoice difficultyChoice, Integer minSatisfactionPercentage,
+                List<Faction> factions) {
+        this.factionList = factions;
+        this.industry = industry;
+        this.agriculture = agriculture;
+        this.treasury = treasury;
+        this.season = Season.SPRING;
+        this.difficultyOfGame = difficultyChoice;
+        this.foodUnits = 0;
+        this.turn = 0;
+        this.minSatisfactionPercentage = minSatisfactionPercentage;
+        this.score = 0;
+    }
+
     //GETTERS AND SETTERS
 
     public List<Faction> getFactionList() {

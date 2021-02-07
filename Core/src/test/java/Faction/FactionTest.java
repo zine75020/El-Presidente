@@ -3,7 +3,7 @@ package Faction;
 import org.junit.Test;
 import Enum.FactionType;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.Assert.*;
 
 public class FactionTest {
 

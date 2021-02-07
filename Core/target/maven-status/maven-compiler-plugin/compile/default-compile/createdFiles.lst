@@ -1,0 +1,17 @@
+Input\Input.class
+ScenarioParsers\ScenarioRepository.class
+Faction\Faction.class
+EventParsers\Event.class
+ScenarioParsers\GameStartParameters.class
+Isle\Isle$1.class
+Isle\Isle.class
+Output\Output.class
+Activity\Activity.class
+Enum\Season.class
+EventParsers\EventsRepository.class
+Enum\DifficultyChoice.class
+Enum\FactionType.class
+Agriculture\Agriculture.class
+EventParsers\Choice.class
+ScenarioParsers\Scenario.class
+Industry\Industry.class

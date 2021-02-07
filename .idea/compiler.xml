@@ -6,7 +6,6 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="JSonRepository" />
         <module name="Console-Input" />
         <module name="Application" />
         <module name="Console-Output" />
@@ -21,6 +20,7 @@
       <module name="El-Presidente" target="15" />
       <module name="JSonRepository" target="8" />
       <module name="JsonRepository" target="8" />
+      <module name="Repository" target="8" />
     </bytecodeTargetLevel>
   </component>
 </project>

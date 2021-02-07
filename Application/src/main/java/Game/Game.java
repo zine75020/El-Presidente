@@ -1,11 +1,16 @@
 package Game;
 
+import Faction.Faction;
+import JsonRepository.JsonScenarioRepository;
 import ConsoleOutput.ConsoleOutput;
 import ConsoleInput.ConsoleInput;
+import ScenarioParsers.Scenario;
 
 import java.util.Scanner;
 
 public class Game {
+
+    public static final String SCENARIO_FILE_PATH = "C:/Users/alois/Documents/GitHub/El-Presidente/Core/src/main/Json/Scenario/Scenarios.json";
 
     public static Scanner clavier = new Scanner(System.in);
 
@@ -17,14 +22,15 @@ public class Game {
         System.out.println(consoleOutput.welcome());
 
         //affichage menu + choix difficulté
-        int difficulty = difficultyTreatment();
+        int selectedDifficulty = difficultyTreatment();
 
-        int minimumSatisfaction = getMinimumSatisfactionByDifficulty(difficulty);
+        int minimumSatisfaction = getMinimumSatisfactionByDifficulty(selectedDifficulty);
 
         //affichage menu scénario (+ bac à sable)
+        Scenario selectedScenario = scenarioTreatment(selectedDifficulty);
 
         //une fois toutes les données nécessaires à l'initialisation de l'île
-        //Isle isle = new Isle(..., difficulty, ...);
+        //Isle isle = new Isle(..., selectedDifficulty, ...);
 
     }
 
@@ -60,6 +66,26 @@ public class Game {
                 minimumSatisfaction = 30;
         }
         return minimumSatisfaction;
+    }
+
+    private static Scenario scenarioTreatment(int difficulty) {
+        Integer selectedScenarioId = -1;
+        JsonScenarioRepository jsonScenarioRepository = new JsonScenarioRepository();
+
+        ConsoleOutput consoleOutput = new ConsoleOutput();
+        ConsoleInput consoleInput = new ConsoleInput();
+
+        do {
+            System.out.println(consoleOutput.scenarioMenu(jsonScenarioRepository.getAllScenarios(SCENARIO_FILE_PATH)));
+            String input = clavier.next();
+            selectedScenarioId = consoleInput.verifyScenarioChoice(input, jsonScenarioRepository.getAllScenariosIds(SCENARIO_FILE_PATH));
+            if (selectedScenarioId == -1) {
+                System.out.println(consoleOutput.valueOfMenuError());
+            }
+        } while (selectedScenarioId == -1);
+
+        //parser le scenario choisi
+        return jsonScenarioRepository.getScenarioById(SCENARIO_FILE_PATH, selectedScenarioId, difficulty);
     }
 
 }
