@@ -1,4 +1,4 @@
-package JsonRepository;
+package JsonScenarioRepository;
 
 import EventParsers.Event;
 import Faction.Faction;

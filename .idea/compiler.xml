@@ -8,6 +8,7 @@
         <outputRelativeToContentRoot value="true" />
         <module name="Console-Input" />
         <module name="Application" />
+        <module name="JsonRepository" />
         <module name="Console-Output" />
         <module name="Core" />
       </profile>

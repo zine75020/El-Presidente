@@ -13,6 +13,7 @@
         <module>Console-Input</module>
         <module>Console-Output</module>
         <module>Core</module>
+        <module>Json</module>
     </modules>
 
     <properties>
