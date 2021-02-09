@@ -3,11 +3,7 @@
     [
       {
         "name": "Jotaro arrive en Ville, et fais tomber Hirose Koichi-kun par terre par accident.",
-        "scenarios": [
-          {
-            "id": 5
-          }
-        ],
+        "scenario": 5,
         "choices": [
           {
             "choice": "Jotaro decide d'aider Koichi-kun à se lever",
@@ -50,7 +46,6 @@
                       {
                         "actionOnFactor": {
                           "treasury": -20,
-                          "foodUnits": -20
                         }
                       }
                     ]
@@ -79,7 +74,6 @@
                   "agriculturePercentage": -70,
                   "industryPercentage": -5,
                   "treasury": -400,
-                  "foodUnits": -700
                 }
               }
             ]
@@ -90,11 +84,7 @@
     [
       {
         "name": "Jotaro se balade et découvre la ville charmante et apaisante qu'est Morioh",
-        "scenarios": [
-          {
-            "id": 5
-          }
-        ],
+        "scenario": 5,
         "choices": [
           {
             "choice": "Jotaro décide d'appeler Joseph Joestar pour penser à une stratégie afin de convaincre Josuke de les rejoindre",
@@ -106,7 +96,6 @@
                 },
                 "actionOnFactor": {
                   "treasury": 40,
-                  "foodUnits": -10,
                   "industryPercentage": 10,
                   "agriculturePercentage": -10
                 }
@@ -124,7 +113,6 @@
                   "capitalists": 20
                 },
                 "actionOnFactor": {
-                  "foodUnits": 20
                 }
               }
             ]
@@ -140,7 +128,6 @@
                 },
                 "actionOnFactor": {
                   "treasury": -50,
-                  "foodUnits": -20
                 }
               }
             ]
@@ -151,11 +138,7 @@
     [
       {
         "name": "Jotaro trouve enfin Josuke Higashikata ! Que compte-t-il faire avec lui ?",
-        "scenarios": [
-          {
-            "id": 5
-          }
-        ],
+        "scenario": 5,
         "choices": [
           {
             "choice": "Jotaro s'introduit poliment et explique son plan à Josuke dans un calme pesant",
@@ -227,11 +210,7 @@
     [
       {
         "name": "Jotaro est maintenant avec Josuke (de force ou non)",
-        "scenarios": [
-          {
-            "id": 5
-          }
-        ],
+        "scenario": 5,
         "choices": [
           {
             "choice": "Ils commencent tout les deux à executer leur plan de remettre en ordre la ville de Morioh",
@@ -250,7 +229,6 @@
               },
               {
                 "actionOnFactor": {
-                  "foodUnits": -20,
                   "treasury": -50
                 }
               }
@@ -327,11 +305,7 @@
     [
       {
         "name": "Vous vous arretez un instant et remettez vos plans en question",
-        "scenarios": [
-          {
-            "id": 5
-          }
-        ],
+        "scenario": 5,
         "choices": [
           {
             "choice": "Continuer l'éxécution du plan.",
@@ -387,11 +361,6 @@
                           "communists": 20
                         }
                       },
-                      {
-                        "actionOnFactor": {
-                          "foodUnits": -50
-                        }
-                      }
                     ],
                     "relatedEvents": [
                       {
@@ -433,7 +402,6 @@
                       },
                       {
                         "actionOnFactor": {
-                          "foodUnits": 50,
                           "treasury": 50
                         }
                       }
@@ -466,11 +434,7 @@
     [
       {
         "name": "Fin du scénario, Jotaro par le biais de ses combats et décisions a imposé le respect dans la ville de Morioh, quel sera sa dernière décision ?",
-        "scenarios": [
-          {
-            "id": 5
-          }
-        ],
+        "scenario": 5,
         "choices": [
           {
             "choice": "Jotaro laisse le contrôle de la ville à Josuke et Koichi-kun car ils ont bien grandi au fur et a mesure des aventures. Il rentre dans sa ville natale avec Joseph. :)",
@@ -492,7 +456,6 @@
                   "industryPercentage": 20,
                   "agriculturePercentage": 10,
                   "treasury": 300,
-                  "foodUnits": 300
                 }
               }
             ]
@@ -517,7 +480,6 @@
                   "industryPercentage": 20,
                   "agriculturePercentage": 10,
                   "treasury": 400,
-                  "foodUnits": 200
                 }
               }
             ]
@@ -540,7 +502,6 @@
               {
                 "actionOnFactor": {
                   "treasury": 100,
-                  "foodUnits": 100
                 }
               }
             ]
