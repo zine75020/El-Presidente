@@ -232,11 +232,7 @@
     },
     {
       "name": "Vous avez trouvé beaucoup de matériaux en explorant les alentours !",
-      "scenarios": [
-        {
-          "id": 7
-        }
-      ],
+      "scenario": 7,
       "choices": [
         {
           "choice": "Je les récupère",

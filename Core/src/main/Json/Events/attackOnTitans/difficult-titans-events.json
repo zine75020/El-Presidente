@@ -2,11 +2,7 @@
   "events": [
     {
       "name": "Des monstres géants approchent le royaume... Que faites-vous ?",
-      "scenarios": [
-        {
-          "id": 1
-        }
-      ],
+      "scenario": 1,
       "choices": [
         {
           "choice": "J'envoie toute la force militaire du pays pour les éradiquer",
@@ -48,11 +44,7 @@
     },
     {
       "name": "Ils détournent leur chemin ! Ils s'attaquent à l'agriculture à l'avant du Royaume...",
-      "scenarios": [
-        {
-          "id": 1
-        }
-      ],
+      "scenario": 1,
       "choices": [
         {
           "choice": "Je laisse tomber en me disant que j'ai d'autres champs et réserves de provisions",
@@ -74,11 +66,7 @@
     },
     {
       "name": "Un valeureux soldat du nom de Rivaille se propose d'aller tuer ces bêtes sauvages...",
-      "scenarios": [
-        {
-          "id": 1
-        }
-      ],
+      "scenario": 1,
       "choices": [
         {
           "choice": "Je le laisse aller défendre ma patrie, celle d'El Presidente, dans le risque que Rivaille décède",
@@ -109,11 +97,7 @@
     },
     {
       "name": "Le commandant Pixis propose d'utiliser 20$ de notre trésorerie pour améliorer et adapter l'armement de nos militaires",
-      "scenarios": [
-        {
-          "id": 1
-        }
-      ],
+      "scenario": 1,
       "choices": [
         {
           "choice": "J'accepte !",
@@ -148,11 +132,7 @@
     },
     {
       "name": "Le capitaine Magath propose de rassembler nos ressources pour bâtir un mur de protection contre les titans",
-      "scenarios": [
-        {
-          "id": 1
-        }
-      ],
+      "scenario": 1,
       "choices": [
         {
           "choice": "J'accepte !",
@@ -182,11 +162,7 @@
     },
     {
       "name": "Des monstres géants approchent le royaume... Que faites-vous ?",
-      "scenarios": [
-        {
-          "id": 1
-        }
-      ],
+      "scenario": 1,
       "choices": [
         {
           "choice": "J'envoie toute la force militaire du pays pour les éradiquer",
@@ -228,11 +204,7 @@
     },
     {
       "name": "Les militaires proposent de nourrir les chevaux afin qu'ils soient plus performants pour leur prochaine course",
-      "scenarios": [
-        {
-          "id": 1
-        }
-      ],
+      "scenario": 1,
       "choices": [
         {
           "choice": "Nourrissons ces braves bêtes !",
@@ -255,11 +227,7 @@
     },
     {
       "name": "Une tornade approche dans quelques jours qui est capable de détruire les murs! Que faire ?",
-      "scenarios": [
-        {
-          "id": 1
-        }
-      ],
+      "scenario": 1,
       "choices": [
         {
           "choice": "Advienne que pourra...",
@@ -282,11 +250,7 @@
     },
     {
       "name": "Le bataillon d'exploration vous propose de s'aventurer hors des murs afin d'en savoir d'avantage sur les titans",
-      "scenarios": [
-        {
-          "id": 1
-        }
-      ],
+      "scenario": 1,
       "choices": [
         {
           "choice": "J'accepte avec hargne",
@@ -367,11 +331,7 @@
     },
     {
       "name": "Les titans ont attaqué Shiganshina ! Que faire ? ",
-      "scenarios": [
-        {
-          "id": 1
-        }
-      ],
+      "scenario": 1,
       "choices": [
         {
           "choice": "Laisser les rescapés déceder face aux titans",
@@ -407,11 +367,7 @@
     },
     {
       "name": "Un mystérieux titan, doté d'une cuirasse imposante a enfoncé le mur Maria",
-      "scenarios": [
-        {
-          "id": 1
-        }
-      ],
+      "scenario": 1,
       "choices": [
         {
           "choice": "Appeler les brigades spéciales pour tuer les titans",
@@ -446,11 +402,7 @@
     },
     {
       "name": "Eren Yeager se propose de se transformer en titan pour reboucher le trou du mur Maria avec une grosse pierre",
-      "scenarios": [
-        {
-          "id": 1
-        }
-      ],
+      "scenario": 1,
       "choices": [
         {
           "choice": "Accepter",
@@ -483,11 +435,7 @@
     },
     {
       "name": "Le Maréchal Steiss propose de distribuer des vivres issus de notre agriculture au peuple",
-      "scenarios": [
-        {
-          "id": 1
-        }
-      ],
+      "scenario": 1,
       "choices": [
         {
           "choice": "Distribuer sans rochigner",
@@ -520,11 +468,7 @@
     },
     {
       "name": "Partisan écologiste, Soldat Frock, propose de réduire un peu notre travail industriel pour préserver l'agriculture",
-      "scenarios": [
-        {
-          "id": 1
-        }
-      ],
+      "scenario": 1,
       "choices": [
         {
           "choice": "Accepter",
@@ -563,11 +507,7 @@
     },
     {
       "name": "Willy Teyber, chef du clan Teyber, propose de faire un discours dans le but de déclarer la guerre totale aux titans. Y assisterez vous ?",
-      "scenarios": [
-        {
-          "id": 1
-        }
-      ],
+      "scenario": 1,
       "choices": [
         {
           "choice": "Oui",
@@ -622,11 +562,7 @@
     },
     {
       "name": "Des révoltes ont lieu à l'intérieur du mur Rose car il n'y a pas assez de vivres issus de l'agriculture pour tout le monde...",
-      "scenarios": [
-        {
-          "id": 1
-        }
-      ],
+      "scenario": 1,
       "choices": [
         {
           "choice": "Je ne veux rien écouter !",
@@ -648,11 +584,7 @@
     },
     {
       "name": "Un titan apparaît au loin, d'apparence plutôt poilue, et se met à jeter des pierres sur les murs...",
-      "scenarios": [
-        {
-          "id": 1
-        }
-      ],
+      "scenario": 1,
       "choices": [
         {
           "choice": "Renforcer les murs avec des matières plus résistantes",
@@ -683,11 +615,7 @@
     },
     {
       "name": "Vous découvrez, après la chute du Titan Bestial, qu'il existe des titans intelligents contrôlés par des humains",
-      "scenarios": [
-        {
-          "id": 1
-        }
-      ],
+      "scenario": 1,
       "choices": [
         {
           "choice": "J'ordonne aux scientifiques d'entamer de nouvelles recherches",
