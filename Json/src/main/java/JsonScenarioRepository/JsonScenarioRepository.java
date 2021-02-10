@@ -73,7 +73,7 @@ public class JsonScenarioRepository implements ScenarioRepository {
      * @return
      */
     @Override
-    public Scenario getScenarioById(String path, Integer selectedScenarioId, Integer difficulty) {
+    public Scenario getScenarioByIdAndDifficulty(String path, Integer selectedScenarioId, Integer difficulty) {
         Scenario scenario = null;
         JsonEventsRepository jsonEventsRepository = new JsonEventsRepository();
 
@@ -83,7 +83,6 @@ public class JsonScenarioRepository implements ScenarioRepository {
             //récupération du tableau des scénarios
             JsonArray scenarios = (JsonArray) myobject.get("scenarios");
             JsonObject selectedScenario = new JsonObject();
-
             //on cherche le scénario correspondant à l'id
             for (JsonElement scenar : scenarios) {
                 JsonObject sc = scenar.getAsJsonObject();

@@ -21,6 +21,7 @@ import Enum.Season;
 
 public class JsonEventsRepository implements EventsRepository {
 
+    //TODO update les chemins après déplacement du fichier json
     //attack on titans
     public static final String EASY_ATTACK_ON_TITANS_FILE_PATH = "C:/Users/alois/Documents/GitHub/El-Presidente/Core/src/main/Json/Events/attackOnTitans/easy-titans-events.json";
     public static final String NORMAL_ATTACK_ON_TITANS_FILE_PATH = "C:/Users/alois/Documents/GitHub/El-Presidente/Core/src/main/Json/Events/attackOnTitans/normal-titans-events.json";

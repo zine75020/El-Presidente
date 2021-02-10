@@ -14,6 +14,7 @@ import java.util.Scanner;
 
 public class Game {
 
+    //TODO update les chemins après déplacement du fichier json
     public static final String SCENARIO_FILE_PATH = "C:/Users/alois/Documents/GitHub/El-Presidente/Core/src/main/Json/Scenario/Scenarios.json";
 
     public static Scanner clavier = new Scanner(System.in);
@@ -127,7 +128,7 @@ public class Game {
         } while (selectedScenarioId == -1);
 
         //parser le scenario choisi
-        return jsonScenarioRepository.getScenarioById(SCENARIO_FILE_PATH, selectedScenarioId, difficulty);
+        return jsonScenarioRepository.getScenarioByIdAndDifficulty(SCENARIO_FILE_PATH, selectedScenarioId, difficulty);
     }
 
 }

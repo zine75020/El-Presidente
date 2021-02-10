@@ -11,7 +11,7 @@ public interface ScenarioRepository {
 
     List<Integer> getAllScenariosIds(String path);
 
-    Scenario getScenarioById(String path, Integer selectedScenarioId, Integer difficulty);
+    Scenario getScenarioByIdAndDifficulty(String path, Integer selectedScenarioId, Integer difficulty);
 
     GameStartParameters getGameStartParameters(JsonObject selectedScenario, Integer difficulty);
 
