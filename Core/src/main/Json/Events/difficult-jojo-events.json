@@ -366,30 +366,6 @@
                         "actionOnFactor": {
                         }
                       }
-                    ],
-                    "relatedEvents": [
-                      {
-                        "name": "Josuke s'est fait fumé, Jotaro et Koichi-kun prennent la relève, le tueur est neutralisé. Il s'agissait de Kira Yoshikage.",
-                        "effects": [
-                          {
-                            "actionOnFaction": {
-                              "ecologists": 5,
-                              "capitalists": 5,
-                              "loyalists": -10,
-                              "liberals": 5,
-                              "religious": 5,
-                              "militarists": 5,
-                              "nationalists": -10,
-                              "communists": -5
-                            }
-                          },
-                          {
-                            "actionOnFactor": {
-                              "treasury": -50
-                            }
-                          }
-                        ]
-                      }
                     ]
                   },
                   {

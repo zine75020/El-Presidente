@@ -53,30 +53,6 @@
                 ]
               }
             ]
-          },
-          {
-            "choice": "Jotaro n'aide pas Koichi-kun à se relever, fin du scénario mdr on n'aura jamais la suite",
-            "effects": [
-              {
-                "actionOnFaction": {
-                  "liberals": -65,
-                  "capitalists": -65,
-                  "communists": -65,
-                  "religious": -65,
-                  "militarists": -65,
-                  "ecologists": -65,
-                  "loyalists": -65,
-                  "nationalists": -65
-                }
-              },
-              {
-                "actionOnFactor": {
-                  "agriculturePercentage": -70,
-                  "industryPercentage": -5,
-                  "treasury": -400,
-                }
-              }
-            ]
           }
         ]
       }
@@ -117,21 +93,6 @@
               }
             ]
           },
-          {
-            "choice": "Jotaro part à la recherche de Josuke sans refléchir à une stratégie et sans appeler Koichi-kun",
-            "effects": [
-              {
-                "actionOnFaction": {
-                  "communists": -20,
-                  "nationalists": 25,
-                  "capitalists": -20
-                },
-                "actionOnFactor": {
-                  "treasury": -50,
-                }
-              }
-            ]
-          }
         ]
       }
     ],
@@ -274,30 +235,6 @@
                 }
               }
             ],
-            "relatedEvents": [
-              {
-                "name": "Un tueur est apparu en ville, on ne connait pas encore son identité mais il fait mauvaise réputation à Jotaro et son équipe.",
-                "choices": [
-                  {
-                    "choice": "Toute l'équipe se met à la recherche du tueur.",
-                    "effects": [
-                      {
-                        "actionOnFaction": {
-                          "ecologists": -20,
-                          "capitalists": -20,
-                          "loyalists": -20,
-                          "liberals": -20,
-                          "religious": -20,
-                          "militarists": -20,
-                          "nationalists": -20,
-                          "communists": -20
-                        }
-                      }
-                    ]
-                  }
-                ]
-              }
-            ]
           }
         ]
       }
