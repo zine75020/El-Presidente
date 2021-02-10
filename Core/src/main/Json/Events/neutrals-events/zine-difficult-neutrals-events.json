@@ -202,18 +202,6 @@
                   "choice": "Une fête nationale est organisée !",
                   "effects": [
                     {
-                      "actionOnFaction": {
-                        "capitalists": 5,
-                        "communists": 5,
-                        "liberals": 5,
-                        "religious": 5,
-                        "militarists": 5,
-                        "ecologists": 5,
-                        "loyalists": -15,
-                        "nationalists": -15
-                      }
-                    },
-                    {
                       "actionOnFactor": {
                         "treasury": -40
                       }
@@ -340,15 +328,6 @@
                 {
                   "choice": "Vous arrivez en premier sur la Lune, ça fait une sacré pub pour votre pays !",
                   "effects": [
-                    {
-                      "actionOnFaction": {
-                        "capitalists": 5,
-                        "communists": 5,
-                        "liberals": 5,
-                        "militarists": 5,
-                        "nationalists": 5
-                      }
-                    },
                     {
                       "actionOnFactor": {
                         "treasury": 15

@@ -141,25 +141,6 @@
               }
             }
           ],
-          "relatedEvents": [
-            {
-              "name": "Le terroriste a réussi à abattre la moitié de ses otages avant que l'intervention fonctionne...",
-              "effects": [
-                {
-                  "actionOnFaction": {
-                    "capitalists": -5,
-                    "communists": -5,
-                    "liberals": -5,
-                    "religious": -5,
-                    "militarists": -5,
-                    "ecologists": -5,
-                    "loyalists": -5,
-                    "nationalists": -5
-                  }
-                }
-              ]
-            }
-          ]
         }
       ]
     },
@@ -359,29 +340,6 @@
             }
           ]
         },
-        {
-          "choice": "Elon Musk ? C'est qui ça ?",
-          "effects": [
-            {
-              "actionOnFaction": {
-                "capitalists": -5,
-                "communists": -5,
-                "liberals": -5,
-                "religious": -5,
-                "militarists": -5,
-                "ecologists": -5,
-                "loyalists": -5,
-                "nationalists": -5
-              }
-            },
-            {
-              "actionOnFactor": {
-                "treasury": 20,
-                "industry": 20
-              }
-            }
-          ]
-        }
       ]
     },
     {
