@@ -81,7 +81,7 @@
             },
             "MILITARISTS": {
               "name": "Militarists",
-              "satisfactionPercentage": 50,
+              "satisfactionPercentage": 60,
               "numberOfPartisans": 10
             },
             "ECOLOGISTS": {
