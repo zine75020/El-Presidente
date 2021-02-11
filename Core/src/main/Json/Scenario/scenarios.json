@@ -454,6 +454,157 @@
       }
     },
     {
+      "id": 4,
+      "name": "The 100",
+      "story": "Dans un futur lointain, 97 années après une guerre nucléaire qui a dévasté la surface de la Terre, les seuls humains ayant survécu vivent dans la flottille de stations spatiales en orbite appelée l'Arche. 100 mineurs condamnés pour divers crimes ou trahisons sont envoyés sur Terre pour tester les chances de survie. Vous êtes nommé chef des mineurs.",
+      "gameStartParameters": {
+        "EASY": {
+          "agriculturePercentage": 20,
+          "industryPercentage": 45,
+          "treasury": 800,
+          "foodUnits": 1100,
+          "factions": {
+            "CAPITALISTS": {
+              "name": "Capitalists",
+              "satisfactionPercentage": 60,
+              "numberOfPartisans": 13
+            },
+            "COMMUNISTS": {
+              "name": "Communists",
+              "satisfactionPercentage": 60,
+              "numberOfPartisans": 12
+            },
+            "LIBERALS": {
+              "name": "Liberals",
+              "satisfactionPercentage": 50,
+              "numberOfPartisans": 13
+            },
+            "RELIGIOUS": {
+              "name": "Religious",
+              "satisfactionPercentage": 50,
+              "numberOfPartisans": 13
+            },
+            "MILITARISTS": {
+              "name": "Militarists",
+              "satisfactionPercentage": 60,
+              "numberOfPartisans": 12
+            },
+            "ECOLOGISTS": {
+              "name": "Ecologists",
+              "satisfactionPercentage": 60,
+              "numberOfPartisans": 13
+            },
+            "LOYALISTS": {
+              "name": "Loyalists",
+              "satisfactionPercentage": 100,
+              "numberOfPartisans": 12
+            },
+            "NATIONALISTS": {
+              "name": "Nationalists",
+              "satisfactionPercentage": 45,
+              "numberOfPartisans": 12
+            }
+          }
+        },
+        "NORMAL": {
+          "agriculturePercentage": 10,
+          "industryPercentage": 40,
+          "treasury": 700,
+          "foodUnits": 1000,
+          "factions": {
+            "CAPITALISTS": {
+              "name": "Capitalists",
+              "satisfactionPercentage": 60,
+              "numberOfPartisans": 13
+            },
+            "COMMUNISTS": {
+              "name": "Communists",
+              "satisfactionPercentage": 50,
+              "numberOfPartisans": 12
+            },
+            "LIBERALS": {
+              "name": "Liberals",
+              "satisfactionPercentage": 40,
+              "numberOfPartisans": 13
+            },
+            "RELIGIOUS": {
+              "name": "Religious",
+              "satisfactionPercentage": 50,
+              "numberOfPartisans": 13
+            },
+            "MILITARISTS": {
+              "name": "Militarists",
+              "satisfactionPercentage": 50,
+              "numberOfPartisans": 12
+            },
+            "ECOLOGISTS": {
+              "name": "Ecologists",
+              "satisfactionPercentage": 60,
+              "numberOfPartisans": 13
+            },
+            "LOYALISTS": {
+              "name": "Loyalists",
+              "satisfactionPercentage": 100,
+              "numberOfPartisans": 12
+            },
+            "NATIONALISTS": {
+              "name": "Nationalists",
+              "satisfactionPercentage": 40,
+              "numberOfPartisans": 12
+            }
+          }
+        },
+        "DIFFICULT": {
+          "agriculturePercentage": 8,
+          "industryPercentage": 30,
+          "treasury": 600,
+          "foodUnits": 900,
+          "factions": {
+            "CAPITALISTS": {
+              "name": "Capitalists",
+              "satisfactionPercentage": 50,
+              "numberOfPartisans": 13
+            },
+            "COMMUNISTS": {
+              "name": "Communists",
+              "satisfactionPercentage": 60,
+              "numberOfPartisans": 12
+            },
+            "LIBERALS": {
+              "name": "Liberals",
+              "satisfactionPercentage": 40,
+              "numberOfPartisans": 13
+            },
+            "RELIGIOUS": {
+              "name": "Religious",
+              "satisfactionPercentage": 40,
+              "numberOfPartisans": 13
+            },
+            "MILITARISTS": {
+              "name": "Militarists",
+              "satisfactionPercentage": 50,
+              "numberOfPartisans": 12
+            },
+            "ECOLOGISTS": {
+              "name": "Ecologists",
+              "satisfactionPercentage": 50,
+              "numberOfPartisans": 13
+            },
+            "LOYALISTS": {
+              "name": "Loyalists",
+              "satisfactionPercentage": 100,
+              "numberOfPartisans": 12
+            },
+            "NATIONALISTS": {
+              "name": "Nationalists",
+              "satisfactionPercentage": 40,
+              "numberOfPartisans": 12
+            }
+          }
+        }
+      }
+    },
+    {
       "id": 7,
       "name": "Bac à sable",
       "story": "Mode de jeu sans scénario avec des événements aléatoires",

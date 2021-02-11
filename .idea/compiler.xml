@@ -12,16 +12,12 @@
         <module name="Core" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel>
+    <bytecodeTargetLevel target="8">
       <module name="Application" target="8" />
       <module name="Console-Input" target="8" />
       <module name="Console-Output" target="8" />
       <module name="Core" target="8" />
-      <module name="El-Presidente" target="15" />
-      <module name="Json" target="8" />
-      <module name="JSonRepository" target="8" />
-      <module name="JsonRepository" target="8" />
-      <module name="Repository" target="8" />
+      <module name="El-Presidente" target="8" />
     </bytecodeTargetLevel>
   </component>
 </project>

@@ -2,7 +2,7 @@
   "events": [
     {
       "name": "En arrivant sur terre, Clarke, Finn, Octavia et d'autres membres des 100 veulent faire un trek terrrestre à travers la forêt pour tenter de trouver de la nourriture au Mont Weather.",
-      "scenario": 7,
+      "scenario": 4,
       "choices": [
         {
           "choice": "Accepter qu'ils partent en un petit groupe",
@@ -76,7 +76,7 @@
     },
     {
       "name": "Certains des 100 essaies d'enlever leurs bracelets afin que l'Arche ne puisse plus avoir d'informations sur eux.",
-      "scenario": 7,
+      "scenario": 4,
       "choices": [
         {
           "choice": "Vous les en empêchez, quitte à vous battre",
@@ -96,7 +96,7 @@
     },
     {
       "name": "La fusée qui vous a servi à venir sur Terre s'avère être trop petite pour abriter confortablement tout le monde",
-      "scenario": 7,
+      "scenario": 4,
       "choices": [
         {
           "choice": "Vous construisez des abris avec du bois, des feuilles et divers matériaux que vous trouvez",
@@ -153,7 +153,7 @@
     },
     {
       "name": "Il est temps de se développer pour pouvoir survivre !",
-      "scenario": 7,
+      "scenario": 4,
       "choices": [
         {
           "choice": "Vous faites en sorte de produire de la nourriture pour tout le monde",
@@ -192,7 +192,7 @@
     },
     {
       "name": "Vous avez trouvé beaucoup de matériaux en explorant les alentours !",
-      "scenario": 7,
+      "scenario": 4,
       "choices": [
         {
           "choice": "Je les récupère",
@@ -214,7 +214,7 @@
     },
     {
       "name": "Les natifs vous attaquent directement au camp ! Que faire ?",
-      "scenario": 7,
+      "scenario": 4,
       "choices": [
         {
           "choice": "Vous envoyez les plus forts pour résister",
@@ -278,7 +278,7 @@
     },
     {
       "name": "Un brouillard acide et mortel se répend sur le camp !",
-      "scenario": 7,
+      "scenario": 4,
       "choices": [
         {
           "choice": "Fuiez !",
@@ -322,7 +322,7 @@
     },
     {
       "name": "Après beaucoup d'insistance, vous trouvez le moyen d'entrer au Mont Weater",
-      "scenario": 7,
+      "scenario": 4,
       "choices": [
         {
           "choice": "C'est peut-être un piège, c'est hors de question",
@@ -364,7 +364,7 @@
     },
     {
       "name": "Octavia s'étant fortement rapprochée d'un natif vous suggère de s'associer à eux",
-      "scenario": 7,
+      "scenario": 4,
       "choices": [
         {
           "choice": "C'est une bonne idée, nous serons plus forts",
