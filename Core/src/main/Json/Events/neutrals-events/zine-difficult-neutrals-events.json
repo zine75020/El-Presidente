@@ -194,23 +194,6 @@
               }
             }
           ],
-          "relatedEvents": [
-            {
-              "name": "Votre plan a l'air de vraiment bien marcher, votre peuple est ravi et vous commencez a vous faire connaître partout dans le monde !",
-              "choices": [
-                {
-                  "choice": "Une fête nationale est organisée !",
-                  "effects": [
-                    {
-                      "actionOnFactor": {
-                        "treasury": -40
-                      }
-                    }
-                  ]
-                }
-              ]
-            }
-          ]
         },
         {
           "choice": "Vous vous en fichez, après tout votre peuple vous suffit ! Fier, vous gardez vos habitudes et continuez comme si de rien n'était",
@@ -321,23 +304,6 @@
               }
             }
           ],
-          "relatedEvents": [
-            {
-              "name": "Votre plan a l'air de vraiment bien marcher, Elon Musk à réussi a inventer un prototype qui devrait arriver sur la Lune avant tout le monde !",
-              "choices": [
-                {
-                  "choice": "Vous arrivez en premier sur la Lune, ça fait une sacré pub pour votre pays !",
-                  "effects": [
-                    {
-                      "actionOnFactor": {
-                        "treasury": 15
-                      }
-                    }
-                  ]
-                }
-              ]
-            }
-          ]
         },
         {
           "choice": "Elon Musk ? C'est qui ça ?",
