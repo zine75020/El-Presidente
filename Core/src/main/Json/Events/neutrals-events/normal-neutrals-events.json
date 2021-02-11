@@ -14,14 +14,14 @@
           "effects": [
             {
               "actionOnFaction": {
-                "RELIGIOUS": 20,
-                "NATIONALISTS": 20
+                "RELIGIOUS": 10,
+                "NATIONALISTS": 10
               }
             },
             {
               "actionOnFactor": {
-                "TREASURY": -20,
-                "INDUSTRY": 20
+                "TREASURY": -30,
+                "INDUSTRY": 10
               }
             }
           ]
@@ -31,14 +31,14 @@
           "effects": [
             {
               "actionOnFaction": {
-                "CAPITALISTS": -5,
-                "COMMUNISTS": -5,
-                "LIBERALS": -5,
-                "RELIGIOUS": -5,
-                "MILITARISTS": -5,
-                "ECOLOGISTS": -5,
-                "LOYALISTS": -5,
-                "NATIONALISTS": -5
+                "CAPITALISTS": -10,
+                "COMMUNISTS": -10,
+                "LIBERALS": -10,
+                "RELIGIOUS": -10,
+                "MILITARISTS": -10,
+                "ECOLOGISTS": -10,
+                "LOYALISTS": -10,
+                "NATIONALISTS": -10
               }
             }
           ]
@@ -59,14 +59,14 @@
           "effects": [
             {
               "actionOnFaction": {
-                "CAPITALISTS": -10,
-                "COMMUNISTS": 40,
-                "LOYALISTS": 20
+                "CAPITALISTS": -20,
+                "COMMUNISTS": 30,
+                "LOYALISTS": 15
               }
             },
             {
               "actionOnFactor": {
-                "TREASURY": -20,
+                "TREASURY": -30,
                 "AGRICULTURE": -10
               }
             }
@@ -77,10 +77,10 @@
           "effects": [
             {
               "actionOnFaction": {
-                "NATIONALISTS": -10,
-                "RELIGIOUS": 40,
-                "COMMUNISTS": 30,
-                "LIBERALS": -10
+                "NATIONALISTS": -20,
+                "RELIGIOUS": 30,
+                "COMMUNISTS": 20,
+                "LIBERALS": -20
               }
             }
           ],
@@ -93,10 +93,10 @@
                   "effects": [
                     {
                       "actionOnFaction": {
-                        "RELIGIOUS": 30,
-                        "MILITARISTS": 30,
-                        "NATIONALISTS": 20,
-                        "CAPITALISTS": -10
+                        "RELIGIOUS": 20,
+                        "MILITARISTS": 20,
+                        "NATIONALISTS": 10,
+                        "CAPITALISTS": -15
                       }
                     }
                   ]
@@ -106,15 +106,15 @@
                   "effects": [
                     {
                       "actionOnFaction": {
-                        "CAPITALISTS": 30,
-                        "COMMUNISTS": 30,
-                        "LIBERALS": 20,
-                        "RELIGIOUS": -10,
-                        "LOYALISTS": -10
+                        "CAPITALISTS": 20,
+                        "COMMUNISTS": 20,
+                        "LIBERALS": 15,
+                        "RELIGIOUS": -20,
+                        "LOYALISTS": -20
                       }
                     },
                     {
-                      "partisans": -8
+                      "partisans": -10
                     }
                   ]
                 }
@@ -127,14 +127,14 @@
           "effects": [
             {
               "actionOnFaction": {
-                "CAPITALISTS": -5,
-                "COMMUNISTS": -5,
-                "LIBERALS": -5,
-                "RELIGIOUS": -5,
-                "MILITARISTS": -5,
-                "ECOLOGISTS": -5,
-                "LOYALISTS": -5,
-                "NATIONALISTS": -5
+                "CAPITALISTS": -10,
+                "COMMUNISTS": -10,
+                "LIBERALS": -10,
+                "RELIGIOUS": -10,
+                "MILITARISTS": -10,
+                "ECOLOGISTS": -10,
+                "LOYALISTS": -10,
+                "NATIONALISTS": -10
               }
             }
           ]
@@ -147,7 +147,7 @@
         "spring": true,
         "summer": true,
         "autumn": true,
-        "winter": true
+        "winter": false
       },
       "choices": [
         {
@@ -155,9 +155,9 @@
           "effects": [
             {
               "actionOnFaction": {
-                "ECOLOGISTS": 10,
-                "MILITARISTS": -20,
-                "RELIGIOUS": 20
+                "ECOLOGISTS": 20,
+                "MILITARISTS": -10,
+                "RELIGIOUS": 10
               }
             },
             {
@@ -175,15 +175,15 @@
                   "effects": [
                     {
                       "actionOnFaction": {
-                        "LIBERALS": 30,
-                        "LOYALISTS": 30,
-                        "NATIONALISTS": 20,
+                        "LIBERALS": 20,
+                        "LOYALISTS": 20,
+                        "NATIONALISTS": 10,
                         "CAPITALISTS": 30
                       }
                     },
                     {
                       "actionOnFactor": {
-                        "TREASURY": 60
+                        "TREASURY": 50
                       }
                     }
                   ]
@@ -197,15 +197,15 @@
           "effects": [
             {
               "actionOnFaction": {
-                "CAPITALISTS": 20,
-                "MILITARISTS": 30,
-                "ECOLOGISTS": -20
+                "CAPITALISTS": 10,
+                "MILITARISTS": 20,
+                "ECOLOGISTS": -15
               }
             },
             {
               "actionOnFactor": {
-                "TREASURY": -20,
-                "INDUSTRY": 40
+                "TREASURY": -30,
+                "INDUSTRY": 30
               }
             }
           ]
@@ -218,7 +218,7 @@
         "spring": true,
         "summer": true,
         "autumn": true,
-        "winter": false
+        "winter": true
       },
       "choices": [
         {
@@ -226,8 +226,8 @@
           "effects": [
             {
               "actionOnFactor": {
-                "INDUSTRY": -20,
-                "TREASURY": 50
+                "INDUSTRY": -30,
+                "TREASURY": 40
               }
             }
           ]
@@ -237,8 +237,8 @@
           "effects": [
             {
               "actionOnFaction": {
-                "COMMUNISTS": -10,
-                "ECOLOGISTS": 30
+                "COMMUNISTS": -20,
+                "ECOLOGISTS": 20
               }
             }
           ]
