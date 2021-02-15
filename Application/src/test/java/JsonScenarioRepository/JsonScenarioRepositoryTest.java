@@ -64,8 +64,7 @@ public class JsonScenarioRepositoryTest {
         assertEquals(8, scenario.getGameStartParameters().getFactions().size());
     }
 
-    //TODO activer quand on aura les modifs de gabriel et zinédine
-    /*@Test
+    @Test
     public void should_get_scenario_by_id_2_and_difficulty_1() {
         Scenario scenario = jsonScenarioRepository.getScenarioByIdAndDifficulty(SCENARIO_FILE_PATH, 2, 1);
         assertEquals("Cold War: The USA version", scenario.getName());
@@ -108,7 +107,8 @@ public class JsonScenarioRepositoryTest {
         assertEquals(8, scenario.getGameStartParameters().getFactions().size());
     }
 
-    @Test
+    //TODO activer quand on aura les modifs de gabriel
+    /*@Test
     public void should_get_scenario_by_id_3_and_difficulty_1() {
         Scenario scenario = jsonScenarioRepository.getScenarioByIdAndDifficulty(SCENARIO_FILE_PATH, 3, 1);
         assertEquals("Cold War: The USSR version", scenario.getName());
@@ -150,8 +150,6 @@ public class JsonScenarioRepositoryTest {
         assertEquals(8, scenario.getGameStartParameters().getFactions().size());
     }*/
 
-    //TODO activer quand la mise en commun des fichiers jsons aura été faite
-    /*
     @Test
     public void should_get_scenario_by_id_4_and_difficulty_1() {
         Scenario scenario = jsonScenarioRepository.getScenarioByIdAndDifficulty(SCENARIO_FILE_PATH, 4, 1);
@@ -192,33 +190,48 @@ public class JsonScenarioRepositoryTest {
         assertEquals(900, scenario.getGameStartParameters().getFoodUnits());
         //factions
         assertEquals(8, scenario.getGameStartParameters().getFactions().size());
-    }*/
+    }
 
     @Test
     public void should_get_scenario_by_id_5_and_difficulty_1() {
-        //test pour tous les scénarios
+        Scenario scenario = jsonScenarioRepository.getScenarioByIdAndDifficulty(SCENARIO_FILE_PATH, 5, 1);
+        assertEquals("Jojo's Bizarre Adventure : Diamond is Unbreakable", scenario.getName());
+        assertNotNull(scenario.getStory());
         //game start parameters
+        assertEquals(70, scenario.getGameStartParameters().getAgriculturePercentage());
+        assertEquals(30, scenario.getGameStartParameters().getIndustryPercentage());
+        assertEquals(400, scenario.getGameStartParameters().getTreasury());
+        assertEquals(700, scenario.getGameStartParameters().getFoodUnits());
         //factions
-
-        //TODO tester pour le scénario de Zinédine
+        assertEquals(8, scenario.getGameStartParameters().getFactions().size());
     }
 
     @Test
     public void should_get_scenario_by_id_5_and_difficulty_2() {
-        //test pour tous les scénarios
+        Scenario scenario = jsonScenarioRepository.getScenarioByIdAndDifficulty(SCENARIO_FILE_PATH, 5, 2);
+        assertEquals("Jojo's Bizarre Adventure : Diamond is Unbreakable", scenario.getName());
+        assertNotNull(scenario.getStory());
         //game start parameters
+        assertEquals(50, scenario.getGameStartParameters().getAgriculturePercentage());
+        assertEquals(15, scenario.getGameStartParameters().getIndustryPercentage());
+        assertEquals(200, scenario.getGameStartParameters().getTreasury());
+        assertEquals(600, scenario.getGameStartParameters().getFoodUnits());
         //factions
-
-        //TODO tester pour le scénario de Zinédine
+        assertEquals(8, scenario.getGameStartParameters().getFactions().size());
     }
 
     @Test
     public void should_get_scenario_by_id_5_and_difficulty_3() {
-        //test pour tous les scénarios
+        Scenario scenario = jsonScenarioRepository.getScenarioByIdAndDifficulty(SCENARIO_FILE_PATH, 5, 3);
+        assertEquals("Jojo's Bizarre Adventure : Diamond is Unbreakable", scenario.getName());
+        assertNotNull(scenario.getStory());
         //game start parameters
+        assertEquals(30, scenario.getGameStartParameters().getAgriculturePercentage());
+        assertEquals(5, scenario.getGameStartParameters().getIndustryPercentage());
+        assertEquals(100, scenario.getGameStartParameters().getTreasury());
+        assertEquals(500, scenario.getGameStartParameters().getFoodUnits());
         //factions
-
-        //TODO tester pour le scénario de Zinédine
+        assertEquals(8, scenario.getGameStartParameters().getFactions().size());
     }
 
     @Test

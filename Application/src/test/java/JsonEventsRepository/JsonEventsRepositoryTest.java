@@ -2,6 +2,7 @@ package JsonEventsRepository;
 
 import org.junit.jupiter.api.Test;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class JsonEventsRepositoryTest {
@@ -15,20 +16,20 @@ public class JsonEventsRepositoryTest {
         assertTrue(jsonEventsRepository.getAllEventsByIdAndDifficulty(1, 3).size() > 0);
     }
 
-    //TODO activer quand on aura les modifications de Gabriel et Zinédine
-    /*@Test
+    @Test
     public void should_get_all_events_by_id_2_and_difficulty() {
         assertTrue(jsonEventsRepository.getAllEventsByIdAndDifficulty(2, 1).size() > 0);
         assertTrue(jsonEventsRepository.getAllEventsByIdAndDifficulty(2, 2).size() > 0);
         assertTrue(jsonEventsRepository.getAllEventsByIdAndDifficulty(2, 3).size() > 0);
     }
 
-    @Test
+    //TODO activer quand on aura les modifications de Gabriel
+    /*@Test
     public void should_get_all_events_by_id_3_and_difficulty() {
         assertTrue(jsonEventsRepository.getAllEventsByIdAndDifficulty(3, 1).size() > 0);
         assertTrue(jsonEventsRepository.getAllEventsByIdAndDifficulty(3, 2).size() > 0);
         assertTrue(jsonEventsRepository.getAllEventsByIdAndDifficulty(3, 3).size() > 0);
-    }
+    }*/
 
     @Test
     public void should_get_all_events_by_id_4_and_difficulty() {
@@ -44,19 +45,20 @@ public class JsonEventsRepositoryTest {
         assertTrue(jsonEventsRepository.getAllEventsByIdAndDifficulty(5, 3).size() > 0);
     }
 
-    @Test
+    //TODO activer quand on aura les modifications de Gabriel
+    /*@Test
     public void should_get_all_events_by_id_6_and_difficulty() {
         assertTrue(jsonEventsRepository.getAllEventsByIdAndDifficulty(6, 1).size() > 0);
         assertTrue(jsonEventsRepository.getAllEventsByIdAndDifficulty(6, 2).size() > 0);
         assertTrue(jsonEventsRepository.getAllEventsByIdAndDifficulty(6, 3).size() > 0);
-    }
+    }*/
 
     @Test
     public void should_get_all_events_by_id_7_and_difficulty() {
-        assertTrue(jsonEventsRepository.getAllEventsByIdAndDifficulty(7, 1).size() > 0);
-        assertTrue(jsonEventsRepository.getAllEventsByIdAndDifficulty(7, 2).size() > 0);
-        assertTrue(jsonEventsRepository.getAllEventsByIdAndDifficulty(7, 3).size() > 0);
-    }*/
+        assertEquals(jsonEventsRepository.getAllEventsByIdAndDifficulty(7, 1).size(), 0);
+        assertEquals(jsonEventsRepository.getAllEventsByIdAndDifficulty(7, 2).size(), 0);
+        assertEquals(jsonEventsRepository.getAllEventsByIdAndDifficulty(7, 3).size(), 0);
+    }
 
     @Test
     public void should_get_neutrals_events_by_difficulty() {

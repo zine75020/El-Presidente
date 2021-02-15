@@ -612,7 +612,7 @@
       "gameStartParameters": {
         "EASY": {
           "agriculturePercentage": 70,
-          "industryPercentage": 35,
+          "industryPercentage": 30,
           "treasury": 400,
           "foodUnits": 700,
           "factions": {
