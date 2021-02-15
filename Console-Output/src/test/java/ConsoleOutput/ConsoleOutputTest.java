@@ -1,12 +1,10 @@
 package ConsoleOutput;
 
-import org.junit.jupiter.api.Test;
+import org.junit.Test;
 
-import java.io.ByteArrayOutputStream;
+import static org.junit.Assert.assertEquals;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-
-class ConsoleOutputTest {
+public class ConsoleOutputTest {
 
     ConsoleOutput consoleOutput = new ConsoleOutput();
 
@@ -36,4 +34,5 @@ class ConsoleOutputTest {
 
         assertEquals(expectedOutput, consoleOutput.valueOfMenuError());
     }
+
 }

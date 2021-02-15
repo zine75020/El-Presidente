@@ -1,21 +1,145 @@
 {
   "events": [
     {
-      "name": "",
+      "name": "Une tempête approche dans quelques jours ! Que faire ?",
+      "seasons": {
+        "spring": true,
+        "summer": false,
+        "autumn": true,
+        "winter": true
+      },
+      "choices": [
+        {
+          "choice": "Je vérifie que tout le monde dispose d'un abri et en créé un pour ceux qui n'en ont pas",
+          "effects": [
+            {
+              "actionOnFaction": {
+                "RELIGIOUS": 5,
+                "NATIONALISTS": 5
+              }
+            },
+            {
+              "actionOnFactor": {
+                "TREASURY": -20,
+                "INDUSTRY": 5
+              }
+            }
+          ]
+        },
+        {
+          "choice": "Advienne que pourra...",
+          "effects": [
+            {
+              "actionOnFaction": {
+                "CAPITALISTS": -20,
+                "COMMUNISTS": -20,
+                "LIBERALS": -20,
+                "RELIGIOUS": -20,
+                "MILITARISTS": -20,
+                "ECOLOGISTS": -20,
+                "LOYALISTS": -20,
+                "NATIONALISTS": -20
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Une tempête de neige commence brusquement, c'est la catastrophe !",
+      "seasons": {
+        "spring": false,
+        "summer": false,
+        "autumn": false,
+        "winter": true
+      },
+      "choices": [
+        {
+          "choice": "Vous vérifiez que tout le monde a un abri",
+          "effects": [
+            {
+              "actionOnFaction": {
+                "NATIONALISTS": -30,
+                "RELIGIOUS": 20,
+                "COMMUNISTS": 10,
+                "LIBERALS": -30
+              }
+            }
+          ],
+          "relatedEvents": [
+            {
+              "name": "Certains abris se sont effondrés sous le poids de la neige",
+              "choices": [
+                {
+                  "choice": "Vous cherchez les corps sous les décombres pour leur rendre hommage",
+                  "effects": [
+                    {
+                      "actionOnFaction": {
+                        "RELIGIOUS": 10,
+                        "MILITARISTS": 10,
+                        "NATIONALISTS": 5,
+                        "CAPITALISTS": -10
+                      }
+                    }
+                  ]
+                },
+                {
+                  "choice": "Ils auraient dû avoir un abri plus solide",
+                  "effects": [
+                    {
+                      "actionOnFaction": {
+                        "CAPITALISTS": 10,
+                        "COMMUNISTS": 10,
+                        "LIBERALS": 10,
+                        "RELIGIOUS": -30,
+                        "LOYALISTS": -30
+                      }
+                    },
+                    {
+                      "partisans": -15
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "choice": "Je suis en sécurité, c'est tout ce qui compte",
+          "effects": [
+            {
+              "actionOnFaction": {
+                "CAPITALISTS": -20,
+                "COMMUNISTS": -20,
+                "LIBERALS": -20,
+                "RELIGIOUS": -20,
+                "MILITARISTS": -20,
+                "ECOLOGISTS": -20,
+                "LOYALISTS": -20,
+                "NATIONALISTS": -20
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Vous avez besoin de développer vos activités ! Que choisisssez-vous ?",
       "seasons": {
         "spring": true,
         "summer": true,
-        "autumn": false,
+        "autumn": true,
         "winter": false
       },
       "choices": [
         {
-          "choice": "",
+          "choice": "Je développe l'agriculture",
           "effects": [
             {
               "actionOnFaction": {
-                "MILITARISTS": 20,
-                "RELIGIOUS": -20
+                "ECOLOGISTS": 10,
+                "MILITARISTS": -20,
+                "RELIGIOUS": 10
               }
             },
             {
@@ -23,41 +147,81 @@
                 "AGRICULTURE": 30
               }
             }
+          ],
+          "relatedEvents": [
+            {
+              "name": "Vous avez trouvé des coffres d'argent dans les terres !",
+              "choices": [
+                {
+                  "choice": "HOURRA !",
+                  "effects": [
+                    {
+                      "actionOnFaction": {
+                        "LIBERALS": 10,
+                        "LOYALISTS": 10,
+                        "NATIONALISTS": 10,
+                        "CAPITALISTS": 20
+                      }
+                    },
+                    {
+                      "actionOnFactor": {
+                        "TREASURY": 40
+                      }
+                    }
+                  ]
+                }
+              ]
+            }
           ]
         },
         {
-          "choice": "",
+          "choice": "Je développe l'industrie",
           "effects": [
             {
               "actionOnFaction": {
-                "ECOLOGISTS": -30,
-                "CAPITALISTS": 10
+                "CAPITALISTS": 10,
+                "MILITARISTS": 10,
+                "ECOLOGISTS": -20
               }
             },
             {
               "actionOnFactor": {
-                "INDUSTRY": -30
+                "TREASURY": -40,
+                "INDUSTRY": 20
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Un pays concurrent veut vous acheter une partie de vos technologies.",
+      "seasons": {
+        "spring": true,
+        "summer": true,
+        "autumn": true,
+        "winter": true
+      },
+      "choices": [
+        {
+          "choice": "Je leur cède",
+          "effects": [
+            {
+              "actionOnFactor": {
+                "INDUSTRY": -40,
+                "TREASURY": 30
               }
             }
           ]
         },
         {
-          "choice": "",
+          "choice": "Je refuse",
           "effects": [
             {
               "actionOnFaction": {
-                "ECOLOGISTS": -80,
-                "CAPITALISTS": -80,
-                "LOYALISTS": -80,
-                "LIBERALS": -80,
-                "RELIGIOUS": -80,
-                "MILITARISTS": -80,
-                "NATIONALISTS": -80,
-                "COMMUNISTS": -80
+                "COMMUNISTS": -30,
+                "ECOLOGISTS": 10
               }
-            },
-            {
-              "partisans": -800
             }
           ]
         }

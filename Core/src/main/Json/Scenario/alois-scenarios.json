@@ -1,7 +1,7 @@
 {
   "scenarios": [
     {
-      "id": 7,
+      "id": 4,
       "name": "The 100",
       "story": "Dans un futur lointain, 97 années après une guerre nucléaire qui a dévasté la surface de la Terre, les seuls humains ayant survécu vivent dans la flottille de stations spatiales en orbite appelée l'Arche. 100 mineurs condamnés pour divers crimes ou trahisons sont envoyés sur Terre pour tester les chances de survie. Vous êtes nommé chef des mineurs.",
       "gameStartParameters": {

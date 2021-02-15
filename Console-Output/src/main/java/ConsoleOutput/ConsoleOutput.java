@@ -2,6 +2,9 @@ package ConsoleOutput;
 
 import Output.Output;
 import Enum.DifficultyChoice;
+import ScenarioParsers.Scenario;
+
+import java.util.List;
 
 public class ConsoleOutput implements Output {
 
@@ -18,6 +21,16 @@ public class ConsoleOutput implements Output {
         for (DifficultyChoice choice : DifficultyChoice.values()) {
             index += 1;
             introduction.append(index).append(": ").append(choice).append("\n");
+        }
+        return introduction;
+    }
+
+    public StringBuilder scenarioMenu(List<Scenario> allScenarios) {
+        StringBuilder introduction = new StringBuilder("Quel est le scénario que vous souhaitez dérouler ?\n");
+        // ajout de la liste des choix possibles
+        for (Scenario scenario : allScenarios) {
+            introduction.append(scenario.getId()).append(": ").append(scenario.getName()).append("\n").
+                    append(scenario.getStory()).append("\n");
         }
         return introduction;
     }

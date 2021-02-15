@@ -37,6 +37,21 @@ public class Isle {
         this.score = 0;
     }
 
+    public Isle(Industry industry, Agriculture agriculture, Integer treasury,
+                DifficultyChoice difficultyChoice, Integer minSatisfactionPercentage,
+                List<Faction> factions) {
+        this.factionList = factions;
+        this.industry = industry;
+        this.agriculture = agriculture;
+        this.treasury = treasury;
+        this.season = Season.SPRING;
+        this.difficultyOfGame = difficultyChoice;
+        this.foodUnits = 0;
+        this.turn = 0;
+        this.minSatisfactionPercentage = minSatisfactionPercentage;
+        this.score = 0;
+    }
+
     //GETTERS AND SETTERS
 
     public List<Faction> getFactionList() {
@@ -124,14 +139,13 @@ public class Isle {
     /**
      * initialise la liste avec toutes les factions à 0
      */
-    //TODO ajouter un paramètre pour initialiser selon les paramètres du jeu et modifier la méthode en conséquence
     private List<Faction> initialiseFactionList() {
         List<Faction> factionList = new ArrayList<>();
         factionList.add(new Faction(FactionType.CAPITALISTS, 0, 0));
         factionList.add(new Faction(FactionType.COMMUNISTS, 0, 0));
         factionList.add(new Faction(FactionType.LIBERALS, 0, 0));
         factionList.add(new Faction(FactionType.RELIGIOUS, 0, 0));
-        factionList.add(new Faction(FactionType.MILITARIES, 0, 0));
+        factionList.add(new Faction(FactionType.MILITARISTS, 0, 0));
         factionList.add(new Faction(FactionType.ECOLOGISTS, 0, 0));
         factionList.add(new Faction(FactionType.NATIONALISTS, 0, 0));
         factionList.add(new Faction(FactionType.LOYALISTS, 0, 100));
