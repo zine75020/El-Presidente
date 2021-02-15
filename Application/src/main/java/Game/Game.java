@@ -50,10 +50,10 @@ public class Game {
 
         System.out.println(consoleOutput.startGame());
         //méthode de déroulement de la partie
-        gameExecution(isle);
+        gameExecution(isle, selectedScenario);
     }
 
-    private static void gameExecution(Isle isle) {
+    private static void gameExecution(Isle isle, Scenario selectedScenario) {
         ConsoleOutput consoleOutput = new ConsoleOutput();
         ConsoleInput consoleInput = new ConsoleInput();
 
