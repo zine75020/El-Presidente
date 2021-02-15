@@ -21,6 +21,11 @@ public class ConsoleOutput implements Output {
     }
 
     @Override
+    public String endGame() {
+        return "Votre population vous renverse par coup d'état... Fin de la partie.";
+    }
+
+    @Override
     public StringBuilder gameInformations(Isle isle) {
         StringBuilder gameInformations = new StringBuilder("============== Informations Île | tour : ").append(isle.getTurn()).append(" ==============\n");
         gameInformations.append("=== Trésorerie : ").append(isle.getTreasury()).append("\n");
@@ -34,8 +39,8 @@ public class ConsoleOutput implements Output {
         //Alignement de l'affichage des factions
         for (Faction faction : isle.getFactionList()) {
             gameInformations.append("=== ").append(faction.getName());
-            for(int i = 0 ; i < 12 ; i += 1) {
-                if(i >= faction.getName().name().length()) {
+            for (int i = 0; i < 12; i += 1) {
+                if (i >= faction.getName().name().length()) {
                     gameInformations.append(" ");
                 }
             }
@@ -66,6 +71,11 @@ public class ConsoleOutput implements Output {
                     append(scenario.getStory()).append("\n");
         }
         return introduction;
+    }
+
+    @Override
+    public StringBuilder printScore(Isle isle) {
+        return new StringBuilder("========= Score : ").append(isle.generateScore()).append(" =========");
     }
 
     public String valueOfMenuError() {

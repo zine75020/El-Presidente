@@ -21,7 +21,6 @@ public class Isle {
     private Integer foodUnits;
     private Integer turn;
     private Integer minSatisfactionPercentage;
-    private Integer score;
 
     public Isle(Industry industry, Agriculture agriculture, Integer treasury,
                 DifficultyChoice difficultyChoice, Integer foodUnits, Integer minSatisfactionPercentage) {
@@ -34,7 +33,6 @@ public class Isle {
         this.foodUnits = foodUnits;
         this.turn = 0;
         this.minSatisfactionPercentage = minSatisfactionPercentage;
-        this.score = 0;
     }
 
     public Isle(Industry industry, Agriculture agriculture, Integer treasury,
@@ -49,7 +47,6 @@ public class Isle {
         this.foodUnits = foodUnits;
         this.turn = 0;
         this.minSatisfactionPercentage = minSatisfactionPercentage;
-        this.score = 0;
     }
 
     //GETTERS AND SETTERS
@@ -126,12 +123,22 @@ public class Isle {
         this.minSatisfactionPercentage = minSatisfactionPercentage;
     }
 
-    public Integer getScore() {
-        return this.score;
-    }
-
-    public void setScore(Integer score) {
-        this.score = score;
+    /**
+     * génération du score selon les paramètres actuels de la partie
+     * @return
+     */
+    public Integer generateScore() {
+        Integer score = 0;
+        score += 100 * this.turn;
+        score += this.treasury;
+        score += this.foodUnits;
+        score += this.industry.getDedicatedPercentage();
+        score += this.agriculture.getDedicatedPercentage();
+        switch (this.difficultyOfGame) {
+            case normal -> score *= 2;
+            case hard -> score *= 3;
+        }
+        return score;
     }
 
     //METHODS
@@ -219,11 +226,6 @@ public class Isle {
      */
     public void nextTurn() {
         this.turn += 1;
-    }
-
-    //TODO
-    public void setScore() {
-
     }
 
     /**
