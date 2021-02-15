@@ -24,21 +24,21 @@ public class Isle {
     private Integer score;
 
     public Isle(Industry industry, Agriculture agriculture, Integer treasury,
-                DifficultyChoice difficultyChoice, Integer minSatisfactionPercentage) {
+                DifficultyChoice difficultyChoice, Integer foodUnits, Integer minSatisfactionPercentage) {
         this.factionList = this.initialiseFactionList();
         this.industry = industry;
         this.agriculture = agriculture;
         this.treasury = treasury;
         this.season = Season.SPRING;
         this.difficultyOfGame = difficultyChoice;
-        this.foodUnits = 0;
+        this.foodUnits = foodUnits;
         this.turn = 0;
         this.minSatisfactionPercentage = minSatisfactionPercentage;
         this.score = 0;
     }
 
     public Isle(Industry industry, Agriculture agriculture, Integer treasury,
-                DifficultyChoice difficultyChoice, Integer minSatisfactionPercentage,
+                DifficultyChoice difficultyChoice, Integer foodUnits, Integer minSatisfactionPercentage,
                 List<Faction> factions) {
         this.factionList = factions;
         this.industry = industry;
@@ -46,7 +46,7 @@ public class Isle {
         this.treasury = treasury;
         this.season = Season.SPRING;
         this.difficultyOfGame = difficultyChoice;
-        this.foodUnits = 0;
+        this.foodUnits = foodUnits;
         this.turn = 0;
         this.minSatisfactionPercentage = minSatisfactionPercentage;
         this.score = 0;

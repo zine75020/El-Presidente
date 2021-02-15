@@ -46,8 +46,18 @@ public class Game {
         Isle isle = new Isle(new Industry(selectedScenario.getGameStartParameters().getIndustryPercentage()),
                 new Agriculture(selectedScenario.getGameStartParameters().getAgriculturePercentage()),
                 selectedScenario.getGameStartParameters().getTreasury(),
-                difficultyChoice, minimumSatisfaction, selectedScenario.getGameStartParameters().getFactions());
+                difficultyChoice, selectedScenario.getGameStartParameters().getFoodUnits(), minimumSatisfaction, selectedScenario.getGameStartParameters().getFactions());
 
+        System.out.println(consoleOutput.startGame());
+        //méthode de déroulement de la partie
+        gameExecution(isle);
+    }
+
+    private static void gameExecution(Isle isle) {
+        ConsoleOutput consoleOutput = new ConsoleOutput();
+        ConsoleInput consoleInput = new ConsoleInput();
+
+        System.out.println(consoleOutput.gameInformations(isle));
         //TODO déroulement jeu
         /*
          * différencier traitement scénario et bac à sable
