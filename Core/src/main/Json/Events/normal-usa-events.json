@@ -118,20 +118,7 @@
                   }
                 ]
               }
-            ]
-          },
-          {
-            "choice": "Je refuse, je sais n'ai besoin de personne",
-            "effects": [
-              {
-                "actionOnFaction": {
-                  "ECOLOGISTS": 10,
-                  "RELIGIOUS": 5,
-                  "MILITARISTS": -15
-                }
-              }
-            ]
-          }
+            ]          }
         ]
       }
     ],
@@ -336,6 +323,7 @@
                           "TREASURY": 150,
                           "INDUSTRY": 3
                         }
+
                       }
                     ]
                   }

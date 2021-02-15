@@ -54,18 +54,6 @@
                 ]
               }
             ]
-          },
-          {
-            "choice": "Je ne fais rien j'attends que ça passe",
-            "effects": [
-              {
-                "actionOnFaction": {
-                  "LIBERALS": -5,
-                  "CAPITALISTS": -10,
-                  "COMMUNISTS": 15
-                }
-              }
-            ]
           }
         ]
       }
@@ -129,18 +117,6 @@
                     ]
                   }
                 ]
-              }
-            ]
-          },
-          {
-            "choice": "Je refuse, je sais n'ai besoin de personne",
-            "effects": [
-              {
-                "actionOnFaction": {
-                  "ECOLOGISTS": 20,
-                  "RELIGIOUS": 15,
-                  "MILITARISTS": -5
-                }
               }
             ]
           }

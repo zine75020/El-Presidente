@@ -54,18 +54,7 @@
                 ]
               }
             ]
-          },
-          {
-            "choice": "Je ne fais rien j'attends que ça passe",
-            "effects": [
-              {
-                "actionOnFaction": {
-                  "LIBERALS": -20,
-                  "CAPITALISTS": -30,
-                  "COMMUNISTS": 5
-                }
-              }
-            ]
+
           }
         ]
       }
@@ -127,22 +116,12 @@
                         }
                       }
                     ]
+
                   }
                 ]
               }
             ]
-          },
-          {
-            "choice": "Je refuse, je sais n'ai besoin de personne",
-            "effects": [
-              {
-                "actionOnFaction": {
-                  "ECOLOGISTS": 5,
-                  "RELIGIOUS": 5,
-                  "MILITARISTS": -25
-                }
-              }
-            ]
+
           }
         ]
       }
@@ -288,10 +267,12 @@
                       },
                       {
                         "partisans": -18
+
                       }
                     ]
                   }
                 ]
+
               }
             ]
           },
@@ -347,6 +328,7 @@
                           "TREASURY": 140,
                           "INDUSTRY": 3
                         }
+
                       }
                     ]
                   }

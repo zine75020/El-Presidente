@@ -1,0 +1,371 @@
+{
+  "events": [
+    {
+      "name": "La FIFA vous contacte car ils aimeraient organiser la prochaine Coupe du Monde de Football dans votre pays !",
+      "seasons": {
+        "spring": false,
+        "summer": false,
+        "autumn": true,
+        "winter": true
+      },
+      "choices": [
+        {
+          "choice": "Vous acceptez avec joie!",
+          "effects": [
+            {
+              "actionOnFaction": {
+                "capitalists": 15,
+                "communists": 15,
+                "liberals": 15,
+                "religious": 15,
+                "militarists": 15,
+                "ecologists": 15,
+                "loyalists": 15,
+                "nationalists": 15
+              }
+            }
+          ]
+        },
+        {
+          "choice": "Vous refusez ? Ok....",
+          "effects": [
+            {
+              "actionOnFaction": {
+                "capitalists": -25,
+                "communists": -15,
+                "liberals": -25,
+                "religious": -25,
+                "militarists": -25,
+                "ecologists": -25,
+                "loyalists": -25,
+                "nationalists": -25
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Un terroriste à pris en otage toute une école et commence à faire ses revendications",
+      "seasons": {
+        "spring": true,
+        "summer": false,
+        "autumn": false,
+        "winter": false
+      },
+      "choices": [
+        {
+          "choice": "Vous n'avez vraiment pas envie que ça parte en cacahuètes, vous entamez les négociations avec le terroriste",
+          "effects": [
+            {
+              "actionOnFaction": {
+                "capitalists": 5,
+                "communists": -20,
+                "liberals": 5,
+                "religious": 5,
+                "militarists": -20,
+                "ecologists": 10,
+                "loyalists": -15,
+                "nationalists": -15
+              }
+            }
+          ],
+          "relatedEvents": [
+            {
+              "name": "Vous discutez au téléphone directement, et le terroriste vous a communiqué ses revendications.",
+              "choices": [
+                {
+                  "choice": "C'est trop dangereux de le laisser s'enfuir, vous refusez les négociations et demandez à un sniper d'élite de l'abattre. (très risqué)",
+                  "effects": [
+                    {
+                      "actionOnFaction": {
+                        "capitalists": -15,
+                        "communists": 5,
+                        "liberals": 5,
+                        "religious": -25,
+                        "militarists": 15,
+                        "ecologists": -15,
+                        "loyalists": 5,
+                        "nationalists": 5
+                      }
+                    }
+                  ]
+                },
+                {
+                  "choice": "Vous acceptez les négociations et entamez l'échange avec le terroriste",
+                  "effects": [
+                    {
+                      "actionOnFaction": {
+                        "capitalists": 5,
+                        "communists": -15,
+                        "liberals": -15,
+                        "religious": 25,
+                        "militarists": -20,
+                        "ecologists": 15,
+                        "loyalists": -20,
+                        "nationalists": -15
+                      }
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "choice": "Vous ne reflechissez pas et vous envoyez un sniper l'abattre directement sans négocier",
+          "effects": [
+            {
+              "actionOnFaction": {
+                "religious": -35,
+                "militarists": 10,
+                "ecologists": -20,
+                "nationalists": 5
+              }
+            }
+          ]
+        },
+        {
+          "choice": "Vous ne reflechissez pas et vous envoyez une équipe d'intervention dans l'école en question sans négocier",
+          "effects": [
+            {
+              "actionOnFaction": {
+                "capitalists": -20,
+                "communists": 5,
+                "liberals": 5,
+                "religious": -25,
+                "militarists": 5,
+                "ecologists": -15,
+                "loyalists": 5,
+                "nationalists": 5
+              }
+            }
+          ],
+          "relatedEvents": [
+            {
+              "name" : "Le terroriste a réussi à abattre la moitié de ses otages avant que l'intervention fonctionne...",
+              "effects": [
+                {
+                  "actionOnFaction": {
+                    "capitalists": -15,
+                    "communists": -15,
+                    "liberals": -15,
+                    "religious": -15,
+                    "militarists": -15,
+                    "ecologists": -15,
+                    "loyalists": -15,
+                    "nationalists": -15
+                  }
+                },
+
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Internet commence vraiment à prendre une ampleur énorme, en profiterez vous ?",
+      "seasons": {
+        "spring": true,
+        "summer": true,
+        "autumn": true,
+        "winter": true
+      },
+      "choices": [
+        {
+          "choice": "Vous décidez d'investir, d'encourager votre peuple à promouvoir notre culture et notre savoir à travers le monde!",
+          "effects": [
+            {
+              "actionOnFaction": {
+                "capitalists": 10,
+                "communists": 10,
+                "liberals": 10,
+                "religious": 10,
+                "militarists": 10,
+                "ecologists": 10,
+                "loyalists": -20,
+                "nationalists": -20
+              }
+            },
+            {
+              "actionOnFactor": {
+                "industry": 15
+              }
+            }
+          ],
+        },
+        {
+          "choice": "Vous vous en fichez, après tout votre peuple vous suffit ! Fier, vous gardez vos habitudes et continuez comme si de rien n'était",
+          "effects": [
+            {
+              "actionOnFaction": {
+                "capitalists": -20,
+                "communists": -20,
+                "liberals": -20,
+                "religious": -20,
+                "militarists": -20,
+                "ecologists": -20,
+                "loyalists": 10,
+                "nationalists": 10
+              }
+            },
+            {
+              "actionOnFactor": {
+                "treasury": 5,
+                "industry": 5
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Un nouveau virus : 'Le covid19' a été découvert en Chine à Wuhan",
+      "seasons": {
+        "spring": true,
+        "summer": true,
+        "autumn": true,
+        "winter": true
+      },
+      "choices": [
+        {
+          "choice": "Je prévois à l'avance des mesures de sécurité auprés de mon peuple pour les protéger de n'importe quel menace.",
+          "effects": [
+            {
+              "actionOnFaction": {
+                "capitalists": 5,
+                "communists": 5,
+                "liberals": 5,
+                "religious": 5,
+                "militarists": 5,
+                "ecologists": 5,
+                "loyalists": 15,
+                "nationalists": 15
+              }
+            },
+            {
+              "actionOnFactor": {
+                "industry": -35,
+                "treasury": -25
+              }
+            }
+          ]
+        },
+        {
+          "choice": "J'attends de savoir ce que represente vraiment ce vraiment, après tout ce n'est peu être pas une vraie menace x)",
+          "effects": [
+            {
+              "actionOnFaction": {
+                "capitalists": 5,
+                "communists": 5,
+                "liberals": 5,
+                "religious": 5,
+                "militarists": -5,
+                "ecologists": 5,
+                "loyalists": -5,
+                "nationalists": -5
+              }
+            },
+            {
+              "actionOnFactor": {
+                "industry": 25,
+                "treasury": 15
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "La course vers la Lune ! Y arriverez vous en premier ?",
+      "seasons": {
+        "spring": true,
+        "summer": true,
+        "autumn": true,
+        "winter": true
+      },
+      "choices": [
+        {
+          "choice": "Vous engagez Elon Musk à la tête de l'entreprise nationale d'aeronautique.",
+          "effects": [
+            {
+              "actionOnFaction": {
+                "capitalists": 10,
+                "communists": 10,
+                "liberals": 10,
+                "militarists": 10,
+                "nationalists": 10
+              }
+            },
+            {
+              "actionOnFactor": {
+                "industry": 5
+              }
+            }
+          ],
+        },
+        {
+          "choice": "Elon Musk ? C'est qui ça ?",
+          "effects": [
+            {
+              "actionOnFaction": {
+                "capitalists": -5,
+                "communists": -5,
+                "liberals": -5,
+                "religious": -5,
+                "militarists": -5,
+                "ecologists": -5,
+                "loyalists": -5,
+                "nationalists": -5
+              }
+            },
+            {
+              "actionOnFactor": {
+                "treasury": 5,
+                "industry": 5
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "L'union européene vous propose de les rejoindre, accepterez-vous leur proposition ?",
+      "seasons": {
+        "spring": false,
+        "summer": true,
+        "autumn": false,
+        "winter": false
+      },
+      "choices": [
+        {
+          "choice": "Vous acceptez, ça pourrait être avantageux économiquement.",
+          "effects": [
+            {
+              "actionOnFaction": {
+                "capitalists": 20,
+                "militarists": 15,
+                "loyalists": -25,
+                "nationalists": -25
+              }
+            }
+          ]
+        },
+        {
+          "choice": "Vous refusez, vous pensez pouvoir vous debrouiller de votre coté",
+          "effects": [
+            {
+              "actionOnFaction": {
+                "capitalists": -35,
+                "militarists": -25,
+                "loyalists": 10,
+                "nationalists": 10
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
