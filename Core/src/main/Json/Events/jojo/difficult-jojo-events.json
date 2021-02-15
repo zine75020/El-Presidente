@@ -1,0 +1,482 @@
+{
+  "events": [
+    {
+      "name": "Jotaro arrive en Ville, et fais tomber Hirose Koichi-kun par terre par accident.",
+      "scenario": 5,
+      "choices": [
+        {
+          "choice": "Jotaro decide d'aider Koichi-kun à se lever",
+          "effects": [
+            {
+              "actionOnFaction": {
+                "CAPITALISTS": 2
+              }
+            }
+          ],
+          "relatedEvents": [
+            {
+              "name": "Koichi-kun sait où se trouve Josuke Higashikata",
+              "choices": [
+                {
+                  "choice": "Jotaro décide de suivre Koichi-kun vers là où se trouve Josuke Higashikata",
+                  "effects": [
+                    {
+                      "actionOnFaction": {
+                        "CAPITALISTS": 5,
+                        "COMMUNISTS": 5
+                      }
+                    },
+                    {
+                      "actionOnFactor": {
+                        "TREASURY": 50
+                      }
+                    }
+                  ]
+                },
+                {
+                  "choice": "Jotaro ne cherche pas à trouver Josuke tout de suite il reviendra vers Koichi-kun plus tard. Il prend donc son numéro de téléphone.",
+                  "effects": [
+                    {
+                      "actionOnFaction": {
+                        "CAPITALISTS": -20,
+                        "COMMUNISTS": -20
+                      }
+                    },
+                    {
+                      "actionOnFactor": {
+                        "INDUSTRY": -5,
+                        "TREASURY": -40
+                      }
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "choice": "Jotaro n'aide pas Koichi-kun à se relever, fin du scénario mdr on n'aura jamais la suite",
+          "effects": [
+            {
+              "actionOnFaction": {
+                "LIBERALS": -85,
+                "CAPITALISTS": -85,
+                "COMMUNISTS": -85,
+                "RELIGIOUS": -85,
+                "MILITARISTS": -85,
+                "ECOLOGISTS": -85,
+                "LOYALISTS": -85,
+                "NATIONALISTS": -85
+              }
+            },
+            {
+              "actionOnFactor": {
+                "AGRICULTURE": -20,
+                "INDUSTRY": -20,
+                "TREASURY": -600
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Jotaro se balade et découvre la ville charmante et apaisante qu'est Morioh",
+      "scenario": 5,
+      "choices": [
+        {
+          "choice": "Jotaro décide d'appeler Joseph Joestar pour penser à une stratégie afin de convaincre Josuke de les rejoindre",
+          "effects": [
+            {
+              "actionOnFaction": {
+                "MILITARISTS": 10,
+                "NATIONALISTS": 5
+              },
+              "actionOnFactor": {
+                "TREASURY": 20,
+                "INDUSTRY": 5,
+                "AGRICULTURE": -5
+              }
+            }
+          ]
+        },
+        {
+          "choice": "Jotaro appelle Koichi-kun et le rejoins devant chez lui pour aller chercher Josuke Higashikata ",
+          "effects": [
+            {
+              "actionOnFaction": {
+                "MILITARISTS": -30,
+                "NATIONALISTS": -30,
+                "COMMUNISTS": 5,
+                "CAPITALISTS": 5
+              },
+              "actionOnFactor": {
+              }
+            }
+          ]
+        },
+        {
+          "choice": "Jotaro part à la recherche de Josuke sans refléchir à une stratégie et sans appeler Koichi-kun",
+          "effects": [
+            {
+              "actionOnFaction": {
+                "COMMUNISTS": -20,
+                "NATIONALISTS": 5,
+                "CAPITALISTS": -30
+              },
+              "actionOnFactor": {
+                "TREASURY": -70
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Jotaro trouve enfin Josuke Higashikata ! Que compte-t-il faire avec lui ?",
+      "scenario": 5,
+      "choices": [
+        {
+          "choice": "Jotaro s'introduit poliment et explique son plan à Josuke dans un calme pesant",
+          "effects": [
+            {
+              "actionOnFaction": {
+                "COMMUNISTS": 2,
+                "CAPITALISTS": 2,
+                "MILITARISTS": -40,
+                "RELIGIOUS": 8
+              }
+            }
+          ],
+          "relatedEvents": [
+            {
+              "name": "Josuke n'as pas l'air de vouloir écouter Jotaro, il est très tétu et ne lui fais pas confiance.",
+              "choices": [
+                {
+                  "choice": "Jotaro met une grosse patate à Josuke et essaye de le convaincre par la force, un combat de stand s'en suis.",
+                  "effects": [
+                    {
+                      "actionOnFaction": {
+                        "CAPITALISTS": -10,
+                        "MILITARISTS": 8,
+                        "LIBERALS": 2,
+                        "RELIGIOUS": -20
+                      }
+                    }
+                  ]
+                },
+                {
+                  "choice": "Jotaro se retire et demande à Koichi-Kun de s'occuper de convaincre Josuke, avec le temps ça devrait le faire...",
+                  "effects": [
+                    {
+                      "actionOnFaction": {
+                        "CAPITALISTS": 2,
+                        "MILITARISTS": -20,
+                        "LIBERALS": -15,
+                        "RELIGIOUS": 5
+                      }
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "choice": "Jotaro force Josuke a le suivre après un long combat de stand gagné de justesse par Jotaro.",
+          "effects": [
+            {
+              "actionOnFaction": {
+                "CAPITALISTS": -15,
+                "MILITARISTS": 10,
+                "LIBERALS": 5,
+                "RELIGIOUS": -25
+              }
+            },
+            {
+              "actionOnFactor": {
+                "TREASURY": -190
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Jotaro est maintenant avec Josuke (de force ou non)",
+      "scenario": 5,
+      "choices": [
+        {
+          "choice": "Ils commencent tout les deux à executer leur plan de remettre en ordre la ville de Morioh",
+          "effects": [
+            {
+              "actionOnFaction": {
+                "MILITARISTS": 5,
+                "CAPITALISTS": 15,
+                "RELIGIOUS": 15,
+                "COMMUNISTS": -8,
+                "ECOLOGISTS": 5,
+                "LOYALISTS": -25,
+                "NATIONALISTS": 8,
+                "LIBERALS": 5
+              }
+            },
+            {
+              "actionOnFactor": {
+                "TREASURY": -80
+              }
+            }
+          ],
+          "relatedEvents": [
+            {
+              "name": "Des ennemis de plusieurs facitons avec stand apparaissent !",
+              "choices": [
+                {
+                  "choice": "Jotaro gagne instantanément parce que Star Platinum the World est trop fort. Il affirme donc sa puissance au reste de la ville.",
+                  "effects": [
+                    {
+                      "actionOnFaction": {
+                        "MILITARISTS": 5,
+                        "CAPITALISTS": 5,
+                        "RELIGIOUS": 5,
+                        "COMMUNISTS": -20,
+                        "ECOLOGISTS": 5,
+                        "LOYALISTS": -20,
+                        "NATIONALISTS": 5,
+                        "LIBERALS": 5
+                      }
+                    },
+                    {
+                      "actionOnFactor": {
+                        "TREASURY": 190,
+                        "AGRICULTURE": 5,
+                        "INDUSTRY": 5
+                      }
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "choice": "Jotaro appelle son grand-père Joseph pour faire un point avec Josuke et Koichi-kun qui fait partie de l'équipe maintenant.",
+          "effects": [
+            {
+              "actionOnFactor": {
+                "TREASURY": -300
+              }
+            }
+          ],
+          "relatedEvents": [
+            {
+              "name": "Un tueur est apparu en ville, on ne connait pas encore son identité mais il fait mauvaise réputation à Jotaro et son équipe.",
+              "choices": [
+                {
+                  "choice": "Toute l'équipe se met à la recherche du tueur.",
+                  "effects": [
+                    {
+                      "actionOnFaction": {
+                        "ECOLOGISTS": -35,
+                        "CAPITALISTS": -35,
+                        "LOYALISTS": -35,
+                        "LIBERALS": -35,
+                        "RELIGIOUS": -35,
+                        "MILITARISTS": -35,
+                        "NATIONALISTS": -35,
+                        "COMMUNISTS": -35
+                      }
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Vous vous arretez un instant et remettez vos plans en question",
+      "scenario": 5,
+      "choices": [
+        {
+          "choice": "Continuer l'éxécution du plan.",
+          "effects": [
+            {
+              "actionOnFaction": {
+                "MILITARISTS": 5,
+                "CAPITALISTS": 5,
+                "RELIGIOUS": 5,
+                "COMMUNISTS": -15,
+                "ECOLOGISTS": 5,
+                "LOYALISTS": -20,
+                "NATIONALISTS": 5,
+                "LIBERALS": 5
+              }
+            },
+            {
+              "actionOnFactor": {
+                "INDUSTRY": 5,
+                "AGRICULTURE": 5,
+                "TREASURY": 30
+              }
+            }
+          ]
+        },
+        {
+          "choice": "Continuer la recherche du tueur, et vous finissez pas le trouver.",
+          "effects": [
+            {
+              "actionOnFaction": {
+                "CAPITALISTS": -18,
+                "RELIGIOUS": -20,
+                "LIBERALS": 15
+              }
+            }
+          ],
+          "relatedEvents": [
+            {
+              "name": "Qui de l'équipe va règler son compte au tueur ?",
+              "choices": [
+                {
+                  "choice": "Josuke prend les devants et veut montrer à Jotaro de quoi il est capable.",
+                  "effects": [
+                    {
+                      "actionOnFaction": {
+                        "ECOLOGISTS": -25,
+                        "CAPITALISTS": -25,
+                        "LOYALISTS": 10,
+                        "LIBERALS": -20,
+                        "RELIGIOUS": -20,
+                        "MILITARISTS": -20,
+                        "NATIONALISTS": -20,
+                        "COMMUNISTS": 10
+                      }
+                    },
+                    {
+                      "actionOnFactor": {
+                      }
+                    }
+                  ]
+                },
+                {
+                  "choice": "Jotaro ne sait pas de quoi est capable le tueur il préfère ne pas laisser Josuke prendre de risque inutile",
+                  "effects": [
+                    {
+                      "actionOnFaction": {
+                        "ECOLOGISTS": 5,
+                        "CAPITALISTS": 5,
+                        "LIBERALS": 5,
+                        "RELIGIOUS": 5,
+                        "MILITARISTS": 5,
+                        "NATIONALISTS": 5
+                      }
+                    },
+                    {
+                      "actionOnFactor": {
+                        "TREASURY": 10
+                      }
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "choice": "Arreter de chercher le tueur, et commencer l'éxecution du plan de Jotaro et Joseph précedemment organisé, le tueur se montrera peut-être plus tard...",
+          "effects": [
+            {
+              "actionOnFaction": {
+                "CAPITALISTS": 20,
+                "COMMUNISTS": 20,
+                "LIBERALS": 20,
+                "RELIGIOUS": 20,
+                "MILITARISTS": 20,
+                "ECOLOGISTS": 20,
+                "LOYALISTS": 20,
+                "NATIONALISTS": 20
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Fin du scénario, Jotaro par le biais de ses combats et décisions a imposé le respect dans la ville de Morioh, quel sera sa dernière décision ?",
+      "scenario": 5,
+      "choices": [
+        {
+          "choice": "Jotaro laisse le contrôle de la ville à Josuke et Koichi-kun car ils ont bien grandi au fur et a mesure des aventures. Il rentre dans sa ville natale avec Joseph. :)",
+          "effects": [
+            {
+              "actionOnFaction": {
+                "CAPITALISTS": 5,
+                "COMMUNISTS": -20,
+                "LIBERALS": 5,
+                "RELIGIOUS": 5,
+                "MILITARISTS": -30,
+                "ECOLOGISTS": 20,
+                "LOYALISTS": -15,
+                "NATIONALISTS": -20
+              }
+            },
+            {
+              "actionOnFactor": {
+                "INDUSTRY": 5,
+                "AGRICULTURE": 5,
+                "TREASURY": 100
+              }
+            }
+          ]
+        },
+        {
+          "choice": "Jotaro reste, et compte faire de cette ville une ville encore mieux qu'elle ne l'est deja grâce à l'aide de Josuke et Koichi-kun, Joseph lui est rentré chez lui à NYC.",
+          "effects": [
+            {
+              "actionOnFaction": {
+                "CAPITALISTS": 15,
+                "COMMUNISTS": 5,
+                "LIBERALS": -20,
+                "RELIGIOUS": -20,
+                "MILITARISTS": 20,
+                "ECOLOGISTS": -20,
+                "LOYALISTS": 10,
+                "NATIONALISTS": 10
+              }
+            },
+            {
+              "actionOnFactor": {
+                "INDUSTRY": 5,
+                "AGRICULTURE": 5,
+                "TREASURY": 200
+              }
+            }
+          ]
+        },
+        {
+          "choice": "Jotaro n'a toujours pas trouvé le tueur qui rôde en ville... Il compte donc rester en ésperant le trouver très bientot !",
+          "effects": [
+            {
+              "actionOnFaction": {
+                "CAPITALISTS": -35,
+                "COMMUNISTS": -35,
+                "LIBERALS": -25,
+                "RELIGIOUS": 70,
+                "MILITARISTS": 25,
+                "ECOLOGISTS": 25,
+                "LOYALISTS": 15,
+                "NATIONALISTS": -35
+              }
+            },
+            {
+              "actionOnFactor": {
+                "TREASURY": 50
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

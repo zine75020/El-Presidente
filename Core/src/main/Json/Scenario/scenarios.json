@@ -605,6 +605,157 @@
       }
     },
     {
+      "id": 5,
+      "name": "Jojo's Bizarre Adventure : Diamond is Unbreakable",
+      "story": "Dans la jeune ville de Morioh au Japon, Jotaro Kujo grand entrepreneur possesseur du stand 'Star Platinum' a pour mission de reperer son oncle (qui est plus jeune que lui lol) Josuke Higashikata. Pour avec lui, refaire de Morioh une ville riche en culture et ressources",
+      "gameStartParameters": {
+        "EASY": {
+          "agriculturePercentage": 70,
+          "industryPercentage": 35,
+          "treasury": 400,
+          "foodUnits": 700,
+          "factions": {
+            "CAPITALISTS": {
+              "name": "Capitalists",
+              "satisfactionPercentage": 65,
+              "numberOfPartisans": 10
+            },
+            "COMMUNISTS": {
+              "name": "Communists",
+              "satisfactionPercentage": 65,
+              "numberOfPartisans": 10
+            },
+            "LIBERALS": {
+              "name": "Liberals",
+              "satisfactionPercentage": 65,
+              "numberOfPartisans": 10
+            },
+            "RELIGIOUS": {
+              "name": "Religious",
+              "satisfactionPercentage": 65,
+              "numberOfPartisans": 10
+            },
+            "MILITARISTS": {
+              "name": "Militarists",
+              "satisfactionPercentage": 65,
+              "numberOfPartisans": 10
+            },
+            "ECOLOGISTS": {
+              "name": "Ecologists",
+              "satisfactionPercentage": 65,
+              "numberOfPartisans": 10
+            },
+            "LOYALISTS": {
+              "name": "Loyalists",
+              "satisfactionPercentage": 65,
+              "numberOfPartisans": 10
+            },
+            "NATIONALISTS": {
+              "name": "Nationalists",
+              "satisfactionPercentage": 65,
+              "numberOfPartisans": 10
+            }
+          }
+        },
+        "NORMAL": {
+          "agriculturePercentage": 50,
+          "industryPercentage": 15,
+          "treasury": 200,
+          "foodUnits": 600,
+          "factions": {
+            "CAPITALISTS": {
+              "name": "Capitalists",
+              "satisfactionPercentage": 50,
+              "numberOfPartisans": 10
+            },
+            "COMMUNISTS": {
+              "name": "Communists",
+              "satisfactionPercentage": 50,
+              "numberOfPartisans": 10
+            },
+            "LIBERALS": {
+              "name": "Liberals",
+              "satisfactionPercentage": 50,
+              "numberOfPartisans": 10
+            },
+            "RELIGIOUS": {
+              "name": "Religious",
+              "satisfactionPercentage": 50,
+              "numberOfPartisans": 10
+            },
+            "MILITARISTS": {
+              "name": "Militarists",
+              "satisfactionPercentage": 50,
+              "numberOfPartisans": 10
+            },
+            "ECOLOGISTS": {
+              "name": "Ecologists",
+              "satisfactionPercentage": 50,
+              "numberOfPartisans": 10
+            },
+            "LOYALISTS": {
+              "name": "Loyalists",
+              "satisfactionPercentage": 50,
+              "numberOfPartisans": 10
+            },
+            "NATIONALISTS": {
+              "name": "Nationalists",
+              "satisfactionPercentage": 50,
+              "numberOfPartisans": 10
+            }
+          }
+        },
+        "DIFFICULT": {
+          "agriculturePercentage": 30,
+          "industryPercentage": 5,
+          "treasury": 100,
+          "foodUnits": 500,
+          "factions": {
+            "CAPITALISTS": {
+              "name": "Capitalists",
+              "satisfactionPercentage": 40,
+              "numberOfPartisans": 10
+            },
+            "COMMUNISTS": {
+              "name": "Communists",
+              "satisfactionPercentage": 40,
+              "numberOfPartisans": 10
+            },
+            "LIBERALS": {
+              "name": "Liberals",
+              "satisfactionPercentage": 40,
+              "numberOfPartisans": 10
+            },
+            "RELIGIOUS": {
+              "name": "Religious",
+              "satisfactionPercentage": 40,
+              "numberOfPartisans": 10
+            },
+            "MILITARISTS": {
+              "name": "Militarists",
+              "satisfactionPercentage": 40,
+              "numberOfPartisans": 10
+            },
+            "ECOLOGISTS": {
+              "name": "Ecologists",
+              "satisfactionPercentage": 40,
+              "numberOfPartisans": 10
+            },
+            "LOYALISTS": {
+              "name": "Loyalists",
+              "satisfactionPercentage": 40,
+              "numberOfPartisans": 10
+            },
+            "NATIONALISTS": {
+              "name": "Nationalists",
+              "satisfactionPercentage": 40,
+              "numberOfPartisans": 10
+            }
+          }
+        }
+      }
+    },
+    {
       "id": 7,
       "name": "Bac à sable",
       "story": "Mode de jeu sans scénario avec des événements aléatoires",

@@ -42,7 +42,12 @@ public class JsonEventsRepository implements EventsRepository {
     public static final String NORMAL_THE_100_FILE_PATH = "C:/Users/alois/Documents/GitHub/El-Presidente/Core/src/main/Json/Events/the100/normal-the100-events.json";
     public static final String DIFFICULT_THE_100_FILE_PATH = "C:/Users/alois/Documents/GitHub/El-Presidente/Core/src/main/Json/Events/the100/difficult-the100-events.json";
     public static final int THE_100_ID = 4;
-    //TODO ajouter les chemins quand on aura les scénarios de Zinédine et Gabriel
+    //jojo's aventure
+    public static final String EASY_JOJO_FILE_PATH = "C:/Users/alois/Documents/GitHub/El-Presidente/Core/src/main/Json/Events/jojo/easy-jojo-events.json";
+    public static final String NORMAL_JOJO_FILE_PATH = "C:/Users/alois/Documents/GitHub/El-Presidente/Core/src/main/Json/Events/jojo/normal-jojo-events.json";
+    public static final String DIFFICULT_JOJO_FILE_PATH = "C:/Users/alois/Documents/GitHub/El-Presidente/Core/src/main/Json/Events/jojo/difficult-jojo-events.json";
+    public static final int JOJO_ID = 5;
+    //TODO ajouter les chemins quand on aura les scénarios de Gabriel
     //neutral events
     public static final String EASY_NEUTRAL_EVENTS_FILE_PATH = "C:/Users/alois/Documents/GitHub/El-Presidente/Core/src/main/Json/Events/neutrals-events/easy-neutrals-events.json";
     public static final String NORMAL_NEUTRAL_EVENTS_FILE_PATH = "C:/Users/alois/Documents/GitHub/El-Presidente/Core/src/main/Json/Events/neutrals-events/normal-neutrals-events.json";
@@ -325,7 +330,19 @@ public class JsonEventsRepository implements EventsRepository {
                         path = NORMAL_THE_100_FILE_PATH;
                 }
                 break;
-            //TODO ajout de la récupération des chemins quand on aura les scénarios de zinédine et Gabriel
+            case JOJO_ID:
+                switch (difficulty) {
+                    case 1:
+                        path = EASY_JOJO_FILE_PATH;
+                        break;
+                    case 3:
+                        path = DIFFICULT_JOJO_FILE_PATH;
+                        break;
+                    default:
+                        path = NORMAL_JOJO_FILE_PATH;
+                }
+                break;
+            //TODO ajout de la récupération des chemins quand on aura les scénarios de Gabriel
             //événements neutres par défaut (bac à sable)
             default:
                 switch (difficulty) {
