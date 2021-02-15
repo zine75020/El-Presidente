@@ -27,16 +27,16 @@ public class JsonEventsRepository implements EventsRepository {
     public static final String NORMAL_ATTACK_ON_TITANS_FILE_PATH = "C:/Users/alois/Documents/GitHub/El-Presidente/Core/src/main/Json/Events/attackOnTitans/normal-titans-events.json";
     public static final String DIFFICULT_ATTACK_ON_TITANS_FILE_PATH = "C:/Users/alois/Documents/GitHub/El-Presidente/Core/src/main/Json/Events/attackOnTitans/difficult-titans-events.json";
     public static final int ATTACK_ON_TITANS_ID = 1;
+    //cold war USA
+    public static final String EASY_COLD_WAR_USA_FILE_PATH = "C:/Users/alois/Documents/GitHub/El-Presidente/Core/src/main/Json/Events/coldWarUSA/easy-usa-events.json";
+    public static final String NORMAL_COLD_WAR_USA_FILE_PATH = "C:/Users/alois/Documents/GitHub/El-Presidente/Core/src/main/Json/Events/coldWarUSA/normal-usa-events.json";
+    public static final String DIFFICULT_COLD_WAR_USA_FILE_PATH = "C:/Users/alois/Documents/GitHub/El-Presidente/Core/src/main/Json/Events/coldWarUSA/difficult-usa-events.json";
+    public static final int COLD_WAR_USA_ID = 2;
     //cold war URSS
     public static final String EASY_COLD_WAR_URSS_FILE_PATH = "C:/Users/alois/Documents/GitHub/El-Presidente/Core/src/main/Json/Events/coldWarURSS/easy-urss.json";
     public static final String NORMAL_COLD_WAR_URSS_FILE_PATH = "C:/Users/alois/Documents/GitHub/El-Presidente/Core/src/main/Json/Events/coldWarURSS/normal-urss.json";
     public static final String DIFFICULT_COLD_WAR_URSS_FILE_PATH = "C:/Users/alois/Documents/GitHub/El-Presidente/Core/src/main/Json/Events/coldWarURSS/difficult-urss.json";
-    public static final int COLD_WAR_URSS_ID = 2;
-    //cold war USA
-    public static final String EASY_COLD_WAR_USA_FILE_PATH = "C:/Users/alois/Documents/GitHub/El-Presidente/Core/src/main/Json/Events/coldWarUSA/easy-usa.json";
-    public static final String NORMAL_COLD_WAR_USA_FILE_PATH = "C:/Users/alois/Documents/GitHub/El-Presidente/Core/src/main/Json/Events/coldWarUSA/normal-usa.json";
-    public static final String DIFFICULT_COLD_WAR_USA_FILE_PATH = "C:/Users/alois/Documents/GitHub/El-Presidente/Core/src/main/Json/Events/coldWarUSA/difficult-usa.json";
-    public static final int COLD_WAR_USA_ID = 3;
+    public static final int COLD_WAR_URSS_ID = 3;
     //the 100
     public static final String EASY_THE_100_FILE_PATH = "C:/Users/alois/Documents/GitHub/El-Presidente/Core/src/main/Json/Events/the100/easy-the100-events.json";
     public static final String NORMAL_THE_100_FILE_PATH = "C:/Users/alois/Documents/GitHub/El-Presidente/Core/src/main/Json/Events/the100/normal-the100-events.json";
