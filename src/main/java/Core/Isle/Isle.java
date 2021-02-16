@@ -135,8 +135,12 @@ public class Isle {
         score += this.industry.getDedicatedPercentage();
         score += this.agriculture.getDedicatedPercentage();
         switch (this.difficultyOfGame) {
-            case normal -> score *= 2;
-            case hard -> score *= 3;
+            case normal:
+                score *=2;
+                break;
+            case hard:
+                score *=3;
+                break;
         }
         return score;
     }

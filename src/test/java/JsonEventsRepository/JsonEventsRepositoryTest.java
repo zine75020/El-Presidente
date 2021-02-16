@@ -1,10 +1,9 @@
 package JsonEventsRepository;
 
-import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.Test;
+import org.junit.Test;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
 
 public class JsonEventsRepositoryTest {
 
@@ -12,16 +11,16 @@ public class JsonEventsRepositoryTest {
 
     @Test
     public void should_get_all_events_by_id_1_and_difficulty() {
-        Assertions.assertTrue(jsonEventsRepository.getAllEventsByIdAndDifficulty(1, 1).size() > 0);
-        Assertions.assertTrue(jsonEventsRepository.getAllEventsByIdAndDifficulty(1, 2).size() > 0);
-        Assertions.assertTrue(jsonEventsRepository.getAllEventsByIdAndDifficulty(1, 3).size() > 0);
+        assertTrue(jsonEventsRepository.getAllEventsByIdAndDifficulty(1, 1).size() > 0);
+        assertTrue(jsonEventsRepository.getAllEventsByIdAndDifficulty(1, 2).size() > 0);
+        assertTrue(jsonEventsRepository.getAllEventsByIdAndDifficulty(1, 3).size() > 0);
     }
 
     @Test
     public void should_get_all_events_by_id_2_and_difficulty() {
-        Assertions.assertTrue(jsonEventsRepository.getAllEventsByIdAndDifficulty(2, 1).size() > 0);
-        Assertions.assertTrue(jsonEventsRepository.getAllEventsByIdAndDifficulty(2, 2).size() > 0);
-        Assertions.assertTrue(jsonEventsRepository.getAllEventsByIdAndDifficulty(2, 3).size() > 0);
+        assertTrue(jsonEventsRepository.getAllEventsByIdAndDifficulty(2, 1).size() > 0);
+        assertTrue(jsonEventsRepository.getAllEventsByIdAndDifficulty(2, 2).size() > 0);
+        assertTrue(jsonEventsRepository.getAllEventsByIdAndDifficulty(2, 3).size() > 0);
     }
 
     //TODO activer quand on aura les modifications de Gabriel
@@ -34,16 +33,16 @@ public class JsonEventsRepositoryTest {
 
     @Test
     public void should_get_all_events_by_id_4_and_difficulty() {
-        Assertions.assertTrue(jsonEventsRepository.getAllEventsByIdAndDifficulty(4, 1).size() > 0);
-        Assertions.assertTrue(jsonEventsRepository.getAllEventsByIdAndDifficulty(4, 2).size() > 0);
-        Assertions.assertTrue(jsonEventsRepository.getAllEventsByIdAndDifficulty(4, 3).size() > 0);
+        assertTrue(jsonEventsRepository.getAllEventsByIdAndDifficulty(4, 1).size() > 0);
+        assertTrue(jsonEventsRepository.getAllEventsByIdAndDifficulty(4, 2).size() > 0);
+        assertTrue(jsonEventsRepository.getAllEventsByIdAndDifficulty(4, 3).size() > 0);
     }
 
     @Test
     public void should_get_all_events_by_id_5_and_difficulty() {
-        Assertions.assertTrue(jsonEventsRepository.getAllEventsByIdAndDifficulty(5, 1).size() > 0);
-        Assertions.assertTrue(jsonEventsRepository.getAllEventsByIdAndDifficulty(5, 2).size() > 0);
-        Assertions.assertTrue(jsonEventsRepository.getAllEventsByIdAndDifficulty(5, 3).size() > 0);
+        assertTrue(jsonEventsRepository.getAllEventsByIdAndDifficulty(5, 1).size() > 0);
+        assertTrue(jsonEventsRepository.getAllEventsByIdAndDifficulty(5, 2).size() > 0);
+        assertTrue(jsonEventsRepository.getAllEventsByIdAndDifficulty(5, 3).size() > 0);
     }
 
     //TODO activer quand on aura les modifications de Gabriel
@@ -63,9 +62,9 @@ public class JsonEventsRepositoryTest {
 
     @Test
     public void should_get_neutrals_events_by_difficulty() {
-        Assertions.assertTrue(jsonEventsRepository.getNeutralEventsByDifficulty(1).size() > 0);
-        Assertions.assertTrue(jsonEventsRepository.getNeutralEventsByDifficulty(2).size() > 0);
-        Assertions.assertTrue(jsonEventsRepository.getNeutralEventsByDifficulty(3).size() > 0);
+        assertTrue(jsonEventsRepository.getNeutralEventsByDifficulty(1).size() > 0);
+        assertTrue(jsonEventsRepository.getNeutralEventsByDifficulty(2).size() > 0);
+        assertTrue(jsonEventsRepository.getNeutralEventsByDifficulty(3).size() > 0);
     }
 
 }
