@@ -17,6 +17,22 @@ public class ConsoleOutputTest {
     }
 
     @Test
+    public void should_display_start_game() {
+
+        String expectedOutput = "Début de la partie !\n";
+
+        assertEquals(expectedOutput, consoleOutput.startGame());
+    }
+
+    @Test
+    public void should_display_end_game() {
+
+        String expectedOutput = "Votre population vous renverse par coup d'état... Fin de la partie.\n";
+
+        assertEquals(expectedOutput, consoleOutput.endGame());
+    }
+
+    @Test
     public void should_display_difficulty_menu() {
 
         String expectedOutput = "Avec quelle difficulté voulez-vous jouer ?\n" +
@@ -25,6 +41,14 @@ public class ConsoleOutputTest {
                 "3: Partie difficile\n";
 
         assertEquals(expectedOutput, consoleOutput.difficultyMenu().toString());
+    }
+
+    @Test
+    public void should_display_value_error() {
+
+        String expectedOutput = "Veuillez saisir une valeur numérique supérieure à 0\n";
+
+        assertEquals(expectedOutput, consoleOutput.valueError());
     }
 
     @Test

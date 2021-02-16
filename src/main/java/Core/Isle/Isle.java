@@ -255,7 +255,6 @@ public class Isle {
      * @param indexFaction
      * @return
      */
-    //TODO gérer quand la faction n'a plus de partisants
     public boolean bribe(int indexFaction) {
         int amount = 15 * this.factionList.get(indexFaction).getNbSupporters();
         boolean bribeIsPossible = false;
@@ -372,4 +371,34 @@ public class Isle {
         return this.generateGlobalSatisfactionPercentage() < this.minSatisfactionPercentage;
     }
 
+    /**
+     * teste si au moins une faction peut bénéficier du pot de vin
+     * @return
+     */
+    public boolean bribeIsPossible() {
+        int minimumTreasury = 0;
+        for (Faction faction : this.factionList) {
+            if(faction.getNbSupporters() > 0 && (minimumTreasury == 0 || minimumTreasury > faction.getNbSupporters() * 15)) {
+                minimumTreasury = faction.getNbSupporters() * 15;
+            }
+        }
+        return minimumTreasury <= this.treasury;
+    }
+
+    /**
+     * teste si le pot de vin est possible pour la faction passée en paramètre
+     * @param faction
+     * @return
+     */
+    public boolean bribeIsPossible(Faction faction) {
+        return (faction.getNbSupporters() > 0 && faction.getNbSupporters() * 15 <= this.treasury);
+    }
+
+    /**
+     * teste si le marché alimentaire est possible
+     * @return
+     */
+    public boolean foodMartIsPossible() {
+        return this.treasury >= 8;
+    }
 }

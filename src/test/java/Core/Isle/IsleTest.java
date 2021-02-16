@@ -15,9 +15,9 @@ import static org.junit.Assert.*;
 public class IsleTest {
 
     Isle isle = new Isle(new Industry(10), new Agriculture(20),
-            100, DifficultyChoice.normal, 20, 30);
+            100, DifficultyChoice.normal, 0, 30);
     Isle isle2 = new Isle(new Industry(10), new Agriculture(20),
-            0, DifficultyChoice.normal, 20, 30);
+            0, DifficultyChoice.normal, 0, 30);
 
     @Test
     public void should_have_8_factions() {
@@ -102,10 +102,9 @@ public class IsleTest {
         Assert.assertEquals(1, (int) isle.getTurn());
     }
 
-    //TODO
     @Test
     public void should_set_score() {
-
+        assertTrue(isle.generateScore() > 0);
     }
 
     @Test
@@ -211,6 +210,57 @@ public class IsleTest {
     @Test
     public void should_not_set_trigger_coup() {
         Assert.assertTrue(isle.triggerCoup());
+    }
+
+    @Test
+    public void should_bribe_is_possible() {
+        isle.increaseTreasury(100);
+        for(Faction faction : isle.getFactionList()) {
+            faction.setNbSupporters(4);
+        }
+        assertTrue(isle.bribeIsPossible());
+    }
+
+    @Test
+    public void should_bribe_is_not_possible() {
+        isle.decreaseTreasury(10000);
+        for(Faction faction : isle.getFactionList()) {
+            faction.setNbSupporters(4);
+        }
+        assertFalse(isle.bribeIsPossible());
+    }
+
+    @Test
+    public void should_bribe_is_possible_for_factions() {
+        isle.increaseTreasury(100);
+        for(Faction faction : isle.getFactionList()) {
+            faction.setNbSupporters(4);
+        }
+        for(Faction faction : isle.getFactionList()) {
+            assertTrue(isle.bribeIsPossible(faction));
+        }
+    }
+
+    @Test
+    public void should_bribe_is_not_possible_for_factions() {
+        isle.decreaseTreasury(10000);
+        for(Faction faction : isle.getFactionList()) {
+            faction.setNbSupporters(4);
+        }
+        for(Faction faction : isle.getFactionList()) {
+            assertFalse(isle.bribeIsPossible(faction));
+        }
+    }
+
+    @Test
+    public void should_food_mart_is_possible() {
+        assertTrue(isle.foodMartIsPossible());
+    }
+
+    @Test
+    public void should_food_mart_is_not_possible() {
+        isle.decreaseTreasury(10000);
+        assertFalse(isle.foodMartIsPossible());
     }
 
 }

@@ -17,12 +17,12 @@ public class ConsoleOutput implements Output {
 
     @Override
     public String startGame() {
-        return "Début de la partie !";
+        return "Début de la partie !\n";
     }
 
     @Override
     public String endGame() {
-        return "Votre population vous renverse par coup d'état... Fin de la partie.";
+        return "Votre population vous renverse par coup d'état... Fin de la partie.\n";
     }
 
     @Override
@@ -53,29 +53,78 @@ public class ConsoleOutput implements Output {
 
     @Override
     public StringBuilder difficultyMenu() {
-        StringBuilder introduction = new StringBuilder("Avec quelle difficulté voulez-vous jouer ?\n");
+        StringBuilder menu = new StringBuilder("Avec quelle difficulté voulez-vous jouer ?\n");
         int index = 0;
         // ajout de la liste des choix possibles
         for (DifficultyChoice choice : DifficultyChoice.values()) {
             index += 1;
-            introduction.append(index).append(": ").append(choice).append("\n");
+            menu.append(index).append(": ").append(choice).append("\n");
         }
-        return introduction;
+        return menu;
     }
 
     public StringBuilder scenarioMenu(List<Scenario> allScenarios) {
-        StringBuilder introduction = new StringBuilder("Quel est le scénario que vous souhaitez dérouler ?\n");
+        StringBuilder menu = new StringBuilder("Quel est le scénario que vous souhaitez dérouler ?\n");
         // ajout de la liste des choix possibles
         for (Scenario scenario : allScenarios) {
-            introduction.append(scenario.getId()).append(": ").append(scenario.getName()).append("\n").
+            menu.append(scenario.getId()).append(": ").append(scenario.getName()).append("\n").
                     append(scenario.getStory()).append("\n");
         }
-        return introduction;
+        return menu;
     }
 
     @Override
     public StringBuilder printScore(Isle isle) {
         return new StringBuilder("========= Score : ").append(isle.generateScore()).append(" =========");
+    }
+
+    @Override
+    public StringBuilder endOfYearInfo() {
+        return new StringBuilder("C'est la fin de l'année !\n");
+    }
+
+    @Override
+    public StringBuilder endOfYearMenu(Isle isle) {
+        StringBuilder menu = new StringBuilder("Que souhaitez-vous faire ?\n");
+        // ajout de la liste des choix possibles
+        int i = 1;
+        //on affiche seulement les choix qui sont faisables
+        if(isle.bribeIsPossible()) {
+            menu.append(i).append(": Pot de vin\n");
+        }
+        i += 1;
+        if(isle.foodMartIsPossible()) {
+            menu.append(i).append(": Marché Alimentaire\n");
+        }
+        i += 1;
+        menu.append(i).append(": Bilan de fin d'année\n");
+
+        return menu;
+    }
+
+    @Override
+    public StringBuilder bribeMenu(Isle isle) {
+        StringBuilder menu = new StringBuilder("Pour quelle faction voulez-vous faire le pot de vin ?\n");
+        // ajout de la liste des choix possibles
+        int i = 1;
+        for(Faction faction : isle.getFactionList()) {
+            //on affiche seulement les choix qui sont faisables
+            if(isle.bribeIsPossible(faction)) {
+                menu.append(i).append(": ").append(faction.getName()).append("\n");
+            }
+            i += 1;
+        }
+
+        return menu;
+    }
+
+    @Override
+    public StringBuilder foodMarksAsk(Isle isle) {
+        return new StringBuilder("Combien d'unités de nourriture souhaitez-vous acheter ?\n");
+    }
+
+    public String valueError() {
+        return "Veuillez saisir une valeur numérique supérieure à 0\n";
     }
 
     public String valueOfMenuError() {
