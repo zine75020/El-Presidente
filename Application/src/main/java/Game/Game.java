@@ -50,19 +50,30 @@ public class Game {
 
         System.out.println(consoleOutput.startGame());
         //méthode de déroulement de la partie
-        gameExecution(isle);
+        gameExecution(isle, selectedScenario);
     }
 
-    private static void gameExecution(Isle isle) {
+    private static void gameExecution(Isle isle, Scenario selectedScenario) {
         ConsoleOutput consoleOutput = new ConsoleOutput();
         ConsoleInput consoleInput = new ConsoleInput();
 
-        System.out.println(consoleOutput.gameInformations(isle));
-        //TODO déroulement jeu
-        /*
-         * différencier traitement scénario et bac à sable
-         *
-         */
+        //traitement de chaque tout tant qu'un coup d'état n'est pas déclenché
+        do {
+            isle.nextTurn();
+            System.out.println(consoleOutput.gameInformations(isle));
+            //TODO déroulement jeu
+            /*
+             * différencier traitement scénario et bac à sable
+             *
+             */
+            //TODO si la population d'une faction tombe à 0, sa satisfaction tombe également à 0
+
+            //TODO supprimer la ligne suivante (elle sert à empêcher une boucle infinie)
+            isle.setMinSatisfactionPercentage(80);
+        } while (!isle.triggerCoup());
+
+        System.out.println(consoleOutput.endGame());
+        System.out.println(consoleOutput.printScore(isle));
     }
 
     private static int difficultyTreatment() {
