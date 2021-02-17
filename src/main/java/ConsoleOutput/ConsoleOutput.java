@@ -26,6 +26,11 @@ public class ConsoleOutput implements Output {
     }
 
     @Override
+    public String impossibleGame() {
+        return "Aucun événements disponibles. Fin de la partie.";
+    }
+
+    @Override
     public StringBuilder gameInformations(Isle isle) {
         StringBuilder gameInformations = new StringBuilder("============== Informations Île | tour : ").append(isle.getTurn()).append(" ==============\n");
         gameInformations.append("=== Trésorerie : ").append(isle.getTreasury()).append("\n");
