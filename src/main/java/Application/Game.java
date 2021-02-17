@@ -1,6 +1,8 @@
 package Application;
 
 import Core.Agriculture.Agriculture;
+import Core.Enum.Season;
+import Core.Faction.Faction;
 import Core.Industry.Industry;
 import Core.Isle.Isle;
 import JsonScenarioRepository.JsonScenarioRepository;
@@ -10,6 +12,8 @@ import Core.ScenarioParsers.Scenario;
 
 import Core.Enum.DifficultyChoice;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 public class Game {
@@ -22,7 +26,6 @@ public class Game {
     public static void main(String[] args) {
 
         ConsoleOutput consoleOutput = new ConsoleOutput();
-        ConsoleInput consoleInput = new ConsoleInput();
 
         //affichage bienvenue
         System.out.println(consoleOutput.welcome());
@@ -61,19 +64,107 @@ public class Game {
         do {
             isle.nextTurn();
             System.out.println(consoleOutput.gameInformations(isle));
-            //TODO déroulement jeu
+            //TODO traitement événements
             /*
              * différencier traitement scénario et bac à sable
              *
              */
-            //TODO si la population d'une faction tombe à 0, sa satisfaction tombe également à 0
 
-            //TODO supprimer la ligne suivante (elle sert à empêcher une boucle infinie)
-            isle.setMinSatisfactionPercentage(80);
+            //TODO traitement fin d'année
+            //si c'est la fin d'année il faut faire le traitement de fin d'année
+            if(isle.getSeason() == Season.WINTER) {
+                endOfYearTreatment(isle, selectedScenario);
+            }
+
+            //on passe à la saison suivante en fin de tour
+            isle.nextSeason();
+
         } while (!isle.triggerCoup());
 
         System.out.println(consoleOutput.endGame());
         System.out.println(consoleOutput.printScore(isle));
+    }
+
+    private static void endOfYearTreatment(Isle isle, Scenario selectedScenario) {
+        ConsoleOutput consoleOutput = new ConsoleOutput();
+        ConsoleInput consoleInput = new ConsoleInput();
+
+        int endOfYearChoice;
+        System.out.println(consoleOutput.endOfYearInfo());
+        //on propose le menu de fin d'année jusqu'à ce que l'utilisateur fasse le bilan de fin d'année
+        do {
+            endOfYearChoice = -1;
+            do {
+                //affichage du menu de fin d'année
+                System.out.println(consoleOutput.endOfYearMenu(isle));
+                //récupération des id des choix disponibles
+                List<Integer> endOfYearChoices = new ArrayList<>();
+                if(isle.bribeIsPossible()) endOfYearChoices.add(1);
+                if(isle.foodMartIsPossible()) endOfYearChoices.add(2);
+                endOfYearChoices.add(3);
+                //récupération du choix de l'utilisateur
+                String input = clavier.next();
+                //vérification que la valeur saisie est valide
+                endOfYearChoice = consoleInput.verifyEndOfYearChoice(input, endOfYearChoices);
+                //si la valeur n'est pas valide on affiche une erreur et on reboucle
+                if (endOfYearChoice == -1) {
+                    System.out.println(consoleOutput.valueOfMenuError());
+                }
+            } while (endOfYearChoice < 0);
+
+            //une fois que la valeur est bonne on effectue la suite selon le choix qui a été fait
+            switch (endOfYearChoice) {
+                case 1:
+                    int bribeChoice = -1;
+                    do {
+                        //affichage du menu de pot de vin
+                        System.out.println(consoleOutput.bribeMenu(isle));
+
+                        //récupération des id des choix disponibles
+                        List<Integer> bribeChoices = new ArrayList<>();
+                        int i = 1;
+                        for(Faction faction : isle.getFactionList()) {
+                            //ajout de l'id si le pot de vin est possible pour cette faction
+                            if(isle.bribeIsPossible(faction)) bribeChoices.add(i);
+                            i += 1;
+                        }
+
+                        //récupération du choix de l'utilisateur
+                        String input = clavier.next();
+                        //vérification que la valeur saisie est valide
+                        bribeChoice = consoleInput.verifyBribeChoice(input, bribeChoices);
+                        //si la valeur n'est pas valide on affiche une erreur et on reboucle
+                        if (bribeChoice == -1) {
+                            System.out.println(consoleOutput.valueOfMenuError());
+                        }
+                    } while (bribeChoice < 0);
+                    //TODO traitement pot de vin
+                    break;
+                case 2:
+                    int foodMarksChoice = -1;
+                    do {
+                        //affichage du menu de marché alimentaire
+                        System.out.println(consoleOutput.foodMarksAsk(isle));
+                        //récupération du choix de l'utilisateur
+                        String input = clavier.next();
+                        //vérification que la valeur saisie est valide
+                        foodMarksChoice = consoleInput.verifyFoodMarksChoice(input);
+                        //si la valeur n'est pas valide on affiche une erreur et on reboucle
+                        if (foodMarksChoice == -1) {
+                            System.out.println(consoleOutput.valueError());
+                        }
+                    } while (foodMarksChoice < 0);
+                    //TODO traitement marché alimentaire
+                    break;
+                case 3:
+                    //TODO traitement bilan de fin d'année
+                    break;
+            }
+        } while (endOfYearChoice != 3);
+
+        //TODO supprimer la ligne suivante quand on aura le traitement des événements
+        // (elle sert à empêcher une boucle infinie)
+        isle.setMinSatisfactionPercentage(80);
     }
 
     private static int difficultyTreatment() {
@@ -129,7 +220,7 @@ public class Game {
     }
 
     private static Scenario scenarioTreatment(int difficulty) {
-        Integer selectedScenarioId;
+        int selectedScenarioId;
         JsonScenarioRepository jsonScenarioRepository = new JsonScenarioRepository();
 
         ConsoleOutput consoleOutput = new ConsoleOutput();

@@ -6,5 +6,11 @@ public interface Input {
 
     int verifyDifficultyChoice(String input);
 
-    Integer verifyScenarioChoice(String input, List<Integer> allIds);
+    int verifyScenarioChoice(String input, List<Integer> allIds);
+
+    int verifyEndOfYearChoice(String input, List<Integer> endOfYearChoices);
+
+    int verifyBribeChoice(String input, List<Integer> bribeChoices);
+
+    int verifyFoodMarksChoice(String input);
 }
