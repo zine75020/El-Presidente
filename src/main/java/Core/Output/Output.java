@@ -15,6 +15,8 @@ public interface Output {
 
     String endGame();
 
+    String impossibleGame();
+
     StringBuilder gameInformations(Isle isle);
 
     String valueError();

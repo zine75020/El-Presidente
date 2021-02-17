@@ -13,4 +13,6 @@ public interface Input {
     int verifyBribeChoice(String input, List<Integer> bribeChoices);
 
     int verifyFoodMarksChoice(String input);
+
+    int verifyChoice(String choiceInput,int size);
 }

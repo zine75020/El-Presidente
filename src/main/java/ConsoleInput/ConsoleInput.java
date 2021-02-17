@@ -86,4 +86,20 @@ public class ConsoleInput implements Input {
             return -1;
         }
     }
+
+    @Override
+    public int verifyChoice(String choiceInput,int size) {
+        try {
+            int choice = Integer.parseInt(choiceInput);
+            //vérification que la valeur saisie est bien correcte
+            if(choice >= 1 && choice <= size) {
+                return choice;
+            }
+            else {
+                return -1;
+            }
+        } catch (NumberFormatException e) {
+            return -1;
+        }
+    }
 }
