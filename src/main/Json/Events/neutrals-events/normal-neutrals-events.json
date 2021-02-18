@@ -670,6 +670,418 @@
           ]
         }
       ]
+    },
+    {
+      "name": "Un groupe de nomades approche de votre patrie, il se propose a la rejoindre souhaitez vous leur venu ?",
+      "seasons": {
+        "spring": true,
+        "summer": true,
+        "autumn": true,
+        "winter": false
+      },
+      "choices": [
+        {
+          "choice": "J'accepte, plus on est nombreux, mieux on pourra s'en sortir !",
+          "effects": [
+            {
+              "actionOnFaction": {
+                "COMMUNISTS": 10,
+                "NATIONALISTS": 10
+              }
+            },
+            {
+              "actionOnFactor": {
+                "TREASURY": -15,
+                "INDUSTRY": 10,
+                "partisans": 15
+              }
+            }
+          ]
+        },
+        {
+          "choice": "Je refuse les pouilleux dans ma patrie au sang pur è_é, chassons-les !!",
+          "effects": [
+            {
+              "actionOnFaction": {
+                "CAPITALISTS": 5,
+                "LIBERALS": -10,
+                "RELIGIOUS": -10,
+                "MILITARISTS": -10,
+                "ECOLOGISTS": -10
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Un dragon arrive au dessus du royaume crachant colère et flamme ! Que faites vous ?",
+      "seasons": {
+        "spring": true,
+        "summer": true,
+        "autumn": false,
+        "winter": false
+      },
+      "choices": [
+        {
+          "choice": "Soldats en formation tuez moi ça",
+          "effects": [
+            {
+              "actionOnFaction": {
+                "RELIGIOUS": -10,
+                "MILITARISTS": -10,
+                "ECOLOGISTS": -10
+              }
+            }
+          ],
+          "relatedEvents": [
+            {
+              "name": "Le dragon a laissé son petit dragonneau derriere lui ! Que va t il advenir ?",
+              "choices": [
+                {
+                  "choice": "Tuons le, sa mère nous a apporté assez d'ennui",
+                  "effects": [
+                    {
+                      "actionOnFaction": {
+                        "RELIGIOUS": 7,
+                        "MILITARISTS": 7,
+                        "LIBERALS": -12,
+                        "ECOLOGISTS": -7
+                      }
+                    }
+                  ]
+                },
+                {
+                  "choice": "Elevons le il sera symbole et force de notre patrie",
+                  "effects": [
+                    {
+                      "actionOnFaction": {
+                        "CAPITALISTS": 12,
+                        "COMMUNISTS": 12,
+                        "LIBERALS": 12,
+                        "RELIGIOUS": -7,
+                        "LOYALISTS": 25,
+                        "MILITARISTS": 22
+                      }
+                    },
+                    {
+                      "AGRICULTURE": -25
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "choice": "Je suis en sécurité, c'est tout ce qui compte",
+          "effects": [
+            {
+              "actionOnFaction": {
+                "CAPITALISTS": -18,
+                "COMMUNISTS": -16,
+                "LIBERALS": -17,
+                "RELIGIOUS": -19,
+                "MILITARISTS": -17,
+                "ECOLOGISTS": -16,
+                "LOYALISTS": -14,
+                "NATIONALISTS": -17
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Un chemin arc en ciel descends du ciel pour arriver vers la patrie ! Que décidez-vous de faire ?",
+      "seasons": {
+        "spring": true,
+        "summer": true,
+        "autumn": true,
+        "winter": false
+      },
+      "choices": [
+        {
+          "choice": "Je monte dans un kart est c'est parti pour la course avec mes amis",
+          "effects": [
+            {
+              "actionOnFaction": {
+                "ECOLOGISTS": -7,
+                "LIBERALS": 15,
+                "LOYALISTS": 12,
+                "NATIONALISTS": 13,
+                "CAPITALISTS": 24,
+                "RELIGIOUS": 12
+              }
+            },
+            {
+              "actionOnFactor": {
+                "AGRICULTURE": 33
+              }
+            }
+          ],
+          "relatedEvents": [
+            {
+              "name": "Il mène a un lutin avec un coffre en or !",
+              "choices": [
+                {
+                  "choice": "Quelle chance, j'ai toujours cru en ces légendes !",
+                  "effects": [
+                    {
+                      "actionOnFaction": {
+                        "LIBERALS": 12,
+                        "LOYALISTS": 12,
+                        "NATIONALISTS": 12,
+                        "CAPITALISTS": 24
+                      }
+                    },
+                    {
+                      "actionOnFactor": {
+                        "TREASURY": 425
+                      }
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "choice": "Une forme de vie extra terrestre a l'air d'avoir ouvert le chemin pour nous.",
+          "effects": [
+            {
+              "actionOnFaction": {
+                "CAPITALISTS": -12,
+                "MILITARISTS": -12,
+                "ECOLOGISTS": 24,
+                "LIBERALS": 12,
+                "LOYALISTS": -7,
+                "NATIONALISTS": -7
+              }
+            },
+            {
+              "actionOnFactor": {
+                "TREASURY": -24,
+                "INDUSTRY": -14
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "C'est le debut du printemps les giboulettes déferlent ! Que faire ?",
+      "seasons": {
+        "spring": true,
+        "summer": false,
+        "autumn": false,
+        "winter": false
+      },
+      "choices": [
+        {
+          "choice": "Je vérifie que tout le monde dispose d'un abri et en créé un pour ceux qui n'en ont pas",
+          "effects": [
+            {
+              "actionOnFaction": {
+                "RELIGIOUS": 5,
+                "NATIONALISTS": 5
+              }
+            },
+            {
+              "actionOnFactor": {
+                "TREASURY": -20,
+                "INDUSTRY": 5
+              }
+            }
+          ]
+        },
+        {
+          "choice": "Advienne que pourra...",
+          "effects": [
+            {
+              "actionOnFaction": {
+                "CAPITALISTS": -20,
+                "COMMUNISTS": -20,
+                "LIBERALS": -20,
+                "RELIGIOUS": -20,
+                "MILITARISTS": -20,
+                "ECOLOGISTS": -20,
+                "LOYALISTS": -20,
+                "NATIONALISTS": -20
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Une avalanche descend de la montagne, c'est la catastrophe !",
+      "seasons": {
+        "spring": false,
+        "summer": false,
+        "autumn": false,
+        "winter": true
+      },
+      "choices": [
+        {
+          "choice": "Vous vérifiez que tout le monde a un abri",
+          "effects": [
+            {
+              "actionOnFaction": {
+                "NATIONALISTS": -30,
+                "RELIGIOUS": 20,
+                "COMMUNISTS": 10,
+                "LIBERALS": -30
+              }
+            }
+          ],
+          "relatedEvents": [
+            {
+              "name": "Certains abris se sont effondrés sous le poids de la neige",
+              "choices": [
+                {
+                  "choice": "Vous cherchez les corps sous les décombres pour leur rendre hommage",
+                  "effects": [
+                    {
+                      "actionOnFaction": {
+                        "RELIGIOUS": 10,
+                        "MILITARISTS": 10,
+                        "NATIONALISTS": 5,
+                        "CAPITALISTS": -10
+                      }
+                    }
+                  ]
+                },
+                {
+                  "choice": "Ils auraient dû avoir un abri plus solide",
+                  "effects": [
+                    {
+                      "actionOnFaction": {
+                        "CAPITALISTS": 10,
+                        "COMMUNISTS": 10,
+                        "LIBERALS": 10,
+                        "RELIGIOUS": -30,
+                        "LOYALISTS": -30
+                      }
+                    },
+                    {
+                      "partisans": -15
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Commençons a planter des fruit et légumes avant l'hiver ! Que choisisssez-vous ?",
+      "seasons": {
+        "spring": true,
+        "summer": true,
+        "autumn": true,
+        "winter": false
+      },
+      "choices": [
+        {
+          "choice": "S'impliquer dans la culture agricole du royaume",
+          "effects": [
+            {
+              "actionOnFaction": {
+                "ECOLOGISTS": 10,
+                "RELIGIOUS": 10
+              }
+            },
+            {
+              "actionOnFactor": {
+                "AGRICULTURE": 30
+              }
+            }
+          ],
+          "relatedEvents": [
+            {
+              "name": "Vous avez trouvé des coffres d'argent dans les terres !",
+              "choices": [
+                {
+                  "choice": "HOURRA !",
+                  "effects": [
+                    {
+                      "actionOnFaction": {
+                        "LIBERALS": 10,
+                        "LOYALISTS": 10,
+                        "NATIONALISTS": 10,
+                        "CAPITALISTS": 20
+                      }
+                    },
+                    {
+                      "actionOnFactor": {
+                        "TREASURY": 40
+                      }
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "choice": "Laisser les paysans s'en occuper !",
+          "effects": [
+            {
+              "actionOnFaction": {
+                "ECOLOGISTS": 10,
+                "RELIGIOUS": 10
+              }
+            },
+            {
+              "actionOnFactor": {
+                "AGRICULTURE": 30
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "La nuit tombe de plus en plus tôt et les bêtes sauvages attaquent le bétail.",
+      "seasons": {
+        "spring": false,
+        "summer": false,
+        "autumn": true,
+        "winter": false
+      },
+      "choices": [
+        {
+          "choice": "renforçons les enclos",
+          "effects": [
+            {
+              "actionOnFactor": {
+                "INDUSTRY": -10,
+                "TREASURY": 30,
+                "AGRICULTURE": 30
+              }
+            }
+          ]
+        },
+        {
+          "choice": "Allons à la chasse",
+          "effects": [
+            {
+              "actionOnFaction": {
+                "COMMUNISTS": -30,
+                "ECOLOGISTS": -10,
+                "MILITARISTS": 10
+              }
+            },
+            {
+              "actionOnFactor": {
+                "AGRICULTURE": 30
+              }
+            }
+          ]
+        }
+      ]
     }
   ]
 }

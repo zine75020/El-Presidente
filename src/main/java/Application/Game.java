@@ -20,12 +20,13 @@ import java.util.*;
 
 public class Game {
 
-    //TODO update les chemins après déplacement du fichier json
-    public static final String SCENARIO_FILE_PATH = "C:/Users/alois/Documents/GitHub/El-Presidente/Core/src/main/Json/Scenario/scenarios.json";
+    public static final String SCENARIO_FILE_PATH = "src/main/Json/Scenario/scenarios.json";
 
     public static Scanner clavier = new Scanner(System.in);
 
     public static void main(String[] args) {
+
+        //TODO gérer la suite du jeu lorsqu'il y a des erreurs
 
         ConsoleOutput consoleOutput = new ConsoleOutput();
 
@@ -60,7 +61,6 @@ public class Game {
 
     private static void gameExecution(Isle isle, Scenario selectedScenario) {
         ConsoleOutput consoleOutput = new ConsoleOutput();
-        ConsoleInput consoleInput = new ConsoleInput();
 
         List<Event> neutralEvents = new ArrayList<>(selectedScenario.getNeutralEvents());
 
@@ -71,99 +71,20 @@ public class Game {
 
             //traitement scénario
             if (selectedScenario.getScenarioEvents().size() != 0) {
-                Event currentEvent;
-                //si l'event a un name c'est qu'il n'est pas encore passé
-                if (!selectedScenario.getScenarioEvents().get(0).getName().equals("")) {
-                    //récupération du premier event
-                    currentEvent = selectedScenario.getScenarioEvents().get(0);
-                }
-                //sinon il faut récupérer le related event
-                else {
-                    currentEvent = selectedScenario.getScenarioEvents().get(0).getChoices().get(0).getRelatedEvents().get(0);
-                }
-                System.out.println("-- " + currentEvent.getName());
-
-                int i = 1;
-                for (Choice choice : currentEvent.getChoices()) {
-                    //affichage des différents choix
-                    printChoices(choice, i);
-                    i += 1;
-                }
-
-                int selectedChoiceId = -1;
-                do {
-                    //récupération du choix de l'utilisateur
-                    String choiceInput = clavier.next();
-                    //vérification que la valeur saisie est valide
-                    selectedChoiceId = consoleInput.verifyChoice(choiceInput, currentEvent.getChoices().size());
-                    //si la valeur n'est pas valide on affiche une erreur et on reboucle
-                    if (selectedChoiceId == -1) {
-                        System.out.println(consoleOutput.valueOfMenuError());
-                    }
-                } while (selectedChoiceId == -1);
-
-                Choice currentChoice = currentEvent.getChoices().get(selectedChoiceId - 1);
-
-                applicationEffects(isle, currentChoice);
-
-                if (currentChoice.getRelatedEvents().size() > 0) {
-                    //TODO Gérer quand il y a deux related events
-                    currentEvent.setName("");
-                    int y;
-                    for (y = 0; y < currentEvent.getChoices().size(); y++) {
-                        if (currentEvent.getChoices().get(y) != currentChoice) {
-                            currentEvent.getChoices().remove(currentEvent.getChoices().get(y));
-                            y = 0;
-                        }
-                    }
-                } else {
-                    selectedScenario.getScenarioEvents().remove(selectedScenario.getScenarioEvents().get(0));
-                }
-
+                scenarioEventTreatment(selectedScenario, isle);
             }
             //traitement bac à sable + fin scénario
             else if (selectedScenario.getNeutralEvents().size() != 0) {
-                Event currentEvent;
-                //TODO Gérer relatedEvents événement neutres (problématique aléatoire)
-                int randomIndex = (int) Math.round(Math.random() * (neutralEvents.size() - 1));
-                currentEvent = neutralEvents.get(randomIndex);
-                System.out.println("-- " + currentEvent.getName());
-                int i = 1;
-                for (Choice choice : currentEvent.getChoices()) {
-                    printChoices(choice, i);
-                    i += 1;
-                }
-                int selectedChoiceId = -1;
-                do {
-                    //récupération du choix de l'utilisateur
-                    String choiceInput = clavier.next();
-                    //vérification que la valeur saisie est valide
-                    selectedChoiceId = consoleInput.verifyChoice(choiceInput, currentEvent.getChoices().size());
-                    //si la valeur n'est pas valide on affiche une erreur et on reboucle
-                    if (selectedChoiceId == -1) {
-                        System.out.println(consoleOutput.valueOfMenuError());
-                    }
-                } while (selectedChoiceId == -1);
-
-                Choice currentChoice = currentEvent.getChoices().get(selectedChoiceId - 1);
-
-                applicationEffects(isle, currentChoice);
-
-                neutralEvents.remove(currentEvent);
-                if (neutralEvents.size() == 0) {
-                    neutralEvents = selectedScenario.getNeutralEvents();
-                }
+                sandboxEventTreatment(selectedScenario, isle, neutralEvents);
             }
             //aucun événement
             else {
-                System.out.println(consoleOutput.impossibleGame());
                 break;
             }
 
-            //TODO traitement fin d'année
             //si c'est la fin d'année il faut faire le traitement de fin d'année
             if (isle.getSeason() == Season.WINTER) {
-                endOfYearTreatment(isle, selectedScenario);
+                endOfYearTreatment(isle);
             }
 
             //on passe à la saison suivante en fin de tour
@@ -171,8 +92,112 @@ public class Game {
 
         } while (!isle.triggerCoup());
 
-        System.out.println(consoleOutput.endGame());
-        System.out.println(consoleOutput.printScore(isle));
+        if(isle.triggerCoup()){
+            System.out.println(consoleOutput.endGame());
+            System.out.println(consoleOutput.printScore(isle));
+        }
+        else {
+            System.out.println(consoleOutput.impossibleGame());
+        }
+    }
+
+    private static void scenarioEventTreatment(Scenario selectedScenario, Isle isle) {
+        ConsoleOutput consoleOutput = new ConsoleOutput();
+        ConsoleInput consoleInput = new ConsoleInput();
+
+        Event currentEvent;
+        boolean isRelatedEvent = false;
+        //si l'event a un name c'est qu'il n'est pas encore passé
+        if (!selectedScenario.getScenarioEvents().get(0).getName().equals("")) {
+            //récupération du premier event
+            currentEvent = selectedScenario.getScenarioEvents().get(0);
+        }
+        //sinon il faut récupérer le related event
+        else {
+            isRelatedEvent = true;
+            currentEvent = selectedScenario.getScenarioEvents().get(0).getChoices().get(0).getRelatedEvents().get(0);
+        }
+        System.out.println("-- " + currentEvent.getName());
+
+        int i = 1;
+        for (Choice choice : currentEvent.getChoices()) {
+            //affichage des différents choix
+            printChoices(choice, i);
+            i += 1;
+        }
+
+        int selectedChoiceId;
+        do {
+            //récupération du choix de l'utilisateur
+            String choiceInput = clavier.next();
+            //vérification que la valeur saisie est valide
+            selectedChoiceId = consoleInput.verifyChoice(choiceInput, currentEvent.getChoices().size());
+            //si la valeur n'est pas valide on affiche une erreur et on reboucle
+            if (selectedChoiceId == -1) {
+                System.out.println(consoleOutput.valueOfMenuError());
+            }
+        } while (selectedChoiceId == -1);
+
+        Choice currentChoice = currentEvent.getChoices().get(selectedChoiceId - 1);
+
+        applicationEffects(isle, currentChoice);
+
+        if (currentChoice.getRelatedEvents().size() > 0) {
+            currentEvent.setName("");
+            int y;
+            for (y = 0; y < currentEvent.getChoices().size(); y++) {
+                if (currentEvent.getChoices().get(y) != currentChoice) {
+                    currentEvent.getChoices().remove(currentEvent.getChoices().get(y));
+                    y = 0;
+                }
+            }
+        } else {
+            if(isRelatedEvent) {
+                selectedScenario.getScenarioEvents().get(0).getChoices().get(0).getRelatedEvents().remove(currentEvent);
+                if(selectedScenario.getScenarioEvents().get(0).getChoices().get(0).getRelatedEvents().size() == 0) {
+                    selectedScenario.getScenarioEvents().remove(0);
+                }
+            }
+            else {
+                selectedScenario.getScenarioEvents().remove(currentEvent);
+            }
+        }
+    }
+
+    private static void sandboxEventTreatment(Scenario selectedScenario, Isle isle, List<Event> neutralEvents) {
+        ConsoleOutput consoleOutput = new ConsoleOutput();
+        ConsoleInput consoleInput = new ConsoleInput();
+
+        Event currentEvent;
+        //TODO Gérer relatedEvents événement neutres (problématique aléatoire) (possibilité plusieurs relatedEvents d'affilée)
+        int randomIndex = (int) Math.round(Math.random() * (neutralEvents.size() - 1));
+        currentEvent = neutralEvents.get(randomIndex);
+        System.out.println("-- " + currentEvent.getName());
+        int i = 1;
+        for (Choice choice : currentEvent.getChoices()) {
+            printChoices(choice, i);
+            i += 1;
+        }
+        int selectedChoiceId;
+        do {
+            //récupération du choix de l'utilisateur
+            String choiceInput = clavier.next();
+            //vérification que la valeur saisie est valide
+            selectedChoiceId = consoleInput.verifyChoice(choiceInput, currentEvent.getChoices().size());
+            //si la valeur n'est pas valide on affiche une erreur et on reboucle
+            if (selectedChoiceId == -1) {
+                System.out.println(consoleOutput.valueOfMenuError());
+            }
+        } while (selectedChoiceId == -1);
+
+        Choice currentChoice = currentEvent.getChoices().get(selectedChoiceId - 1);
+
+        applicationEffects(isle, currentChoice);
+
+        neutralEvents.remove(currentEvent);
+        if (neutralEvents.size() == 0) {
+            neutralEvents = selectedScenario.getNeutralEvents();
+        }
     }
 
     private static void applicationEffects(Isle isle, Choice choice) {
@@ -255,7 +280,7 @@ public class Game {
         }
     }
 
-    private static void endOfYearTreatment(Isle isle, Scenario selectedScenario) {
+    private static void endOfYearTreatment(Isle isle) {
         ConsoleOutput consoleOutput = new ConsoleOutput();
         ConsoleInput consoleInput = new ConsoleInput();
 
@@ -285,7 +310,7 @@ public class Game {
             //une fois que la valeur est bonne on effectue la suite selon le choix qui a été fait
             switch (endOfYearChoice) {
                 case 1:
-                    int bribeChoice = -1;
+                    int bribeChoice;
                     do {
                         //affichage du menu de pot de vin
                         System.out.println(consoleOutput.bribeMenu(isle));
@@ -311,7 +336,7 @@ public class Game {
                     //TODO traitement pot de vin
                     break;
                 case 2:
-                    int foodMarksChoice = -1;
+                    int foodMarksChoice;
                     do {
                         //affichage du menu de marché alimentaire
                         System.out.println(consoleOutput.foodMarksAsk(isle));

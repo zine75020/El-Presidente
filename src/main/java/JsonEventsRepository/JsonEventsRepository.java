@@ -21,37 +21,40 @@ import Core.Enum.Season;
 
 public class JsonEventsRepository implements EventsRepository {
 
-    //TODO update les chemins après déplacement du fichier json
     //attack on titans
-    public static final String EASY_ATTACK_ON_TITANS_FILE_PATH = "C:/Users/alois/Documents/GitHub/El-Presidente/Core/src/main/Json/Events/attackOnTitans/easy-titans-events.json";
-    public static final String NORMAL_ATTACK_ON_TITANS_FILE_PATH = "C:/Users/alois/Documents/GitHub/El-Presidente/Core/src/main/Json/Events/attackOnTitans/normal-titans-events.json";
-    public static final String DIFFICULT_ATTACK_ON_TITANS_FILE_PATH = "C:/Users/alois/Documents/GitHub/El-Presidente/Core/src/main/Json/Events/attackOnTitans/difficult-titans-events.json";
+    public static final String EASY_ATTACK_ON_TITANS_FILE_PATH = "src/main/Json/Events/attackOnTitans/easy-titans-events.json";
+    public static final String NORMAL_ATTACK_ON_TITANS_FILE_PATH = "src/main/Json/Events/attackOnTitans/normal-titans-events.json";
+    public static final String DIFFICULT_ATTACK_ON_TITANS_FILE_PATH = "src/main/Json/Events/attackOnTitans/difficult-titans-events.json";
     public static final int ATTACK_ON_TITANS_ID = 1;
     //cold war USA
-    public static final String EASY_COLD_WAR_USA_FILE_PATH = "C:/Users/alois/Documents/GitHub/El-Presidente/Core/src/main/Json/Events/coldWarUSA/easy-usa-events.json";
-    public static final String NORMAL_COLD_WAR_USA_FILE_PATH = "C:/Users/alois/Documents/GitHub/El-Presidente/Core/src/main/Json/Events/coldWarUSA/normal-usa-events.json";
-    public static final String DIFFICULT_COLD_WAR_USA_FILE_PATH = "C:/Users/alois/Documents/GitHub/El-Presidente/Core/src/main/Json/Events/coldWarUSA/difficult-usa-events.json";
+    public static final String EASY_COLD_WAR_USA_FILE_PATH = "src/main/Json/Events/coldWarUSA/easy-usa-events.json";
+    public static final String NORMAL_COLD_WAR_USA_FILE_PATH = "src/main/Json/Events/coldWarUSA/normal-usa-events.json";
+    public static final String DIFFICULT_COLD_WAR_USA_FILE_PATH = "src/main/Json/Events/coldWarUSA/difficult-usa-events.json";
     public static final int COLD_WAR_USA_ID = 2;
     //cold war URSS
-    public static final String EASY_COLD_WAR_URSS_FILE_PATH = "C:/Users/alois/Documents/GitHub/El-Presidente/Core/src/main/Json/Events/coldWarURSS/easy-urss.json";
-    public static final String NORMAL_COLD_WAR_URSS_FILE_PATH = "C:/Users/alois/Documents/GitHub/El-Presidente/Core/src/main/Json/Events/coldWarURSS/normal-urss.json";
-    public static final String DIFFICULT_COLD_WAR_URSS_FILE_PATH = "C:/Users/alois/Documents/GitHub/El-Presidente/Core/src/main/Json/Events/coldWarURSS/difficult-urss.json";
+    public static final String EASY_COLD_WAR_URSS_FILE_PATH = "src/main/Json/Events/coldWarURSS/easy-ussr-events.json";
+    public static final String NORMAL_COLD_WAR_URSS_FILE_PATH = "src/main/Json/Events/coldWarURSS/normal-ussr-events.json";
+    public static final String DIFFICULT_COLD_WAR_URSS_FILE_PATH = "src/main/Json/Events/coldWarURSS/difficult-ussr-events.json";
     public static final int COLD_WAR_URSS_ID = 3;
     //the 100
-    public static final String EASY_THE_100_FILE_PATH = "C:/Users/alois/Documents/GitHub/El-Presidente/Core/src/main/Json/Events/the100/easy-the100-events.json";
-    public static final String NORMAL_THE_100_FILE_PATH = "C:/Users/alois/Documents/GitHub/El-Presidente/Core/src/main/Json/Events/the100/normal-the100-events.json";
-    public static final String DIFFICULT_THE_100_FILE_PATH = "C:/Users/alois/Documents/GitHub/El-Presidente/Core/src/main/Json/Events/the100/difficult-the100-events.json";
+    public static final String EASY_THE_100_FILE_PATH = "src/main/Json/Events/the100/easy-the100-events.json";
+    public static final String NORMAL_THE_100_FILE_PATH = "src/main/Json/Events/the100/normal-the100-events.json";
+    public static final String DIFFICULT_THE_100_FILE_PATH = "src/main/Json/Events/the100/difficult-the100-events.json";
     public static final int THE_100_ID = 4;
     //jojo's aventure
-    public static final String EASY_JOJO_FILE_PATH = "C:/Users/alois/Documents/GitHub/El-Presidente/Core/src/main/Json/Events/jojo/easy-jojo-events.json";
-    public static final String NORMAL_JOJO_FILE_PATH = "C:/Users/alois/Documents/GitHub/El-Presidente/Core/src/main/Json/Events/jojo/normal-jojo-events.json";
-    public static final String DIFFICULT_JOJO_FILE_PATH = "C:/Users/alois/Documents/GitHub/El-Presidente/Core/src/main/Json/Events/jojo/difficult-jojo-events.json";
+    public static final String EASY_JOJO_FILE_PATH = "src/main/Json/Events/jojo/easy-jojo-events.json";
+    public static final String NORMAL_JOJO_FILE_PATH = "src/main/Json/Events/jojo/normal-jojo-events.json";
+    public static final String DIFFICULT_JOJO_FILE_PATH = "src/main/Json/Events/jojo/difficult-jojo-events.json";
     public static final int JOJO_ID = 5;
-    //TODO ajouter les chemins quand on aura les scénarios de Gabriel
+    //shadow war
+    public static final String EASY_SHADOW_WAR_FILE_PATH = "src/main/Json/Events/shadowWar/easy-shadow-war-events.json";
+    public static final String NORMAL_SHADOW_WAR_FILE_PATH = "src/main/Json/Events/shadowWar/normal-shadow-war-events.json";
+    public static final String DIFFICULT_SHADOW_WAR_FILE_PATH = "src/main/Json/Events/shadowWar/difficult-shadow-war-events.json";
+    public static final int SHADOW_WAR_ID = 6;
     //neutral events
-    public static final String EASY_NEUTRAL_EVENTS_FILE_PATH = "C:/Users/alois/Documents/GitHub/El-Presidente/Core/src/main/Json/Events/neutrals-events/easy-neutrals-events.json";
-    public static final String NORMAL_NEUTRAL_EVENTS_FILE_PATH = "C:/Users/alois/Documents/GitHub/El-Presidente/Core/src/main/Json/Events/neutrals-events/normal-neutrals-events.json";
-    public static final String DIFFICULT_NEUTRAL_EVENTS_FILE_PATH = "C:/Users/alois/Documents/GitHub/El-Presidente/Core/src/main/Json/Events/neutrals-events/difficult-neutrals-events.json";
+    public static final String EASY_NEUTRAL_EVENTS_FILE_PATH = "src/main/Json/Events/neutrals-events/easy-neutrals-events.json";
+    public static final String NORMAL_NEUTRAL_EVENTS_FILE_PATH = "src/main/Json/Events/neutrals-events/normal-neutrals-events.json";
+    public static final String DIFFICULT_NEUTRAL_EVENTS_FILE_PATH = "src/main/Json/Events/neutrals-events/difficult-neutrals-events.json";
     //bac à sable
     public static final int SANDBOX_ID = 7;
 
@@ -78,6 +81,7 @@ public class JsonEventsRepository implements EventsRepository {
             String path = this.getPathByIdAndDifficulty(selectedScenarioId, difficulty);
 
             //lecture du fichier json
+            System.out.println(path);
             try (FileReader reader = new FileReader(path)) {
                 JsonObject myobject = (JsonObject) new JsonParser().parse(reader);
 
@@ -345,7 +349,18 @@ public class JsonEventsRepository implements EventsRepository {
                         path = NORMAL_JOJO_FILE_PATH;
                 }
                 break;
-            //TODO ajout de la récupération des chemins quand on aura les scénarios de Gabriel
+            case SHADOW_WAR_ID:
+                switch (difficulty) {
+                    case 1:
+                        path = EASY_SHADOW_WAR_FILE_PATH;
+                        break;
+                    case 3:
+                        path = DIFFICULT_SHADOW_WAR_FILE_PATH;
+                        break;
+                    default:
+                        path = NORMAL_SHADOW_WAR_FILE_PATH;
+                }
+                break;
             //événements neutres par défaut (bac à sable)
             default:
                 switch (difficulty) {

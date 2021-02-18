@@ -8,7 +8,7 @@ import static org.junit.Assert.*;
 public class JsonScenarioRepositoryTest {
 
     JsonScenarioRepository jsonScenarioRepository = new JsonScenarioRepository();
-    public static final String SCENARIO_FILE_PATH = "C:/Users/alois/Documents/GitHub/El-Presidente/Core/src/main/Json/Scenario/Scenarios.json";
+    public static final String SCENARIO_FILE_PATH = "src/main/Json/Scenario/Scenarios.json";
 
     @Test
     public void should_get_all_scenarios() {
@@ -107,8 +107,7 @@ public class JsonScenarioRepositoryTest {
         assertEquals(8, scenario.getGameStartParameters().getFactions().size());
     }
 
-    //TODO activer quand on aura les modifs de gabriel
-    /*@Test
+    @Test
     public void should_get_scenario_by_id_3_and_difficulty_1() {
         Scenario scenario = jsonScenarioRepository.getScenarioByIdAndDifficulty(SCENARIO_FILE_PATH, 3, 1);
         assertEquals("Cold War: The USSR version", scenario.getName());
@@ -148,7 +147,7 @@ public class JsonScenarioRepositoryTest {
         assertEquals(900, scenario.getGameStartParameters().getFoodUnits());
         //factions
         assertEquals(8, scenario.getGameStartParameters().getFactions().size());
-    }*/
+    }
 
     @Test
     public void should_get_scenario_by_id_4_and_difficulty_1() {
@@ -236,29 +235,44 @@ public class JsonScenarioRepositoryTest {
 
     @Test
     public void should_get_scenario_by_id_6_and_difficulty_1() {
-        //test pour tous les scénarios
+        Scenario scenario = jsonScenarioRepository.getScenarioByIdAndDifficulty(SCENARIO_FILE_PATH, 6, 1);
+        assertEquals("Shadow War", scenario.getName());
+        assertNotNull(scenario.getStory());
         //game start parameters
+        assertEquals(70, scenario.getGameStartParameters().getAgriculturePercentage());
+        assertEquals(30, scenario.getGameStartParameters().getIndustryPercentage());
+        assertEquals(1000, scenario.getGameStartParameters().getTreasury());
+        assertEquals(700, scenario.getGameStartParameters().getFoodUnits());
         //factions
-
-        //TODO tester pour le scénario de Gabriel
+        assertEquals(8, scenario.getGameStartParameters().getFactions().size());
     }
 
     @Test
     public void should_get_scenario_by_id_6_and_difficulty_2() {
-        //test pour tous les scénarios
+        Scenario scenario = jsonScenarioRepository.getScenarioByIdAndDifficulty(SCENARIO_FILE_PATH, 6, 2);
+        assertEquals("Shadow War", scenario.getName());
+        assertNotNull(scenario.getStory());
         //game start parameters
+        assertEquals(60, scenario.getGameStartParameters().getAgriculturePercentage());
+        assertEquals(25, scenario.getGameStartParameters().getIndustryPercentage());
+        assertEquals(800, scenario.getGameStartParameters().getTreasury());
+        assertEquals(600, scenario.getGameStartParameters().getFoodUnits());
         //factions
-
-        //TODO tester pour le scénario de Gabriel
+        assertEquals(8, scenario.getGameStartParameters().getFactions().size());
     }
 
     @Test
     public void should_get_scenario_by_id_6_and_difficulty_3() {
-        //test pour tous les scénarios
+        Scenario scenario = jsonScenarioRepository.getScenarioByIdAndDifficulty(SCENARIO_FILE_PATH, 6, 3);
+        assertEquals("Shadow War", scenario.getName());
+        assertNotNull(scenario.getStory());
         //game start parameters
+        assertEquals(50, scenario.getGameStartParameters().getAgriculturePercentage());
+        assertEquals(20, scenario.getGameStartParameters().getIndustryPercentage());
+        assertEquals(600, scenario.getGameStartParameters().getTreasury());
+        assertEquals(400, scenario.getGameStartParameters().getFoodUnits());
         //factions
-
-        //TODO tester pour le scénario de Gabriel
+        assertEquals(8, scenario.getGameStartParameters().getFactions().size());
     }
 
     @Test

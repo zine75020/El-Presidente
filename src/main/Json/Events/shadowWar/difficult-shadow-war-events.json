@@ -1,0 +1,863 @@
+{
+  "events": [
+    {
+      "name": "Une armée des ombres approchent de votre royaume... Que faites vous ?",
+      "scenario": 6,
+      "choices": [
+        {
+          "choice": "J'envoie un émissaire de notre royaume pour discuter afin de découvrir leurs intentions.",
+          "effects": [
+            {
+              "actionOnFaction": {
+                "MILITARISTS": -7
+              }
+            },
+            {
+              "partisans": -10
+            }
+          ]
+        },
+        {
+          "choice": "J'attends de voir ce qu'ils vont faire.",
+          "effects": [
+            {
+              "actionOnFaction": {
+                "MILITARISTS": -20,
+                "COMMUNISTS": -20,
+                "AGRICULTURE": -20,
+                "CAPITALISTS": -20,
+                "LIBERALS": -20,
+                "ECOLOGISTS": -20,
+                "LOYALISTS": -20
+              }
+            },
+            {
+              "actionOnFactor": {
+                "foodUnits": -20
+              }
+            },
+            {
+              "partisans": -20
+            }
+          ]
+        },
+        {
+          "choice": "J'envoie une armée attaquer pour défendre nos terres.",
+          "effects": [
+            {
+              "actionOnFaction": {
+                "MILITARISTS": -20,
+                "COMMUNISTS": -12,
+                "AGRICULTURE": -20,
+                "CAPITALISTS": -12,
+                "LIBERALS": -12,
+                "ECOLOGISTS": -12,
+                "LOYALISTS": -12
+              }
+            },
+            {
+              "partisans": -10
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "L'armée des ombres commencent à établir un campement ! Ils utilisent vos ressources...",
+      "scenario": 6,
+      "choices": [
+        {
+          "choice": "Je prepare une offensive pour défendre mes terres ! Brulons les champs, polluons les rivières, et profitons de notre avantage technologique.",
+          "effects": [
+            {
+              "actionOnFaction": {
+                "AGRICULTURE": -15,
+                "MILITARISTS": 7,
+                "CAPITALISTS": 5,
+                "ECOLOGISTS": -15,
+                "LOYALISTS": 5
+              }
+            },
+            {
+              "actionOnFactor": {
+                "AGRICULTURE": -10
+              }
+            }
+          ]
+        },
+        {
+          "choice": "Ils ont l'intention de nous depouiller on va pas les laisser faire, envoyé des espions.",
+          "effects": [
+            {
+              "actionOnFaction": {
+                "AGRICULTURE": -15,
+                "MILITARISTS": -10,
+                "CAPITALISTS": 15,
+                "ECOLOGISTS": -15,
+                "LOYALISTS": 15
+              }
+            },
+            {
+              "actionOnFactor": {
+                "AGRICULTURE": -5
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Un groupe de guerrier se propose d'aller infilter le camp des ombres...",
+      "scenario": 6,
+      "choices": [
+        {
+          "choice": "Je confie au groupe de guerriers la mission d'infiltrer l'ennemie, au risque de perdre des hommes",
+          "effects": [
+            {
+              "actionOnFaction": {
+                "MILITARISTS": -20,
+                "LOYALISTS": -10
+              }
+            }
+          ]
+        },
+        {
+          "choice": "Je refuse de prendre le risque de perdre mes hommes, je propose de réfléchir a une autre solution.",
+          "effects": [
+            {
+              "actionOnFaction": {
+                "MILITARISTS": 5,
+                "CAPITALISTS": -10
+              }
+            },
+            {
+              "actionOnFactor": {
+                "AGRICULTURE": -25
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Un tout nouveau type d'armement était en développement le produire en masse aura un coup mais il sera éfficace contre l'enemie",
+      "scenario": 6,
+      "choices": [
+        {
+          "choice": "Je commence la production de masse !",
+          "effects": [
+            {
+              "actionOnFaction": {
+                "MILITARISTS": 45,
+                "CAPITALISTS": -30
+              }
+            },
+            {
+              "actionOnFactor": {
+                "TREASURY": -70
+              }
+            }
+          ]
+        },
+        {
+          "choice": "Je ne préfère pas miser sur cette armee, les testes ne m'ont pas paru concluant.",
+          "effects": [
+            {
+              "actionOnFaction": {
+                "MILITARISTS": -50,
+                "CAPITALISTS": 5
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Le groupe de guerriers revient me proposant un plan pour kinapper un membre du peuple des ombres",
+      "scenario": 6,
+      "choices": [
+        {
+          "choice": "Cette idée me plait plus que la précédent... Je leur donne le feu vert",
+          "effects": [
+            {
+              "actionOnFaction": {
+                "COMMUNISTS": 7,
+                "ECOLOGISTS": -5,
+                "CAPITALISTS": -15
+              }
+            }
+          ],
+          "relatedEvents": [
+            {
+              "name": "Vous avez eux un des généraux de cette armée des ombres. Que faites vous ?",
+              "choices": [
+                {
+                  "choice": "Fiere de nous je felicite les valeureux geurrier et j'interroge le monstre avant de le décapité.",
+                  "effects": [
+                    {
+                      "actionOnFaction": {
+                        "CAPITALISTS": 7,
+                        "COMMUNISTS": 5,
+                        "LIBERALS": 7,
+                        "RELIGIOUS": -5,
+                        "MILITARISTS": 10,
+                        "ECOLOGISTS": 5,
+                        "LOYALISTS": 7
+                      }
+                    }
+                  ]
+                },
+                {
+                  "choice": "Je reste sur mon choix, je suis le roi je confie l'avenir de la nation cette homme",
+                  "effects": [
+                    {
+                      "actionOnFaction": {
+                        "MILITARISTS": 5,
+                        "LOYALISTS": 5
+                      }
+                    },
+                    {
+                      "actionOnFactor": {
+                        "INDUSTRY": 20,
+                        "TREASURY": 10
+                      }
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "choice": "Je refuse de les laisser y aller sa pourrait etre un piege.",
+          "effects": [
+            {
+              "actionOnFaction": {
+                "COMMUNISTS": -10,
+                "CAPITALISTS": -10,
+                "LOYALISTS": -10
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "L'armée des ombres implanté dans le royaume decide passer a l'offensive... Que faites-vous ?",
+      "scenario": 6,
+      "choices": [
+        {
+          "choice": "Je fortifie mes defenses et préfère attendre une occasion.",
+          "effects": [
+            {
+              "actionOnFaction": {
+                "ECOLOGISTS": -10,
+                "CAPITALISTS": -10,
+                "LOYALISTS": -10,
+                "LIBERALS": -10,
+                "RELIGIOUS": -10,
+                "MILITARISTS": 10,
+                "COMMUNISTS": -7
+              }
+            },
+            {
+              "actionOnFactor": {
+                "TREASURY": -50,
+                "partisan": -10
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Les membres de votre royaume proposent de venir vous aider avec la logistique et les blessées.",
+      "scenario": 6,
+      "choices": [
+        {
+          "choice": "Ensemble nous sommes plus fort !!",
+          "effects": [
+            {
+              "actionOnFaction": {
+                "ECOLOGISTS": 5,
+                "CAPITALISTS": 5,
+                "LOYALISTS": 5,
+                "LIBERALS": 5,
+                "RELIGIOUS": 5,
+                "MILITARISTS": 5,
+                "COMMUNISTS": 5
+              }
+            },
+            {
+              "actionOnFactor": {
+                "AGRICULTURE": -20
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Une de leurs soldat a foncé sur nos remparts muni d'une bombe, il se serait sacrifier pour faire une brèche ! Que faire ?",
+      "scenario": 6,
+      "choices": [
+        {
+          "choice": "La meilleur des défences s'est l'attaque !!",
+          "effects": [
+            {
+              "actionOnFaction": {
+                "CAPITALISTS": -10,
+                "COMMUNISTS": 10,
+                "LIBERALS": 10,
+                "RELIGIOUS": -10,
+                "MILITARISTS": 10,
+                "ECOLOGISTS": -10,
+                "LOYALISTS": -10
+              }
+            },
+            {
+              "actionOnFactor": {
+                "TREASURY": -50
+              }
+            },
+            {
+              "partisan": -10
+            }
+          ]
+        },
+        {
+          "choice": "Il faut vite colmater la brèche et défendre le peuple.",
+          "effects": [
+            {
+              "actionOnFaction": {
+                "CAPITALISTS": 10,
+                "COMMUNISTS": -10,
+                "LIBERALS": -10,
+                "RELIGIOUS": 10,
+                "MILITARISTS": -10,
+                "ECOLOGISTS": 10,
+                "LOYALISTS": 10
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Il faut lancer le dialogue avec eux afin de savoir d'ou ils viennent et comment ils sont arriver là.",
+      "scenario": 6,
+      "choices": [
+        {
+          "choice": "J'accepte, j'admets qu'ils sont bien meilleur en stratégie militaire et technique de combat.",
+          "effects": [
+            {
+              "actionOnFaction": {
+                "MILITARISTS": -10
+              }
+            }
+          ],
+          "relatedEvents": [
+            {
+              "name": "Un chasseur d'ombre vient avec son armée des ombres, un talent similaire a ceux dirigeant l'armée des ombres.",
+              "choices": [
+                {
+                  "choice": "Je me fie a lui, je le fais dirigeant de mon armée.",
+                  "effects": [
+                    {
+                      "actionOnFaction": {
+                        "CAPITALISTS": 5,
+                        "COMMUNISTS": 5,
+                        "LIBERALS": 5,
+                        "RELIGIOUS": 5,
+                        "MILITARISTS": 5,
+                        "ECOLOGISTS": 5,
+                        "LOYALISTS": 5
+                      }
+                    }
+                  ]
+                },
+                {
+                  "choice": "Il est avec l'ennemi enfermons le pour le garder sous surveillance.",
+                  "effects": [
+                    {
+                      "actionOnFaction": {
+                        "CAPITALISTS": 5,
+                        "COMMUNISTS": 5,
+                        "LIBERALS": 5,
+                        "RELIGIOUS": 5,
+                        "MILITARISTS": -5,
+                        "ECOLOGISTS": 5,
+                        "LOYALISTS": 5
+                      }
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "Mes conseillers s'inquètent, ils se demandent si vous ne perdez pas la tete, il vous suggère de garder le chasseur d'ombre a l'oeil de l'étudier.",
+              "choices": [
+                {
+                  "choice": "Je reste sur mon choix, je suis le roi je confie l'avenir de la nation cette homme",
+                  "effects": [
+                    {
+                      "actionOnFaction": {
+                        "MILITARISTS": 5,
+                        "LOYALISTS": 5
+                      }
+                    },
+                    {
+                      "actionOnFactor": {
+                        "INDUSTRY": 20,
+                        "TREASURY": 10
+                      }
+                    }
+                  ]
+                },
+                {
+                  "choice": "Ils ont raison, mes conseillers sont rempli de sagesse, observons ces intentions avant de le compter comme l'un des notres",
+                  "effects": [
+                    {
+                      "actionOnFaction": {
+                        "MILITARISTS": -5,
+                        "LOYALISTS": -5
+                      }
+                    },
+                    {
+                      "actionOnFactor": {
+                        "INDUSTRY": -25,
+                        "TREASURY": -40
+                      }
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Un espion surveille les alentours du royaume, il voie un portail menant vers une autre dmension. Vous comprenez vite que l'armée des ombres vient de cette endroit.",
+      "scenario": 6,
+      "choices": [
+        {
+          "choice": "Vous cherchez un moyen avec vos conseillers et sages du royaume pour condamner ce portail",
+          "effects": [
+            {
+              "actionOnFaction": {
+                "RELIGIOUS": -10,
+                "LOYALISTS": 5
+              }
+            },
+            {
+              "partisans": -10
+            }
+          ]
+        },
+        {
+          "choice": "On va envoyer des guerriers attaquer a l'interieur du portail afin d'éliminer la menace avant qu'elle n'arrive.",
+          "effects": [
+            {
+              "actionOnFaction": {
+                "MILITARISTS": -5,
+                "LIBERALS": 10
+              }
+            },
+            {
+              "partisans": -5
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Une créature imposante est enchainer dans une zone neutre de la region, pretend savoir d'ou vienne ces ennemies et dit pouvoir nous aider !",
+      "scenario": 6,
+      "choices": [
+        {
+          "choice": "Ecoutons le, on le liberera après",
+          "effects": [
+            {
+              "actionOnFaction": {
+                "LIBERALS": -5,
+                "RELIGIOUS": -10,
+                "LOYALISTS": -5,
+                "MILITARISTS": -10
+              }
+            },
+            {
+              "partisans": -10
+            }
+          ]
+        },
+        {
+          "choice": "Coupons lui la tete, on a deja assez de souci comme ça.",
+          "effects": [
+            {
+              "actionOnFaction": {
+                "MILITARISTS": 5,
+                "LIBERALS": 10,
+                "LOYALISTS": 10,
+                "RELIGIOUS": 10
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Le chasseur d'ombre se propose d'aller fermer le portail, il dévoile ces veritables intentions. Ils cherchaient a fermé le portail depuis le debut !",
+      "scenario": 6,
+      "choices": [
+        {
+          "choice": "Nous allons lui faire confiance, il est pami depuis un moment",
+          "effects": [
+            {
+              "actionOnFaction": {
+                "MILITARISTS": 200,
+                "RELIGIOUS": -20,
+                "LOYALISTS": -5,
+                "LIBERALS": 5
+              }
+            }
+          ]
+        },
+        {
+          "choice": "Il ne nous a surement pas tout dit continuons de le garder en observation.",
+          "effects": [
+            {
+              "actionOnFaction": {
+                "MILITARISTS": -10,
+                "LIBERALS": -5,
+                "LOYALISTS": -5,
+                "RELIGIOUS": 10
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Le peuple est au plus bas, il n'a plus confiance en vous pour eux vous les avez abandonnée !",
+      "scenario": 6,
+      "choices": [
+        {
+          "choice": "C'est un sacrifice necessaire !",
+          "effects": [
+            {
+              "actionOnFaction": {
+                "COMMUNISTS": 10,
+                "CAPITALISTS": -30
+              }
+            },
+            {
+              "actionOnFactor": {
+                "AGRICULTURE": -50
+              }
+            }
+          ]
+        },
+        {
+          "choice": "Envoyons les rebelles aux combats !",
+          "effects": [
+            {
+              "actionOnFaction": {
+                "COMMUNISTS": -10,
+                "CAPITALISTS": -30
+              }
+            },
+            {
+              "actionOnFactor": {
+                "AGRICULTURE": -50
+              }
+            }
+          ]
+        },
+        {
+          "choice": "Leurs montrer que vous etes toujours present en leur apportant nourriture et protection.",
+          "effects": [
+            {
+              "actionOnFaction": {
+                "COMMUNISTS": -15,
+                "CAPITALISTS": 5
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Entre les champs de bataille rempli de cadavre et la perte d'une parti de vos territoires. Vous vous retrouvez avec une crise !(la famine et la maladie)",
+      "scenario": 6,
+      "choices": [
+        {
+          "choice": "Campagne de vaccination et distribution de vivre afin de contenir l'épidemie",
+          "effects": [
+            {
+              "actionOnFaction": {
+                "COMMUNISTS": -5,
+                "LIBERALS": -5,
+                "RELIGIOUS": -5,
+                "MILITARISTS": -5,
+                "ECOLOGISTS": 5
+              }
+            },
+            {
+              "actionOnFactor": {
+                "INDUSTRY": -30,
+                "AGRICULTURE": 5
+              }
+            }
+          ]
+        },
+        {
+          "choice": "Envoyer les malades au front afin de contaminer le camps ennemie.",
+          "effects": [
+            {
+              "actionOnFaction": {
+                "COMMUNISTS": 5,
+                "LIBERALS": 5,
+                "RELIGIOUS": 5,
+                "MILITARISTS": 5,
+                "ECOLOGISTS": 5
+              }
+            },
+            {
+              "actionOnFactor": {
+                "INDUSTRY": 10,
+                "AGRICULTURE": -20
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Un cessez le feu a été déclaré, vous voulez en profiter pour organiser un festival mais est ce vraiment le bon moment ?",
+      "scenario": 6,
+      "choices": [
+        {
+          "choice": "Oui",
+          "effects": [
+            {
+              "actionOnFaction": {
+                "CAPITALISTS": 5,
+                "COMMUNISTS": 5,
+                "LIBERALS": 5,
+                "RELIGIOUS": 5,
+                "MILITARISTS": 5,
+                "ECOLOGISTS": 5,
+                "LOYALISTS": 5
+              }
+            }
+          ],
+          "relatedEvents": [
+            {
+              "name": "Un portail apparait au beau millieu du festival faisant deferler une vague de soldat des ombres.",
+              "choices": [
+                {
+                  "choice": "Courir à toute vitesse",
+                  "effects": [
+                    {
+                      "partisans": -15
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "choice": "Non",
+          "effects": [
+            {
+              "actionOnFaction": {
+                "CAPITALISTS": -10,
+                "COMMUNISTS": -10,
+                "LIBERALS": -10,
+                "RELIGIOUS": -10,
+                "MILITARISTS": -10,
+                "ECOLOGISTS": -10,
+                "LOYALISTS": -10
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "La situation est critique, une nouvelle menace apparait une tempete vient a son tour ravagé le royaume.",
+      "scenario": 6,
+      "choices": [
+        {
+          "choice": "Que dieu nous viennent en aide !",
+          "effects": [
+            {
+              "actionOnFaction": {
+                "CAPITALISTS": -15,
+                "ECOLOGISTS": -10
+              }
+            },
+            {
+              "actionOnFactor": {
+                "INDUSTRY": -5,
+                "TREASURY": -90
+              }
+            }
+          ],
+          "relatedEvents": [
+            {
+              "name": "Nos morts se relevent sous forme d'ombres.",
+              "choices": [
+                {
+                  "choice": "Courir à toute vitesse",
+                  "effects": [
+                    {
+                      "actionOnFaction": {
+                        "CAPITALISTS": -10,
+                        "COMMUNISTS": -10,
+                        "LIBERALS": -10,
+                        "RELIGIOUS": -10,
+                        "MILITARISTS": -10,
+                        "ECOLOGISTS": -10,
+                        "LOYALISTS": -10
+                      }
+                    },
+                    {
+                      "partisans": -15
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "choice": "Toujours plus de mort, ,ettoyons nos champs de bataille pour eviter les maladie !",
+          "effects": [
+            {
+              "actionOnFaction": {
+                "CAPITALISTS": -15,
+                "ECOLOGISTS": -10
+              }
+            },
+            {
+              "actionOnFactor": {
+                "INDUSTRY": -5,
+                "TREASURY": -90
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "L'armée des ombres veut en finir, elle prépare son assaut final pour mettre un terme a se conflit...",
+      "scenario": 6,
+      "choices": [
+        {
+          "choice": "Preparer les troupes pour un dernier bras de fer avec tout les moyens qu'on dispose.",
+          "effects": [
+            {
+              "actionOnFaction": {
+                "CAPITALISTS": 10,
+                "COMMUNISTS": 10,
+                "LIBERALS": 10,
+                "RELIGIOUS": 10,
+                "MILITARISTS": 10,
+                "ECOLOGISTS": 10,
+                "LOYALISTS": 10
+              }
+            },
+            {
+              "actionOnFactor": {
+                "INDUSTRY": 10,
+                "TREASURY": -90
+              }
+            }
+          ]
+        },
+        {
+          "choice": "Nous avons deja perdu à quoi bon se battre, il ne s'arrete jamais de se relever.",
+          "effects": [
+            {
+              "actionOnFaction": {
+                "CAPITALISTS": -20,
+                "COMMUNISTS": -20,
+                "LIBERALS": -20,
+                "RELIGIOUS": -20,
+                "MILITARISTS": -20,
+                "ECOLOGISTS": -20,
+                "LOYALISTS": -20
+              }
+            },
+            {
+              "partisans": -15
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Vous découvrez que l'armée des ombres est dirigé par un seul homme, un chevalier aussi sombre que funeste. Vous comprenez qu'il est la tete à faire tomber !!!",
+      "scenario": 6,
+      "choices": [
+        {
+          "choice": "Je contact le chasseur d'ombre qui possède la meme capacité, il est notre dernier espoir.",
+          "effects": [
+            {
+              "actionOnFaction": {
+                "MILITARISTS": 20,
+                "COMMUNISTS": 7,
+                "RELIGIOUS": -20
+              }
+            },
+            {
+              "actionOnFactor": {
+                "INDUSTRY": 5,
+                "TREASURY": -100
+              }
+            }
+          ]
+        },
+        {
+          "choice": "Nous allons utiliser la ruse, séparons le de ces troupes afin qu'ils soit isolé et sans défense.",
+          "effects": [
+            {
+              "actionOnFaction": {
+                "MILITARISTS": -20,
+                "RELIGIOUS": -10,
+                "LIBERALS": 20
+              }
+            },
+            {
+              "actionOnFactor": {
+                "INDUSTRY": 15
+              }
+            },
+            {
+              "partisans": 15
+            }
+          ]
+        },
+        {
+          "choice": "Je relève le défi du monstre, je pars moi meme au front afin de tuer ce monstre moi-meme.",
+          "effects": [
+            {
+              "actionOnFaction": {
+                "CAPITALISTS": -10,
+                "COMMUNISTS": -10,
+                "LIBERALS": -10,
+                "RELIGIOUS": -10,
+                "MILITARISTS": -10,
+                "ECOLOGISTS": -10,
+                "LOYALISTS": -10
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
