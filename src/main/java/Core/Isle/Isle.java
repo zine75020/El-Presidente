@@ -125,6 +125,7 @@ public class Isle {
 
     /**
      * génération du score selon les paramètres actuels de la partie
+     *
      * @return
      */
     public Integer generateScore() {
@@ -136,10 +137,10 @@ public class Isle {
         score += this.agriculture.getDedicatedPercentage();
         switch (this.difficultyOfGame) {
             case normal:
-                score *=2;
+                score *= 2;
                 break;
             case hard:
-                score *=3;
+                score *= 3;
                 break;
         }
         return score;
@@ -310,38 +311,38 @@ public class Isle {
         //vérification des partisants de l'île
         int nbTotalSupporters = this.generateNumberTotalOfSupporters();
         //s'il n'y a pas assez de nourriture pour nourrir tous les habitants
-        if(this.foodUnits/4 < nbTotalSupporters) {
+        if (this.foodUnits / 4 < nbTotalSupporters) {
             //on en élimine aléatoirement
-            while(nbTotalSupporters > 0 && this.foodUnits/4 < nbTotalSupporters) {
+            while (nbTotalSupporters > 0 && this.foodUnits / 4 < nbTotalSupporters) {
                 int randomIndexFaction = this.getRandomIndexOfFaction();
                 this.factionList.get(randomIndexFaction).decreaseNbSupporters(1);
                 nbTotalSupporters -= 1;
-                for(Faction faction : this.factionList) {
+                for (Faction faction : this.factionList) {
                     faction.decreasePercentageApproval(2);
                 }
             }
             this.decreaseFoodUnits(nbTotalSupporters * 4);
         }
         //si l'agriculture seule est excédente
-        else if(this.agriculture.generateFoodUnits()/4 > nbTotalSupporters) {
+        else if (this.agriculture.generateFoodUnits() / 4 > nbTotalSupporters) {
             this.decreaseFoodUnits(nbTotalSupporters * 4);
             //pourcentage de natalité entre 1 et 10%
             float randomNatalityPercentage = (float) 1 + (int) Math.round(Math.random() * 9);
             //on génère le pourcentage de supporters selon le pourcentage
-            float nbNewSupporters = nbTotalSupporters * (randomNatalityPercentage/100);
+            float nbNewSupporters = nbTotalSupporters * (randomNatalityPercentage / 100);
             //et on les répartit aléatoirement
-            for(int i = 0 ; i < (int) nbNewSupporters ; i += 1) {
+            for (int i = 0; i < (int) nbNewSupporters; i += 1) {
                 int randomIndexFaction = this.getRandomIndexOfFaction();
                 this.factionList.get(randomIndexFaction).increaseNbSupporters(1);
             }
-        }
-        else {
+        } else {
             this.decreaseFoodUnits(nbTotalSupporters * 4);
         }
     }
 
     /**
      * nombre aléatoire entre 0 et 7 (car 8 factions)
+     *
      * @return
      */
     public int getRandomIndexOfFaction() {
@@ -350,11 +351,12 @@ public class Isle {
 
     /**
      * génère le nombre total de supporters toutes factions confondues
+     *
      * @return
      */
     public int generateNumberTotalOfSupporters() {
         int nbTotalSupporters = 0;
-        for(Faction faction : this.factionList) {
+        for (Faction faction : this.factionList) {
             nbTotalSupporters += faction.getNbSupporters();
         }
         return nbTotalSupporters;
@@ -373,12 +375,13 @@ public class Isle {
 
     /**
      * teste si au moins une faction peut bénéficier du pot de vin
+     *
      * @return
      */
     public boolean bribeIsPossible() {
         int minimumTreasury = 0;
         for (Faction faction : this.factionList) {
-            if(faction.getNbSupporters() > 0 && (minimumTreasury == 0 || minimumTreasury > faction.getNbSupporters() * 15)) {
+            if (faction.getNbSupporters() > 0 && (minimumTreasury == 0 || minimumTreasury > faction.getNbSupporters() * 15)) {
                 minimumTreasury = faction.getNbSupporters() * 15;
             }
         }
@@ -387,6 +390,7 @@ public class Isle {
 
     /**
      * teste si le pot de vin est possible pour la faction passée en paramètre
+     *
      * @param faction
      * @return
      */
@@ -396,9 +400,99 @@ public class Isle {
 
     /**
      * teste si le marché alimentaire est possible
+     *
      * @return
      */
     public boolean foodMartIsPossible() {
         return this.treasury >= 8;
+    }
+
+    //TODO documentation + tests
+    public void increasePartisans(int nbIncrease) {
+        while (nbIncrease > 0) {
+            int randomIndexFaction = this.getRandomIndexOfFaction();
+            this.factionList.get(randomIndexFaction).increaseNbSupporters(1);
+            nbIncrease -= 1;
+        }
+    }
+
+    //TODO documentation + tests
+    public void decreasePartisans(int nbIncrease) {
+        while (nbIncrease > 0) {
+            int randomIndexFaction = this.getRandomIndexOfFaction();
+            this.factionList.get(randomIndexFaction).decreaseNbSupporters(1);
+            nbIncrease -= 1;
+        }
+    }
+
+    //TODO documentation + tests
+    public void increaseIndustry(int nbAdd) {
+        this.industry.increaseDedicatedPercentage(nbAdd);
+        if (this.industry.getDedicatedPercentage() > 100) {
+            this.industry.setDedicatedPercentage(100);
+        }
+        //vérifier que agriculture + industrie n'est pas suppérieur à 100%
+        int percentageTot = this.industry.getDedicatedPercentage() + this.agriculture.getDedicatedPercentage();
+        if (percentageTot > 100) {
+            this.agriculture.decreaseDedicatedPercentage(percentageTot - 100);
+        }
+    }
+
+    //TODO documentation + tests
+    public void decreaseIndustry(int nbRemove) {
+        this.industry.decreaseDedicatedPercentage(nbRemove);
+        if (this.industry.getDedicatedPercentage() < 0) {
+            this.industry.setDedicatedPercentage(0);
+        }
+    }
+
+    //TODO documentation + tests
+    public void increaseAgriculture(int nbAdd) {
+        this.agriculture.increaseDedicatedPercentage(nbAdd);
+        if (this.agriculture.getDedicatedPercentage() > 100) {
+            this.agriculture.setDedicatedPercentage(100);
+        }
+        //vérifier que agriculture + industrie n'est pas suppérieur à 100%
+        int percentageTot = this.industry.getDedicatedPercentage() + this.agriculture.getDedicatedPercentage();
+        if (percentageTot > 100) {
+            this.industry.decreaseDedicatedPercentage(percentageTot - 100);
+        }
+    }
+
+    //TODO documentation + tests
+    public void decreaseAgriculture(int nbRemove) {
+        this.agriculture.decreaseDedicatedPercentage(nbRemove);
+        if (this.agriculture.getDedicatedPercentage() < 0) {
+            this.agriculture.setDedicatedPercentage(0);
+        }
+    }
+
+    //TODO documentation + tests
+    public Faction getFactionByFactionType(FactionType factionType) {
+        Faction faction = this.factionList.get(0);
+        switch (factionType) {
+            case COMMUNISTS:
+                faction = this.factionList.get(1);
+                break;
+            case LIBERALS:
+                faction = this.factionList.get(2);
+                break;
+            case RELIGIOUS:
+                faction = this.factionList.get(3);
+                break;
+            case MILITARISTS:
+                faction = this.factionList.get(4);
+                break;
+            case ECOLOGISTS:
+                faction = this.factionList.get(5);
+                break;
+            case LOYALISTS:
+                faction = this.factionList.get(6);
+                break;
+            case NATIONALISTS:
+                faction = this.factionList.get(7);
+                break;
+        }
+        return faction;
     }
 }

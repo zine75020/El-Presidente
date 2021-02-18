@@ -238,29 +238,32 @@ public class JsonEventsRepository implements EventsRepository {
             //conversion en un json object
             JsonObject eff = effect.getAsJsonObject();
 
+            JsonObject actionOnFaction = eff.get("actionOnFaction") != null ? eff.get("actionOnFaction").getAsJsonObject() : new JsonObject();
             //récupération des actions sur chaque factions individuellement (si renseignée)
             Map<FactionType, Integer> actionsOnFaction = new HashMap<>();
-            if (eff.get("CAPITALISTS") != null)
-                actionsOnFaction.put(FactionType.CAPITALISTS, eff.get("CAPITALISTS").getAsInt());
-            if (eff.get("COMMUNISTS") != null)
-                actionsOnFaction.put(FactionType.COMMUNISTS, eff.get("COMMUNISTS").getAsInt());
-            if (eff.get("LIBERALS") != null) actionsOnFaction.put(FactionType.LIBERALS, eff.get("LIBERALS").getAsInt());
-            if (eff.get("RELIGIOUS") != null)
-                actionsOnFaction.put(FactionType.RELIGIOUS, eff.get("RELIGIOUS").getAsInt());
-            if (eff.get("MILITARISTS") != null)
-                actionsOnFaction.put(FactionType.MILITARISTS, eff.get("MILITARISTS").getAsInt());
-            if (eff.get("ECOLOGISTS") != null)
-                actionsOnFaction.put(FactionType.ECOLOGISTS, eff.get("ECOLOGISTS").getAsInt());
-            if (eff.get("LOYALISTS") != null)
-                actionsOnFaction.put(FactionType.LOYALISTS, eff.get("LOYALISTS").getAsInt());
-            if (eff.get("NATIONALISTS") != null)
-                actionsOnFaction.put(FactionType.NATIONALISTS, eff.get("NATIONALISTS").getAsInt());
+            if (actionOnFaction.get("CAPITALISTS") != null)
+                actionsOnFaction.put(FactionType.CAPITALISTS, actionOnFaction.get("CAPITALISTS").getAsInt());
+            if (actionOnFaction.get("COMMUNISTS") != null)
+                actionsOnFaction.put(FactionType.COMMUNISTS, actionOnFaction.get("COMMUNISTS").getAsInt());
+            if (actionOnFaction.get("LIBERALS") != null)
+                actionsOnFaction.put(FactionType.LIBERALS, actionOnFaction.get("LIBERALS").getAsInt());
+            if (actionOnFaction.get("RELIGIOUS") != null)
+                actionsOnFaction.put(FactionType.RELIGIOUS, actionOnFaction.get("RELIGIOUS").getAsInt());
+            if (actionOnFaction.get("MILITARISTS") != null)
+                actionsOnFaction.put(FactionType.MILITARISTS, actionOnFaction.get("MILITARISTS").getAsInt());
+            if (actionOnFaction.get("ECOLOGISTS") != null)
+                actionsOnFaction.put(FactionType.ECOLOGISTS, actionOnFaction.get("ECOLOGISTS").getAsInt());
+            if (actionOnFaction.get("LOYALISTS") != null)
+                actionsOnFaction.put(FactionType.LOYALISTS, actionOnFaction.get("LOYALISTS").getAsInt());
+            if (actionOnFaction.get("NATIONALISTS") != null)
+                actionsOnFaction.put(FactionType.NATIONALISTS, actionOnFaction.get("NATIONALISTS").getAsInt());
 
+            JsonObject actionOnFactor = eff.get("actionOnFactor") != null ? eff.get("actionOnFactor").getAsJsonObject() : new JsonObject();
             //récupération des actions sur les facteurs (si renseigné)
             Map<String, Integer> actionsOnFactor = new HashMap<>();
-            if (eff.get("TREASURY") != null) actionsOnFactor.put("TREASURY", eff.get("TREASURY").getAsInt());
-            if (eff.get("INDUSTRY") != null) actionsOnFactor.put("INDUSTRY", eff.get("INDUSTRY").getAsInt());
-            if (eff.get("AGRICULTURE") != null) actionsOnFactor.put("AGRICULTURE", eff.get("AGRICULTURE").getAsInt());
+            if (actionOnFactor.get("TREASURY") != null) actionsOnFactor.put("TREASURY", actionOnFactor.get("TREASURY").getAsInt());
+            if (actionOnFactor.get("INDUSTRY") != null) actionsOnFactor.put("INDUSTRY", actionOnFactor.get("INDUSTRY").getAsInt());
+            if (actionOnFactor.get("AGRICULTURE") != null) actionsOnFactor.put("AGRICULTURE", actionOnFactor.get("AGRICULTURE").getAsInt());
 
             //récupération de l'effet sur les partisans (si renseigné)
             Integer partisans = eff.get("partisans") != null ? eff.get("partisans").getAsInt() : 0;

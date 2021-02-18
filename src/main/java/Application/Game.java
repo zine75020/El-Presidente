@@ -1,6 +1,7 @@
 package Application;
 
 import Core.Agriculture.Agriculture;
+import Core.Enum.FactionType;
 import Core.Enum.Season;
 import Core.EventParsers.Choice;
 import Core.EventParsers.Effect;
@@ -15,14 +16,12 @@ import Core.ScenarioParsers.Scenario;
 
 import Core.Enum.DifficultyChoice;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Scanner;
+import java.util.*;
 
 public class Game {
 
     //TODO update les chemins après déplacement du fichier json
-    public static final String SCENARIO_FILE_PATH = "C:/Users/zined/Desktop/ESGI/Outils et technique de devloppement/Encore un putin de projet(El Presidente)/CODE/Core/src/main/Json/Scenario/scenarios.json";
+    public static final String SCENARIO_FILE_PATH = "C:/Users/alois/Documents/GitHub/El-Presidente/Core/src/main/Json/Scenario/scenarios.json";
 
     public static Scanner clavier = new Scanner(System.in);
 
@@ -69,23 +68,28 @@ public class Game {
         do {
             isle.nextTurn();
             System.out.println(consoleOutput.gameInformations(isle));
-            //TODO traitement événements
+
+            //traitement scénario
             if (selectedScenario.getScenarioEvents().size() != 0) {
                 Event currentEvent;
+                //si l'event a un name c'est qu'il n'est pas encore passé
                 if (!selectedScenario.getScenarioEvents().get(0).getName().equals("")) {
+                    //récupération du premier event
                     currentEvent = selectedScenario.getScenarioEvents().get(0);
-                } else {
+                }
+                //sinon il faut récupérer le related event
+                else {
                     currentEvent = selectedScenario.getScenarioEvents().get(0).getChoices().get(0).getRelatedEvents().get(0);
                 }
                 System.out.println("-- " + currentEvent.getName());
+
                 int i = 1;
                 for (Choice choice : currentEvent.getChoices()) {
-                    System.out.println(i + " : " + choice.getChoice());
-                    for (Effect effect : choice.getEffects()) {
-                        //TODO affichage effect
-                    }
+                    //affichage des différents choix
+                    printChoices(choice, i);
                     i += 1;
                 }
+
                 int selectedChoiceId = -1;
                 do {
                     //récupération du choix de l'utilisateur
@@ -97,8 +101,11 @@ public class Game {
                         System.out.println(consoleOutput.valueOfMenuError());
                     }
                 } while (selectedChoiceId == -1);
-                //TODO application des effets
+
                 Choice currentChoice = currentEvent.getChoices().get(selectedChoiceId - 1);
+
+                applicationEffects(isle, currentChoice);
+
                 if (currentChoice.getRelatedEvents().size() > 0) {
                     //TODO Gérer quand il y a deux related events
                     currentEvent.setName("");
@@ -113,7 +120,9 @@ public class Game {
                     selectedScenario.getScenarioEvents().remove(selectedScenario.getScenarioEvents().get(0));
                 }
 
-            } else if (selectedScenario.getNeutralEvents().size() != 0) {
+            }
+            //traitement bac à sable + fin scénario
+            else if (selectedScenario.getNeutralEvents().size() != 0) {
                 Event currentEvent;
                 //TODO Gérer relatedEvents événement neutres (problématique aléatoire)
                 int randomIndex = (int) Math.round(Math.random() * (neutralEvents.size() - 1));
@@ -121,10 +130,7 @@ public class Game {
                 System.out.println("-- " + currentEvent.getName());
                 int i = 1;
                 for (Choice choice : currentEvent.getChoices()) {
-                    System.out.println(i + " : " + choice.getChoice());
-                    for (Effect effect : choice.getEffects()) {
-                        //TODO affichage effect
-                    }
+                    printChoices(choice, i);
                     i += 1;
                 }
                 int selectedChoiceId = -1;
@@ -138,12 +144,18 @@ public class Game {
                         System.out.println(consoleOutput.valueOfMenuError());
                     }
                 } while (selectedChoiceId == -1);
-                //TODO application des effets
+
+                Choice currentChoice = currentEvent.getChoices().get(selectedChoiceId - 1);
+
+                applicationEffects(isle, currentChoice);
+
                 neutralEvents.remove(currentEvent);
                 if (neutralEvents.size() == 0) {
                     neutralEvents = selectedScenario.getNeutralEvents();
                 }
-            } else {
+            }
+            //aucun événement
+            else {
                 System.out.println(consoleOutput.impossibleGame());
                 break;
             }
@@ -161,6 +173,86 @@ public class Game {
 
         System.out.println(consoleOutput.endGame());
         System.out.println(consoleOutput.printScore(isle));
+    }
+
+    private static void applicationEffects(Isle isle, Choice choice) {
+        for (Effect effect : choice.getEffects()) {
+            //effets sur les factions
+            for (Map.Entry actionOnFaction : effect.getActionsOnFaction().entrySet()) {
+                //increase si positif
+                if ((int) actionOnFaction.getValue() > 0)
+                    isle.getFactionByFactionType((FactionType) actionOnFaction.getKey()).
+                            increasePercentageApproval((int) actionOnFaction.getValue());
+                //decrease si positif
+                else
+                    isle.getFactionByFactionType((FactionType) actionOnFaction.getKey()).
+                            increasePercentageApproval((int) actionOnFaction.getValue());
+            }
+            //effets sur les facteurs
+            for (Map.Entry actionOnFactor : effect.getActionsOnFactor().entrySet()) {
+                switch ((String) actionOnFactor.getKey()) {
+                    case "INDUSTRY":
+                        //increase si positif
+                        if ((int) actionOnFactor.getValue() > 0)
+                            isle.increaseIndustry((int) actionOnFactor.getValue());
+                        //decrease si positif
+                        else
+                            isle.decreaseIndustry((int) actionOnFactor.getValue());
+                        break;
+                    case "AGRICULTURE":
+                        //increase si positif
+                        if ((int) actionOnFactor.getValue() > 0)
+                            isle.increaseAgriculture((int) actionOnFactor.getValue());
+                        //decrease si positif
+                        else
+                            isle.decreaseAgriculture((int) actionOnFactor.getValue());
+                        break;
+                    case "TREASURY":
+                        //increase si positif
+                        if ((int) actionOnFactor.getValue() > 0)
+                            isle.increaseTreasury((int) actionOnFactor.getValue());
+                        //decrease si positif
+                        else
+                            isle.decreaseTreasury((int) actionOnFactor.getValue());
+                        break;
+                }
+            }
+            //effets sur les partisans
+            if (effect.getPartisans() != 0) {
+                //increase si positif
+                if (effect.getPartisans() > 0)
+                    isle.increasePartisans(effect.getPartisans());
+                //decrease si positif
+                else
+                    isle.decreasePartisans(effect.getPartisans());
+            }
+        }
+    }
+
+    private static void printChoices(Choice choice, int i) {
+        //affichage intitulé du choix
+        System.out.println(i + " : " + choice.getChoice());
+        //affichage des effets
+        System.out.println("      Effets :");
+        for (Effect effect : choice.getEffects()) {
+            //effets sur les factions
+            for (Map.Entry actionOnFaction : effect.getActionsOnFaction().entrySet()) {
+                if ((int) actionOnFaction.getValue() > 0)
+                    System.out.println("          " + actionOnFaction.getKey() + " : +" + actionOnFaction.getValue() + "%");
+                else
+                    System.out.println("          " + actionOnFaction.getKey() + " : " + actionOnFaction.getValue() + "%");
+            }
+            //effets sur les facteurs
+            for (Map.Entry actionOnFactor : effect.getActionsOnFactor().entrySet()) {
+                if ((int) actionOnFactor.getValue() > 0)
+                    System.out.println("          " + actionOnFactor.getKey() + " : +" + actionOnFactor.getValue() + "%");
+                else
+                    System.out.println("          " + actionOnFactor.getKey() + " : " + actionOnFactor.getValue() + "%");
+            }
+            //effets sur les partisans
+            if (effect.getPartisans() != 0)
+                System.out.println("          PARTISANS : " + effect.getPartisans() + "\n");
+        }
     }
 
     private static void endOfYearTreatment(Isle isle, Scenario selectedScenario) {
