@@ -81,14 +81,13 @@ public class JsonEventsRepository implements EventsRepository {
             String path = this.getPathByIdAndDifficulty(selectedScenarioId, difficulty);
 
             //lecture du fichier json
-            System.out.println(path);
             try (FileReader reader = new FileReader(path)) {
                 JsonObject myobject = (JsonObject) new JsonParser().parse(reader);
 
                 //récupération de la liste d'événements
                 allEvents = this.parseEvents(myobject);
             } catch (IOException e) {
-                System.out.println("Nous ne parvenons pas à récupérer les événements du scénario");
+                System.out.println("Nous ne parvenons pas à récupérer les événements du scénario " + selectedScenarioId);
             }
         }
         return allEvents;
@@ -117,7 +116,7 @@ public class JsonEventsRepository implements EventsRepository {
             //récupération de la liste d'événements
             neultralEvents = this.parseEvents(myobject);
         } catch (IOException e) {
-            System.out.println("Nous ne parvenons pas à récupérer les événements du scénario");
+            System.out.println("Nous ne parvenons pas à récupérer les événements du scénario " + SANDBOX_ID);
         }
         return neultralEvents;
     }
@@ -180,11 +179,23 @@ public class JsonEventsRepository implements EventsRepository {
 
             //récupération des saisons (si renseignées)
             JsonObject seas = ev.get("seasons") != null ? ev.get("seasons").getAsJsonObject() : new JsonObject();
-            Map<Season, Boolean> seasons = new HashMap<>();
-            if (seas.get("spring") != null) seasons.put(Season.SPRING, seas.get("spring").getAsBoolean());
-            if (seas.get("summer") != null) seasons.put(Season.SUMMER, seas.get("summer").getAsBoolean());
-            if (seas.get("autumn") != null) seasons.put(Season.AUTUMN, seas.get("autumn").getAsBoolean());
-            if (seas.get("winter") != null) seasons.put(Season.WINTER, seas.get("winter").getAsBoolean());
+            List<Season> seasons = new ArrayList<>();
+            if (seas.get("spring") != null){
+                if(seas.get("spring").getAsBoolean())
+                    seasons.add(Season.SPRING);
+            }
+            if (seas.get("summer") != null){
+                if(seas.get("summer").getAsBoolean())
+                    seasons.add(Season.SUMMER);
+            }
+            if (seas.get("autumn") != null){
+                if(seas.get("autumn").getAsBoolean())
+                    seasons.add(Season.AUTUMN);
+            }
+            if (seas.get("winter") != null){
+                if(seas.get("winter").getAsBoolean())
+                    seasons.add(Season.WINTER);
+            }
 
             //récupération des choix de l'événement
             JsonArray choices = ev.get("choices").getAsJsonArray();

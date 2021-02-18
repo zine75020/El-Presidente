@@ -8,10 +8,10 @@ import Core.Enum.Season;
 public class Event {
 
     private String name;
-    Map<Season, Boolean> seasons;
+    List<Season> seasons;
     List<Choice> choices;
 
-    public Event (String name, Map<Season, Boolean> seasons, List<Choice> choices) {
+    public Event (String name, List<Season> seasons, List<Choice> choices) {
         this.name = name;
         this.seasons = seasons;
         this.choices = choices;
@@ -25,11 +25,11 @@ public class Event {
         this.name = name;
     }
 
-    public Map<Season, Boolean> getSeasons() {
+    public List<Season> getSeasons() {
         return seasons;
     }
 
-    public void setSeasons(Map<Season, Boolean> seasons) {
+    public void setSeasons(List<Season> seasons) {
         this.seasons = seasons;
     }
 

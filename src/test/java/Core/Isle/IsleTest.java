@@ -1,6 +1,7 @@
 package Core.Isle;
 
 import Core.Agriculture.Agriculture;
+import Core.Enum.FactionType;
 import Core.Faction.Faction;
 import Core.Industry.Industry;
 import Core.Enum.Season;
@@ -159,7 +160,7 @@ public class IsleTest {
             faction.increaseNbSupporters(25);
         }
         isle.endOfYearReview();
-        assertEquals(200, isle.generateNumberTotalOfSupporters());
+        assertEquals(200, isle.generateNumberTotalOfPartisans());
         Assert.assertEquals(150, (int) isle.getFoodUnits());
         assertEquals(100, isle.getFactionList().get(7).getPercentageApproval());
     }
@@ -170,7 +171,7 @@ public class IsleTest {
             faction.increaseNbSupporters(26);
         }
         isle.endOfYearReview();
-        assertEquals(200, isle.generateNumberTotalOfSupporters());
+        assertEquals(200, isle.generateNumberTotalOfPartisans());
         Assert.assertEquals(0, (int) isle.getFoodUnits());
         assertEquals(84, isle.getFactionList().get(7).getPercentageApproval());
     }
@@ -183,7 +184,7 @@ public class IsleTest {
         isle.endOfYearReview();
         Assert.assertEquals(224, (int) isle.getFoodUnits());
         assertEquals(100, isle.getFactionList().get(7).getPercentageApproval());
-        Assert.assertTrue((isle.generateNumberTotalOfSupporters() > 144 && isle.generateNumberTotalOfSupporters() < 158));
+        Assert.assertTrue((isle.generateNumberTotalOfPartisans() > 144 && isle.generateNumberTotalOfPartisans() < 158));
     }
 
     @Test
@@ -196,7 +197,7 @@ public class IsleTest {
         for (Faction faction : isle.getFactionList()) {
             faction.increaseNbSupporters(10);
         }
-        assertEquals(80, isle.generateNumberTotalOfSupporters());
+        assertEquals(80, isle.generateNumberTotalOfPartisans());
     }
 
     @Test
@@ -261,6 +262,33 @@ public class IsleTest {
     public void should_food_mart_is_not_possible() {
         isle.decreaseTreasury(10000);
         assertFalse(isle.foodMartIsPossible());
+    }
+
+    @Test
+    public void should_increase_partisans() {
+        isle.increasePartisans(10);
+        assertEquals(10, isle.generateNumberTotalOfPartisans());
+    }
+
+    @Test
+    public void should_decrease_partisans() {
+        isle.increasePartisans(10);
+        isle.decreasePartisans(8);
+        assertEquals(2, isle.generateNumberTotalOfPartisans());
+        isle.decreasePartisans(4);
+        assertEquals(0, isle.generateNumberTotalOfPartisans());
+    }
+
+    @Test
+    public void should_get_faction_by_faction_type() {
+        assertEquals(isle.getFactionList().get(0).getName(), FactionType.CAPITALISTS);
+        assertEquals(isle.getFactionList().get(1).getName(), FactionType.COMMUNISTS);
+        assertEquals(isle.getFactionList().get(2).getName(), FactionType.LIBERALS);
+        assertEquals(isle.getFactionList().get(3).getName(), FactionType.RELIGIOUS);
+        assertEquals(isle.getFactionList().get(4).getName(), FactionType.MILITARISTS);
+        assertEquals(isle.getFactionList().get(5).getName(), FactionType.ECOLOGISTS);
+        assertEquals(isle.getFactionList().get(6).getName(), FactionType.NATIONALISTS);
+        assertEquals(isle.getFactionList().get(7).getName(), FactionType.LOYALISTS);
     }
 
 }

@@ -42,21 +42,18 @@ public class Game {
         int minimumSatisfaction = getMinimumSatisfactionByDifficulty(difficultyChoice);
 
         //affichage menu scénario (+ bac à sable)
-        /*
-         * TODO gérer toutes les exceptions d'existence de clé (au cas où un fichier json serait mal formé)
-         *  mieux vaut se retrouver avec une information en moins qu'avec un programme qui plante
-         */
         Scenario selectedScenario = scenarioTreatment(selectedDifficulty);
 
-        //initialisation de l'île
-        Isle isle = new Isle(new Industry(selectedScenario.getGameStartParameters().getIndustryPercentage()),
-                new Agriculture(selectedScenario.getGameStartParameters().getAgriculturePercentage()),
-                selectedScenario.getGameStartParameters().getTreasury(),
-                difficultyChoice, selectedScenario.getGameStartParameters().getFoodUnits(), minimumSatisfaction, selectedScenario.getGameStartParameters().getFactions());
+        if (selectedScenario != null && selectedScenario.getNeutralEvents().size() > 0) {//initialisation de l'île
+            Isle isle = new Isle(new Industry(selectedScenario.getGameStartParameters().getIndustryPercentage()),
+                    new Agriculture(selectedScenario.getGameStartParameters().getAgriculturePercentage()),
+                    selectedScenario.getGameStartParameters().getTreasury(),
+                    difficultyChoice, selectedScenario.getGameStartParameters().getFoodUnits(), minimumSatisfaction, selectedScenario.getGameStartParameters().getFactions());
 
-        System.out.println(consoleOutput.startGame());
-        //méthode de déroulement de la partie
-        gameExecution(isle, selectedScenario);
+            System.out.println(consoleOutput.startGame());
+            //méthode de déroulement de la partie
+            gameExecution(isle, selectedScenario);
+        }
     }
 
     private static void gameExecution(Isle isle, Scenario selectedScenario) {
@@ -92,11 +89,10 @@ public class Game {
 
         } while (!isle.triggerCoup());
 
-        if(isle.triggerCoup()){
+        if (isle.triggerCoup()) {
             System.out.println(consoleOutput.endGame());
             System.out.println(consoleOutput.printScore(isle));
-        }
-        else {
+        } else {
             System.out.println(consoleOutput.impossibleGame());
         }
     }
@@ -142,22 +138,29 @@ public class Game {
 
         applicationEffects(isle, currentChoice);
 
+        //s'il y a des related events
         if (currentChoice.getRelatedEvents().size() > 0) {
+            //on supprime le nom de l'événement pour savoir qu'il est déjà passé
             currentEvent.setName("");
             int y;
-            for (y = 0; y < currentEvent.getChoices().size(); y++) {
+            //on supprime tous les autres choix de l'événement pour ne garder que celui avec les related events
+            for (y = 0; y < currentEvent.getChoices().size(); y += 1) {
                 if (currentEvent.getChoices().get(y) != currentChoice) {
                     currentEvent.getChoices().remove(currentEvent.getChoices().get(y));
                     y = 0;
                 }
             }
         } else {
-            if(isRelatedEvent) {
+            //si on traite actuellement un related event on le supprime
+            if (isRelatedEvent) {
                 selectedScenario.getScenarioEvents().get(0).getChoices().get(0).getRelatedEvents().remove(currentEvent);
-                if(selectedScenario.getScenarioEvents().get(0).getChoices().get(0).getRelatedEvents().size() == 0) {
+                //s'il n'y a plus de related events on supprime l'event global
+                if (selectedScenario.getScenarioEvents().get(0).getChoices().get(0).getRelatedEvents().size() == 0) {
                     selectedScenario.getScenarioEvents().remove(0);
+                    isRelatedEvent = false;
                 }
             }
+            //sinon on supprime l'événement global
             else {
                 selectedScenario.getScenarioEvents().remove(currentEvent);
             }
@@ -168,11 +171,50 @@ public class Game {
         ConsoleOutput consoleOutput = new ConsoleOutput();
         ConsoleInput consoleInput = new ConsoleInput();
 
-        Event currentEvent;
-        //TODO Gérer relatedEvents événement neutres (problématique aléatoire) (possibilité plusieurs relatedEvents d'affilée)
-        int randomIndex = (int) Math.round(Math.random() * (neutralEvents.size() - 1));
-        currentEvent = neutralEvents.get(randomIndex);
+        Event currentEvent = null;
+        boolean isRelatedEvent = false;
+        //si le premier event n'a pas de name c'est qu'il est déjà passé et qu'il a des related events
+        if (neutralEvents.get(0).getName().equals("")) {
+            isRelatedEvent = true;
+            currentEvent = neutralEvents.get(0).getChoices().get(0).getRelatedEvents().get(0);
+        }
+        //sinon il faut récupérer un événement aléatoire correspondant à la saison
+        else {
+            boolean seasonIsOk = false;
+            do {
+                int randomIndex = (int) Math.round(Math.random() * (neutralEvents.size() - 1));
+                //vérification correspondance événement récupéré aléatoirement
+                if (neutralEvents.get(randomIndex).getSeasons().contains(isle.getSeason())) {
+                    currentEvent = neutralEvents.get(randomIndex);
+                    seasonIsOk = true;
+                }
+                //si la saison ne correspondait pas, on cherche avant l'événement
+                if (!seasonIsOk) {
+                    for (int x = randomIndex; x > 0; x -= 1) {
+                        if (neutralEvents.get(x).getSeasons().contains(isle.getSeason())) {
+                            currentEvent = neutralEvents.get(x);
+                            seasonIsOk = true;
+                        }
+                    }
+                }
+                //si la saison ne correspondait toujours avec aucuns, on cherche après l'événement
+                if (!seasonIsOk) {
+                    for (int x = randomIndex; x < neutralEvents.size(); x += 1) {
+                        if (neutralEvents.get(x).getSeasons().contains(isle.getSeason())) {
+                            currentEvent = neutralEvents.get(x);
+                            seasonIsOk = true;
+                        }
+                    }
+                }
+                //s'il n'y a aucun événement qui correspond, on remet tous les événements neutres
+                if (!seasonIsOk) {
+                    neutralEvents = new ArrayList<>(selectedScenario.getNeutralEvents());
+                }
+            } while (!seasonIsOk);
+        }
+
         System.out.println("-- " + currentEvent.getName());
+
         int i = 1;
         for (Choice choice : currentEvent.getChoices()) {
             printChoices(choice, i);
@@ -194,9 +236,43 @@ public class Game {
 
         applicationEffects(isle, currentChoice);
 
-        neutralEvents.remove(currentEvent);
+        //s'il y a des related events
+        if (currentChoice.getRelatedEvents().size() > 0) {
+            //on supprime le nom de l'événement pour savoir qu'il est déjà passé
+            currentEvent.setName("");
+            int y;
+            //on supprime tous les autres choix de l'événement pour ne garder que celui avec les related events
+
+            for (y = 0; y < currentEvent.getChoices().size(); y += 1) {
+                if (currentEvent.getChoices().get(y) != currentChoice) {
+                    currentEvent.getChoices().remove(currentEvent.getChoices().get(y));
+                    y = -1;
+                }
+            }
+            //on enlève l'événement et on le remet en début de liste
+            neutralEvents.remove(currentEvent);
+            neutralEvents.add(0, currentEvent);
+            System.out.println("oui");
+            System.out.println(neutralEvents.get(0).getChoices());
+        } else {
+            //si on traite actuellement un related event on le supprime
+            if (isRelatedEvent) {
+                neutralEvents.get(0).getChoices().get(0).getRelatedEvents().remove(currentEvent);
+                //s'il n'y a plus de related events on supprime l'event global
+                if (neutralEvents.get(0).getChoices().get(0).getRelatedEvents().size() == 0) {
+                    neutralEvents.remove(0);
+                    isRelatedEvent = false;
+                }
+            }
+            //sinon on supprime l'événement global
+            else {
+                neutralEvents.remove(currentEvent);
+            }
+        }
+
+        //si la liste est vide, on remet tous les événements neutres
         if (neutralEvents.size() == 0) {
-            neutralEvents = selectedScenario.getNeutralEvents();
+            neutralEvents = new ArrayList<>(selectedScenario.getNeutralEvents());
         }
     }
 
@@ -208,7 +284,7 @@ public class Game {
                 if ((int) actionOnFaction.getValue() > 0)
                     isle.getFactionByFactionType((FactionType) actionOnFaction.getKey()).
                             increasePercentageApproval((int) actionOnFaction.getValue());
-                //decrease si positif
+                    //decrease si positif
                 else
                     isle.getFactionByFactionType((FactionType) actionOnFaction.getKey()).
                             increasePercentageApproval((int) actionOnFaction.getValue());
@@ -220,7 +296,7 @@ public class Game {
                         //increase si positif
                         if ((int) actionOnFactor.getValue() > 0)
                             isle.increaseIndustry((int) actionOnFactor.getValue());
-                        //decrease si positif
+                            //decrease si positif
                         else
                             isle.decreaseIndustry((int) actionOnFactor.getValue());
                         break;
@@ -228,7 +304,7 @@ public class Game {
                         //increase si positif
                         if ((int) actionOnFactor.getValue() > 0)
                             isle.increaseAgriculture((int) actionOnFactor.getValue());
-                        //decrease si positif
+                            //decrease si positif
                         else
                             isle.decreaseAgriculture((int) actionOnFactor.getValue());
                         break;
@@ -236,7 +312,7 @@ public class Game {
                         //increase si positif
                         if ((int) actionOnFactor.getValue() > 0)
                             isle.increaseTreasury((int) actionOnFactor.getValue());
-                        //decrease si positif
+                            //decrease si positif
                         else
                             isle.decreaseTreasury((int) actionOnFactor.getValue());
                         break;
@@ -247,7 +323,7 @@ public class Game {
                 //increase si positif
                 if (effect.getPartisans() > 0)
                     isle.increasePartisans(effect.getPartisans());
-                //decrease si positif
+                    //decrease si positif
                 else
                     isle.decreasePartisans(effect.getPartisans());
             }
@@ -411,27 +487,32 @@ public class Game {
     }
 
     private static Scenario scenarioTreatment(int difficulty) {
-        int selectedScenarioId;
+        int selectedScenarioId = -1;
         JsonScenarioRepository jsonScenarioRepository = new JsonScenarioRepository();
 
         ConsoleOutput consoleOutput = new ConsoleOutput();
         ConsoleInput consoleInput = new ConsoleInput();
 
-        do {
-            //affichage du menu des scénarios en les récupérant depuis le fichier json contenant les scénarios
-            System.out.println(consoleOutput.scenarioMenu(jsonScenarioRepository.getAllScenarios(SCENARIO_FILE_PATH)));
-            //récupération du choix de l'utilisateur
-            String input = clavier.next();
-            //vérification que la valeur saisie est valide (contenue dans la liste les ids de scénarios récupérée depuis le fichier json)
-            selectedScenarioId = consoleInput.verifyScenarioChoice(input, jsonScenarioRepository.getAllScenariosIds(SCENARIO_FILE_PATH));
-            //si la valeur n'est pas valide on affiche une erreur et on reboucle
-            if (selectedScenarioId == -1) {
-                System.out.println(consoleOutput.valueOfMenuError());
-            }
-        } while (selectedScenarioId == -1);
+        if(jsonScenarioRepository.getAllScenarios(SCENARIO_FILE_PATH).size() == 0) {
+            return null;
+        }
+        else {
+            do {
+                //affichage du menu des scénarios en les récupérant depuis le fichier json contenant les scénarios
+                System.out.println(consoleOutput.scenarioMenu(jsonScenarioRepository.getAllScenarios(SCENARIO_FILE_PATH)));
+                //récupération du choix de l'utilisateur
+                String input = clavier.next();
+                //vérification que la valeur saisie est valide (contenue dans la liste les ids de scénarios récupérée depuis le fichier json)
+                selectedScenarioId = consoleInput.verifyScenarioChoice(input, jsonScenarioRepository.getAllScenariosIds(SCENARIO_FILE_PATH));
+                //si la valeur n'est pas valide on affiche une erreur et on reboucle
+                if (selectedScenarioId == -1) {
+                    System.out.println(consoleOutput.valueOfMenuError());
+                }
+            } while (selectedScenarioId == -1);
 
-        //parser le scenario choisi
-        return jsonScenarioRepository.getScenarioByIdAndDifficulty(SCENARIO_FILE_PATH, selectedScenarioId, difficulty);
+            //parser le scenario choisi
+            return jsonScenarioRepository.getScenarioByIdAndDifficulty(SCENARIO_FILE_PATH, selectedScenarioId, difficulty);
+        }
     }
 
 }

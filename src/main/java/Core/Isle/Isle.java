@@ -309,7 +309,7 @@ public class Isle {
         //génère la nourriture de l'agriculture
         this.increaseFoodUnits(this.agriculture.getDedicatedPercentage() * 40);
         //vérification des partisants de l'île
-        int nbTotalSupporters = this.generateNumberTotalOfSupporters();
+        int nbTotalSupporters = this.generateNumberTotalOfPartisans();
         //s'il n'y a pas assez de nourriture pour nourrir tous les habitants
         if (this.foodUnits / 4 < nbTotalSupporters) {
             //on en élimine aléatoirement
@@ -354,7 +354,7 @@ public class Isle {
      *
      * @return
      */
-    public int generateNumberTotalOfSupporters() {
+    public int generateNumberTotalOfPartisans() {
         int nbTotalSupporters = 0;
         for (Faction faction : this.factionList) {
             nbTotalSupporters += faction.getNbSupporters();
@@ -407,25 +407,46 @@ public class Isle {
         return this.treasury >= 8;
     }
 
-    //TODO documentation + tests
+    /**
+     * augmente le nombre le partisans dans les factions de façons aléatoire entre les factions
+     *
+     * @param nbIncrease
+     */
     public void increasePartisans(int nbIncrease) {
         while (nbIncrease > 0) {
-            int randomIndexFaction = this.getRandomIndexOfFaction();
+            int randomIndexFaction = -1;
+            do {
+                randomIndexFaction = this.getRandomIndexOfFaction();
+            } while (this.factionList.get(randomIndexFaction).getNbSupporters() == 0
+                    && this.generateNumberTotalOfPartisans() > 0);
             this.factionList.get(randomIndexFaction).increaseNbSupporters(1);
             nbIncrease -= 1;
         }
     }
 
-    //TODO documentation + tests
+    /**
+     * diminue le nombre de partisans dans les factions de façon aléatoire entre les factions
+     *
+     * @param nbIncrease
+     */
     public void decreasePartisans(int nbIncrease) {
         while (nbIncrease > 0) {
-            int randomIndexFaction = this.getRandomIndexOfFaction();
+            int randomIndexFaction = -1;
+            do {
+                randomIndexFaction = this.getRandomIndexOfFaction();
+            } while (this.factionList.get(randomIndexFaction).getNbSupporters() == 0
+                    && this.generateNumberTotalOfPartisans() > 0);
             this.factionList.get(randomIndexFaction).decreaseNbSupporters(1);
             nbIncrease -= 1;
         }
     }
 
-    //TODO documentation + tests
+    //TODO tests unitaires de toutes les méthodes qui suivent
+    /**
+     * augmente l'industrie du pourcentage passé en paramètre
+     * diminue l'agriculture si l'industrie + l'agriculture dépassent 100% à deux
+     * @param nbAdd
+     */
     public void increaseIndustry(int nbAdd) {
         this.industry.increaseDedicatedPercentage(nbAdd);
         if (this.industry.getDedicatedPercentage() > 100) {
@@ -438,15 +459,21 @@ public class Isle {
         }
     }
 
-    //TODO documentation + tests
+    /**
+     * diminue l'industrie du pourcentage passé en paramètre
+     * @param nbRemove
+     */
     public void decreaseIndustry(int nbRemove) {
         this.industry.decreaseDedicatedPercentage(nbRemove);
         if (this.industry.getDedicatedPercentage() < 0) {
             this.industry.setDedicatedPercentage(0);
         }
     }
-
-    //TODO documentation + tests
+    /**
+     * augmente l'agriculture du pourcentage passé en paramètre
+     * diminue l'industrie si l'industrie + l'agriculture dépassent 100% à deux
+     * @param nbAdd
+     */
     public void increaseAgriculture(int nbAdd) {
         this.agriculture.increaseDedicatedPercentage(nbAdd);
         if (this.agriculture.getDedicatedPercentage() > 100) {
@@ -459,39 +486,29 @@ public class Isle {
         }
     }
 
-    //TODO documentation + tests
+    /**
+     * diminue l'agriculture du pourcentage passé en paramètre
+     * @param nbRemove
+     */
     public void decreaseAgriculture(int nbRemove) {
         this.agriculture.decreaseDedicatedPercentage(nbRemove);
         if (this.agriculture.getDedicatedPercentage() < 0) {
             this.agriculture.setDedicatedPercentage(0);
         }
     }
+    //TODO tests unitaires des fonctions du dessus
 
-    //TODO documentation + tests
+    /**
+     * retourne la faction selon le Faction type passé en paramètre
+     * @param factionType
+     * @return
+     */
     public Faction getFactionByFactionType(FactionType factionType) {
-        Faction faction = this.factionList.get(0);
-        switch (factionType) {
-            case COMMUNISTS:
-                faction = this.factionList.get(1);
-                break;
-            case LIBERALS:
-                faction = this.factionList.get(2);
-                break;
-            case RELIGIOUS:
-                faction = this.factionList.get(3);
-                break;
-            case MILITARISTS:
-                faction = this.factionList.get(4);
-                break;
-            case ECOLOGISTS:
-                faction = this.factionList.get(5);
-                break;
-            case LOYALISTS:
-                faction = this.factionList.get(6);
-                break;
-            case NATIONALISTS:
-                faction = this.factionList.get(7);
-                break;
+        Faction faction = null;
+        for(Faction fac : this.factionList) {
+            if(fac.getName() == factionType) {
+                faction = fac;
+            }
         }
         return faction;
     }
