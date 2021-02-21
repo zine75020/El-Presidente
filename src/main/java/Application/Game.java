@@ -364,6 +364,7 @@ public class Game {
         System.out.println(consoleOutput.endOfYearInfo());
         //on propose le menu de fin d'année jusqu'à ce que l'utilisateur fasse le bilan de fin d'année
         do {
+            System.out.println(consoleOutput.gameInformations(isle));
             endOfYearChoice = -1;
             do {
                 //affichage du menu de fin d'année
@@ -409,7 +410,14 @@ public class Game {
                             System.out.println(consoleOutput.valueOfMenuError());
                         }
                     } while (bribeChoice < 0);
-                    //TODO traitement pot de vin
+                    int treasury = isle.getTreasury();
+                    if (isle.bribe(bribeChoice - 1)) {
+                        System.out.println(consoleOutput.bribeInfos(isle.getFactionList().get(bribeChoice - 1).getName()));
+                        System.out.println(consoleOutput.loyalistsDiminutionSatisfaction(treasury - isle.getTreasury()));
+                        System.out.println(consoleOutput.bribeCoast(treasury - isle.getTreasury()));
+                    } else {
+                        System.out.println(consoleOutput.bribeEchec(isle.getFactionList().get(bribeChoice - 1).getName()));
+                    }
                     break;
                 case 2:
                     int foodMarksChoice;
@@ -425,10 +433,11 @@ public class Game {
                             System.out.println(consoleOutput.valueError());
                         }
                     } while (foodMarksChoice < 0);
-                    //TODO traitement marché alimentaire
+                    System.out.println(consoleOutput.nbUnitSet(isle.foodMart(foodMarksChoice)));
                     break;
                 case 3:
-                    //TODO traitement bilan de fin d'année
+                    HashMap<String, Integer> reviewOfYear = isle.endOfYearReview();
+                    System.out.println(consoleOutput.endOfYearReviewInfos(reviewOfYear));
                     break;
             }
         } while (endOfYearChoice != 3);

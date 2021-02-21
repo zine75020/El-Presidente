@@ -1,12 +1,15 @@
 package ConsoleOutput;
 
+import Core.Enum.FactionType;
 import Core.Faction.Faction;
 import Core.Isle.Isle;
 import Core.Output.Output;
 import Core.Enum.DifficultyChoice;
 import Core.ScenarioParsers.Scenario;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public class ConsoleOutput implements Output {
 
@@ -126,6 +129,35 @@ public class ConsoleOutput implements Output {
     @Override
     public StringBuilder foodMarksAsk(Isle isle) {
         return new StringBuilder("Combien d'unités de nourriture souhaitez-vous acheter ?\n");
+    }
+
+    @Override
+    public StringBuilder bribeCoast(int coast) {
+        return new StringBuilder("Le pot de vin vous a coûté ").append(coast).append(" de la trésorerie\n");
+    }
+
+    @Override
+    public StringBuilder loyalistsDiminutionSatisfaction(int coast) {
+        return new StringBuilder("La satisfaction des LOYALISTS diminue de ").append(coast/10).append("%");
+    }
+
+    public StringBuilder nbUnitSet(int nbFood) {
+        int priceFood = nbFood * 8;
+        return new StringBuilder("Vous avez acheté "+ nbFood +" unités de nourriture, vous avez donc dépensé "+ priceFood +" de la trésorerie au marché alimentaire\n");
+    }
+
+    public StringBuilder bribeInfos(FactionType factionName) {
+        return new StringBuilder("Vous venez de fournir un pot de vin à la faction "+ factionName +", sa satisfaction augmente de 10%");
+    }
+    public StringBuilder bribeEchec(FactionType factionName) {
+        return new StringBuilder("Vous ne pouvez pas fournir de pot de vin à la faction "+ factionName +"\n");
+    }
+    public StringBuilder endOfYearReviewInfos(HashMap<String, Integer> reviewOfYear) {
+        StringBuilder bilanOfYears = new StringBuilder("============== Bilan de Fin d'année : ==============\n");
+        for(Map.Entry<String, Integer> entry : reviewOfYear.entrySet()) {
+            bilanOfYears.append("==== "+ entry.getKey() +" : "+ entry.getValue() +" ====\n");
+        }
+        return bilanOfYears;
     }
 
     public String valueError() {

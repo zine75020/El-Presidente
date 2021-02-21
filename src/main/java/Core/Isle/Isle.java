@@ -8,6 +8,7 @@ import Core.Enum.FactionType;
 import Core.Enum.DifficultyChoice;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 
 public class Isle {
@@ -266,7 +267,7 @@ public class Isle {
             //augmenter la satisfaction de la faction
             this.factionList.get(indexFaction).increasePercentageApproval(10);
             //diminuer satisfaction loyalistes
-            this.factionList.get(7).decreasePercentageApproval(amount / 10);
+            this.getFactionByFactionType(FactionType.LOYALISTS).decreasePercentageApproval(amount / 10);
         }
         return bribeIsPossible;
     }
@@ -290,6 +291,7 @@ public class Isle {
                 this.decreaseTreasury(8);
             }
         }
+        this.foodUnits += nbUnitsReallyPurchased;
         return nbUnitsReallyPurchased;
     }
 
@@ -303,13 +305,17 @@ public class Isle {
      * 10 % de la population globale de l’île.
      * La répartition des nouveaux partisans dans les différentes factions est aléatoire.
      */
-    public void endOfYearReview() {
+    public HashMap<String,Integer> endOfYearReview() {
+        HashMap<String, Integer> reviewOfYear = new HashMap();
         //génère l'argent de l'industrie
         this.increaseTreasury(this.industry.getDedicatedPercentage() * 10);
+        reviewOfYear.put("Gains de trésorerie grâce à l'industrie", this.industry.getDedicatedPercentage() * 10);
         //génère la nourriture de l'agriculture
         this.increaseFoodUnits(this.agriculture.getDedicatedPercentage() * 40);
+        reviewOfYear.put("Gains d'unités de nourriture grâce à l'agriculture", this.agriculture.getDedicatedPercentage() * 40);
         //vérification des partisants de l'île
         int nbTotalSupporters = this.generateNumberTotalOfPartisans();
+        reviewOfYear.put("Nombre de partisans debut année", nbTotalSupporters);
         //s'il n'y a pas assez de nourriture pour nourrir tous les habitants
         if (this.foodUnits / 4 < nbTotalSupporters) {
             //on en élimine aléatoirement
@@ -328,16 +334,22 @@ public class Isle {
             this.decreaseFoodUnits(nbTotalSupporters * 4);
             //pourcentage de natalité entre 1 et 10%
             float randomNatalityPercentage = (float) 1 + (int) Math.round(Math.random() * 9);
+            reviewOfYear.put("Taux de natalité (%)", (int)randomNatalityPercentage);
             //on génère le pourcentage de supporters selon le pourcentage
             float nbNewSupporters = nbTotalSupporters * (randomNatalityPercentage / 100);
+            reviewOfYear.put("Partisans nés cette année", (int) nbNewSupporters);
             //et on les répartit aléatoirement
             for (int i = 0; i < (int) nbNewSupporters; i += 1) {
                 int randomIndexFaction = this.getRandomIndexOfFaction();
                 this.factionList.get(randomIndexFaction).increaseNbSupporters(1);
             }
+            nbTotalSupporters += nbNewSupporters;
         } else {
             this.decreaseFoodUnits(nbTotalSupporters * 4);
         }
+        reviewOfYear.put("Nourriture consommée cette année", nbTotalSupporters * 4);
+        reviewOfYear.put("Nombre de partisans fin année", nbTotalSupporters);
+        return reviewOfYear;
     }
 
     /**

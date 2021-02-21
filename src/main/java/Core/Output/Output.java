@@ -34,4 +34,8 @@ public interface Output {
     StringBuilder bribeMenu(Isle isle);
 
     StringBuilder foodMarksAsk(Isle isle);
+
+    StringBuilder bribeCoast(int coast);
+
+    StringBuilder loyalistsDiminutionSatisfaction(int coast);
 }
