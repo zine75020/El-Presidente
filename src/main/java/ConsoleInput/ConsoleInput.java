@@ -1,5 +1,6 @@
 package ConsoleInput;
 
+import Application.Game;
 import Core.Input.Input;
 import Core.ScenarioParsers.Scenario;
 

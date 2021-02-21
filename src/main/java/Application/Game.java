@@ -409,7 +409,11 @@ public class Game {
                             System.out.println(consoleOutput.valueOfMenuError());
                         }
                     } while (bribeChoice < 0);
-                    //TODO traitement pot de vin
+                    if (isle.bribe(bribeChoice)) {
+                        System.out.println(consoleOutput.potDeVin(isle.getFactionList().get(bribeChoice).getName()));
+                    } else {
+                        System.out.println(consoleOutput.potDeVinEchec(isle.getFactionList().get(bribeChoice).getName()));
+                    }
                     break;
                 case 2:
                     int foodMarksChoice;
@@ -425,10 +429,11 @@ public class Game {
                             System.out.println(consoleOutput.valueError());
                         }
                     } while (foodMarksChoice < 0);
-                    //TODO traitement marché alimentaire
+                    System.out.println(consoleOutput.nbUnitSet(isle.foodMart(foodMarksChoice)));
                     break;
                 case 3:
-                    //TODO traitement bilan de fin d'année
+                    HashMap<String, Integer> reviewOfYear = isle.endOfYearReview();
+                    System.out.println(consoleOutput.endOfYearReview(reviewOfYear));
                     break;
             }
         } while (endOfYearChoice != 3);

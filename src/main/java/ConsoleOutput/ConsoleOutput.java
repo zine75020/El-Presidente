@@ -1,12 +1,15 @@
 package ConsoleOutput;
 
+import Core.Enum.FactionType;
 import Core.Faction.Faction;
 import Core.Isle.Isle;
 import Core.Output.Output;
 import Core.Enum.DifficultyChoice;
 import Core.ScenarioParsers.Scenario;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public class ConsoleOutput implements Output {
 
@@ -128,6 +131,24 @@ public class ConsoleOutput implements Output {
         return new StringBuilder("Combien d'unités de nourriture souhaitez-vous acheter ?\n");
     }
 
+    public StringBuilder nbUnitSet(int nbFood) {
+        int priceFood = nbFood * 8;
+        return new StringBuilder("Vous avez récupéré "+ nbFood +" unité de nourriture qui vous ont coutées "+ priceFood +" au marché alimentaire\n");
+    }
+
+    public StringBuilder potDeVin(FactionType factionName) {
+        return new StringBuilder("Vous venez de fournir un pot de vin a "+ factionName +" ?\n");
+    }
+    public StringBuilder potDeVinEchec(FactionType factionName) {
+        return new StringBuilder("Vous ne pouvez pas fournir de pot de vin a "+ factionName +" ?\n");
+    }
+    public StringBuilder endOfYearReview(HashMap<String, Integer> reviewOfYear) {
+        StringBuilder bilanOfYears = new StringBuilder("============== Bilan de Fin d'année : ==============\n");
+        for(Map.Entry<String, Integer> entry : reviewOfYear.entrySet()) {
+            bilanOfYears.append("==== "+ entry.getKey() +" : "+ entry.getValue() +" ====\n");
+        }
+       return bilanOfYears;
+    }
     public String valueError() {
         return "Veuillez saisir une valeur numérique supérieure à 0\n";
     }
