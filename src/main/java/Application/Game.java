@@ -26,8 +26,6 @@ public class Game {
 
     public static void main(String[] args) {
 
-        //TODO gérer la suite du jeu lorsqu'il y a des erreurs
-
         ConsoleOutput consoleOutput = new ConsoleOutput();
 
         //affichage bienvenue
