@@ -60,6 +60,9 @@ public class Faction {
      * @param nbRemove
      */
     public void decreaseNbSupporters(int nbRemove) {
+        if(nbRemove < 0) {
+            nbRemove *= -1;
+        }
         this.nbSupporters -= nbRemove;
         if(this.nbSupporters <= 0) {
             this.nbSupporters = 0;
@@ -85,6 +88,9 @@ public class Faction {
      * @param nbRemove
      */
     public void decreasePercentageApproval(int nbRemove) {
+        if(nbRemove < 0) {
+            nbRemove *= -1;
+        }
         this.percentageApproval -= nbRemove;
         if(this.percentageApproval < 0) {
             this.percentageApproval = 0;

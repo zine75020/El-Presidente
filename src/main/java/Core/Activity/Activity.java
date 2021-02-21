@@ -38,6 +38,9 @@ public abstract class Activity {
      * @param nbRemove
      */
     public void decreaseDedicatedPercentage(int nbRemove) {
+        if(nbRemove < 0) {
+            nbRemove *= -1;
+        }
         this.dedicatedPercentage -= nbRemove;
         if(this.dedicatedPercentage < 0) {
             this.dedicatedPercentage = 0;

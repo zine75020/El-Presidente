@@ -1,13 +1,11 @@
 package Core.Isle;
 
 import Core.Agriculture.Agriculture;
+import Core.Enum.DifficultyChoice;
 import Core.Enum.FactionType;
+import Core.Enum.Season;
 import Core.Faction.Faction;
 import Core.Industry.Industry;
-import Core.Enum.Season;
-import Core.Enum.DifficultyChoice;
-
-import org.junit.Assert;
 import org.junit.Test;
 
 import static org.junit.Assert.*;
@@ -29,35 +27,35 @@ public class IsleTest {
     public void should_increase_treasury() {
         isle.increaseTreasury(100);
 
-        Assert.assertEquals(200, (int) isle.getTreasury());
+        assertEquals(200, (int) isle.getTreasury());
     }
 
     @Test
     public void should_decrease_treasury() {
         isle.decreaseTreasury(50);
 
-        Assert.assertEquals(50, (int) isle.getTreasury());
+        assertEquals(50, (int) isle.getTreasury());
     }
 
     @Test
     public void should_decrease_treasury_and_limit_at_0() {
         isle.decreaseTreasury(120);
 
-        Assert.assertEquals(0, (int) isle.getTreasury());
+        assertEquals(0, (int) isle.getTreasury());
     }
 
     @Test
     public void should_not_decrease_treasury_because_its_at_0() {
         isle2.decreaseTreasury(20);
 
-        Assert.assertEquals(0, (int) isle2.getTreasury());
+        assertEquals(0, (int) isle2.getTreasury());
     }
 
     @Test
     public void should_increase_food_units() {
         isle.increaseFoodUnits(100);
 
-        Assert.assertEquals(100, (int) isle.getFoodUnits());
+        assertEquals(100, (int) isle.getFoodUnits());
     }
 
     @Test
@@ -65,7 +63,7 @@ public class IsleTest {
         isle.increaseFoodUnits(50);
         isle.decreaseFoodUnits(10);
 
-        Assert.assertEquals(40, (int) isle.getFoodUnits());
+        assertEquals(40, (int) isle.getFoodUnits());
     }
 
     @Test
@@ -73,14 +71,14 @@ public class IsleTest {
         isle.increaseFoodUnits(20);
         isle.decreaseFoodUnits(40);
 
-        Assert.assertEquals(0, (int) isle.getFoodUnits());
+        assertEquals(0, (int) isle.getFoodUnits());
     }
 
     @Test
     public void should_not_decrease_food_units_because_its_at_0() {
         isle2.decreaseFoodUnits(20);
 
-        Assert.assertEquals(0, (int) isle2.getFoodUnits());
+        assertEquals(0, (int) isle2.getFoodUnits());
     }
 
     @Test
@@ -100,7 +98,7 @@ public class IsleTest {
     public void should_go_to_next_turn() {
         isle.nextTurn();
 
-        Assert.assertEquals(1, (int) isle.getTurn());
+        assertEquals(1, (int) isle.getTurn());
     }
 
     @Test
@@ -123,8 +121,8 @@ public class IsleTest {
     public void should_make_bribe() {
         isle.getFactionList().get(3).increaseNbSupporters(10);
         isle.increaseTreasury(150);
-        Assert.assertTrue(isle.bribe(3));
-        Assert.assertEquals(100, (int) isle.getTreasury());
+        assertTrue(isle.bribe(3));
+        assertEquals(100, (int) isle.getTreasury());
         assertEquals(10, isle.getFactionList().get(3).getPercentageApproval());
         assertEquals(85, isle.getFactionList().get(7).getPercentageApproval());
     }
@@ -132,19 +130,19 @@ public class IsleTest {
     @Test
     public void should_not_make_bribe() {
         isle.getFactionList().get(3).increaseNbSupporters(10);
-        Assert.assertFalse(isle.bribe(3));
+        assertFalse(isle.bribe(3));
     }
 
     @Test
     public void should_make_food_mart() {
         assertEquals(5, isle.foodMart(5));
-        Assert.assertEquals(60, (int) isle.getTreasury());
+        assertEquals(60, (int) isle.getTreasury());
     }
 
     @Test
     public void should_make_max_food_mart() {
         assertEquals(12, isle.foodMart(15));
-        Assert.assertEquals(4, (int) isle.getTreasury());
+        assertEquals(4, (int) isle.getTreasury());
     }
 
     @Test
@@ -161,7 +159,7 @@ public class IsleTest {
         }
         isle.endOfYearReview();
         assertEquals(200, isle.generateNumberTotalOfPartisans());
-        Assert.assertEquals(150, (int) isle.getFoodUnits());
+        assertEquals(150, (int) isle.getFoodUnits());
         assertEquals(100, isle.getFactionList().get(7).getPercentageApproval());
     }
 
@@ -172,7 +170,7 @@ public class IsleTest {
         }
         isle.endOfYearReview();
         assertEquals(200, isle.generateNumberTotalOfPartisans());
-        Assert.assertEquals(0, (int) isle.getFoodUnits());
+        assertEquals(0, (int) isle.getFoodUnits());
         assertEquals(84, isle.getFactionList().get(7).getPercentageApproval());
     }
 
@@ -182,14 +180,14 @@ public class IsleTest {
             faction.increaseNbSupporters(18);
         }
         isle.endOfYearReview();
-        Assert.assertEquals(224, (int) isle.getFoodUnits());
+        assertEquals(224, (int) isle.getFoodUnits());
         assertEquals(100, isle.getFactionList().get(7).getPercentageApproval());
-        Assert.assertTrue((isle.generateNumberTotalOfPartisans() > 144 && isle.generateNumberTotalOfPartisans() < 158));
+        assertTrue((isle.generateNumberTotalOfPartisans() > 144 && isle.generateNumberTotalOfPartisans() < 158));
     }
 
     @Test
     public void should_get_random_index_of_faction() {
-        Assert.assertTrue((isle.getRandomIndexOfFaction() >= 0 && isle.getRandomIndexOfFaction() <= 7));
+        assertTrue((isle.getRandomIndexOfFaction() >= 0 && isle.getRandomIndexOfFaction() <= 7));
     }
 
     @Test
@@ -205,12 +203,12 @@ public class IsleTest {
         for (Faction faction : isle.getFactionList()) {
             faction.increasePercentageApproval(70);
         }
-        Assert.assertFalse(isle.triggerCoup());
+        assertFalse(isle.triggerCoup());
     }
 
     @Test
     public void should_not_set_trigger_coup() {
-        Assert.assertTrue(isle.triggerCoup());
+        assertTrue(isle.triggerCoup());
     }
 
     @Test

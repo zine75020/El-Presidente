@@ -180,6 +180,9 @@ public class Isle {
      * @param nbRemove
      */
     public void decreaseTreasury(int nbRemove) {
+        if(nbRemove < 0) {
+            nbRemove *= -1;
+        }
         this.treasury -= nbRemove;
         if (this.treasury < 0) {
             this.treasury = 0;
@@ -201,6 +204,9 @@ public class Isle {
      * @param nbRemove
      */
     public void decreaseFoodUnits(int nbRemove) {
+        if(nbRemove < 0) {
+            nbRemove *= -1;
+        }
         this.foodUnits -= nbRemove;
         if (this.foodUnits < 0) {
             this.foodUnits = 0;
@@ -439,17 +445,20 @@ public class Isle {
     /**
      * diminue le nombre de partisans dans les factions de façon aléatoire entre les factions
      *
-     * @param nbIncrease
+     * @param nbDecrease
      */
-    public void decreasePartisans(int nbIncrease) {
-        while (nbIncrease > 0) {
+    public void decreasePartisans(int nbDecrease) {
+        if(nbDecrease < 0) {
+            nbDecrease *= -1;
+        }
+        while (nbDecrease > 0) {
             int randomIndexFaction = -1;
             do {
                 randomIndexFaction = this.getRandomIndexOfFaction();
             } while (this.factionList.get(randomIndexFaction).getNbSupporters() == 0
                     && this.generateNumberTotalOfPartisans() > 0);
             this.factionList.get(randomIndexFaction).decreaseNbSupporters(1);
-            nbIncrease -= 1;
+            nbDecrease -= 1;
         }
     }
 
@@ -476,6 +485,9 @@ public class Isle {
      * @param nbRemove
      */
     public void decreaseIndustry(int nbRemove) {
+        if(nbRemove < 0) {
+            nbRemove *= -1;
+        }
         this.industry.decreaseDedicatedPercentage(nbRemove);
         if (this.industry.getDedicatedPercentage() < 0) {
             this.industry.setDedicatedPercentage(0);
@@ -503,6 +515,9 @@ public class Isle {
      * @param nbRemove
      */
     public void decreaseAgriculture(int nbRemove) {
+        if(nbRemove < 0) {
+            nbRemove *= -1;
+        }
         this.agriculture.decreaseDedicatedPercentage(nbRemove);
         if (this.agriculture.getDedicatedPercentage() < 0) {
             this.agriculture.setDedicatedPercentage(0);

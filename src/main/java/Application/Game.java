@@ -282,10 +282,10 @@ public class Game {
                 if ((int) actionOnFaction.getValue() > 0)
                     isle.getFactionByFactionType((FactionType) actionOnFaction.getKey()).
                             increasePercentageApproval((int) actionOnFaction.getValue());
-                    //decrease si positif
+                    //decrease si négatif
                 else
                     isle.getFactionByFactionType((FactionType) actionOnFaction.getKey()).
-                            increasePercentageApproval((int) actionOnFaction.getValue());
+                            decreasePercentageApproval((int) actionOnFaction.getValue());
             }
             //effets sur les facteurs
             for (Map.Entry actionOnFactor : effect.getActionsOnFactor().entrySet()) {
@@ -294,7 +294,7 @@ public class Game {
                         //increase si positif
                         if ((int) actionOnFactor.getValue() > 0)
                             isle.increaseIndustry((int) actionOnFactor.getValue());
-                            //decrease si positif
+                            //decrease si négatif
                         else
                             isle.decreaseIndustry((int) actionOnFactor.getValue());
                         break;
@@ -302,7 +302,7 @@ public class Game {
                         //increase si positif
                         if ((int) actionOnFactor.getValue() > 0)
                             isle.increaseAgriculture((int) actionOnFactor.getValue());
-                            //decrease si positif
+                            //decrease si négatif
                         else
                             isle.decreaseAgriculture((int) actionOnFactor.getValue());
                         break;
@@ -310,7 +310,7 @@ public class Game {
                         //increase si positif
                         if ((int) actionOnFactor.getValue() > 0)
                             isle.increaseTreasury((int) actionOnFactor.getValue());
-                            //decrease si positif
+                            //decrease si négatif
                         else
                             isle.decreaseTreasury((int) actionOnFactor.getValue());
                         break;
@@ -321,7 +321,7 @@ public class Game {
                 //increase si positif
                 if (effect.getPartisans() > 0)
                     isle.increasePartisans(effect.getPartisans());
-                    //decrease si positif
+                    //decrease si négatif
                 else
                     isle.decreasePartisans(effect.getPartisans());
             }
@@ -344,9 +344,9 @@ public class Game {
             //effets sur les facteurs
             for (Map.Entry actionOnFactor : effect.getActionsOnFactor().entrySet()) {
                 if ((int) actionOnFactor.getValue() > 0)
-                    System.out.println("          " + actionOnFactor.getKey() + " : +" + actionOnFactor.getValue() + "%");
+                    System.out.println("          " + actionOnFactor.getKey() + " : +" + actionOnFactor.getValue());
                 else
-                    System.out.println("          " + actionOnFactor.getKey() + " : " + actionOnFactor.getValue() + "%");
+                    System.out.println("          " + actionOnFactor.getKey() + " : " + actionOnFactor.getValue());
             }
             //effets sur les partisans
             if (effect.getPartisans() != 0)
