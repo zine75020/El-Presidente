@@ -6,6 +6,7 @@ import Core.Industry.Industry;
 import Core.Enum.Season;
 import Core.Enum.FactionType;
 import Core.Enum.DifficultyChoice;
+import IndexOfFactionRecuperationMethod.IndexOfFactionRecuperationMethod;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -22,6 +23,7 @@ public class Isle {
     private Integer foodUnits;
     private Integer turn;
     private Integer minSatisfactionPercentage;
+    private IndexOfFactionRecuperationMethod indexOfFactionRecuperationMethod;
 
     public Isle(Industry industry, Agriculture agriculture, Integer treasury,
                 DifficultyChoice difficultyChoice, Integer foodUnits, Integer minSatisfactionPercentage) {
@@ -324,6 +326,7 @@ public class Isle {
         reviewOfYear.put("Nombre de partisans debut année", nbTotalSupporters);
         //s'il n'y a pas assez de nourriture pour nourrir tous les habitants
         if (this.foodUnits / 4 < nbTotalSupporters) {
+            //TODO gestion algorithme de suppression
             //on en élimine aléatoirement
             while (nbTotalSupporters > 0 && this.foodUnits / 4 < nbTotalSupporters) {
                 int randomIndexFaction = this.getRandomIndexOfFaction();
@@ -431,6 +434,7 @@ public class Isle {
      * @param nbIncrease
      */
     public void increasePartisans(int nbIncrease) {
+        //TODO gestion algorithme d'ajout
         while (nbIncrease > 0) {
             int randomIndexFaction = -1;
             do {
@@ -448,6 +452,7 @@ public class Isle {
      * @param nbDecrease
      */
     public void decreasePartisans(int nbDecrease) {
+        //TODO gestion algorithme de suppression
         if(nbDecrease < 0) {
             nbDecrease *= -1;
         }
