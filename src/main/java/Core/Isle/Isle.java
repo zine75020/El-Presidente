@@ -27,6 +27,7 @@ public class Isle {
      * pour changer la méthode de gestion d'ajout/suppression des partisans, changer le type de
      * indexOfFactionRecuperationMethod à la méthode souhaitée dans le package IndexOfFactionRecuperationMethod
      */
+    //TODO vérifier la logique algorithmique liée à cet attribut à la fin de la création de tous les algos
     private RandomMethod indexOfFactionRecuperationMethod = new RandomMethod();
 
     public Isle(Industry industry, Agriculture agriculture, Integer treasury,
