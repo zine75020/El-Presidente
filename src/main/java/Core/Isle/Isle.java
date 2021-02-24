@@ -6,7 +6,7 @@ import Core.Industry.Industry;
 import Core.Enum.Season;
 import Core.Enum.FactionType;
 import Core.Enum.DifficultyChoice;
-import IndexOfFactionRecuperationMethod.IndexOfFactionRecuperationMethod;
+import IndexOfFactionRecuperationMethod.RandomMethod;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -23,7 +23,11 @@ public class Isle {
     private Integer foodUnits;
     private Integer turn;
     private Integer minSatisfactionPercentage;
-    private IndexOfFactionRecuperationMethod indexOfFactionRecuperationMethod;
+    /**
+     * pour changer la méthode de gestion d'ajout/suppression des partisans, changer le type de
+     * indexOfFactionRecuperationMethod à la méthode souhaitée dans le package IndexOfFactionRecuperationMethod
+     */
+    private RandomMethod indexOfFactionRecuperationMethod = new RandomMethod();
 
     public Isle(Industry industry, Agriculture agriculture, Integer treasury,
                 DifficultyChoice difficultyChoice, Integer foodUnits, Integer minSatisfactionPercentage) {
@@ -326,11 +330,11 @@ public class Isle {
         reviewOfYear.put("Nombre de partisans debut année", nbTotalSupporters);
         //s'il n'y a pas assez de nourriture pour nourrir tous les habitants
         if (this.foodUnits / 4 < nbTotalSupporters) {
-            //TODO gestion algorithme de suppression
             //on en élimine aléatoirement
             while (nbTotalSupporters > 0 && this.foodUnits / 4 < nbTotalSupporters) {
-                int randomIndexFaction = this.getRandomIndexOfFaction();
-                this.factionList.get(randomIndexFaction).decreaseNbSupporters(1);
+                //récupération de l'index d'une faction selon la méthode appliquée
+                int indexOfFaction = this.indexOfFactionRecuperationMethod.getIndexOfFactionByMethod(this);
+                this.factionList.get(indexOfFaction).decreaseNbSupporters(1);
                 nbTotalSupporters -= 1;
                 for (Faction faction : this.factionList) {
                     faction.decreasePercentageApproval(2);
@@ -349,8 +353,10 @@ public class Isle {
             reviewOfYear.put("Partisans nés cette année", (int) nbNewSupporters);
             //et on les répartit aléatoirement
             for (int i = 0; i < (int) nbNewSupporters; i += 1) {
-                int randomIndexFaction = this.getRandomIndexOfFaction();
-                this.factionList.get(randomIndexFaction).increaseNbSupporters(1);
+                //récupération de l'index d'une faction selon la méthode appliquée
+                int indexOfFaction = this.indexOfFactionRecuperationMethod.getIndexOfFactionByMethod(this);
+                System.out.println(indexOfFaction);
+                this.factionList.get(indexOfFaction).increaseNbSupporters(1);
             }
             nbTotalSupporters += nbNewSupporters;
         } else {
@@ -359,15 +365,6 @@ public class Isle {
         reviewOfYear.put("Nourriture consommée cette année", nbTotalSupporters * 4);
         reviewOfYear.put("Nombre de partisans fin année", nbTotalSupporters);
         return reviewOfYear;
-    }
-
-    /**
-     * nombre aléatoire entre 0 et 7 (car 8 factions)
-     *
-     * @return
-     */
-    public int getRandomIndexOfFaction() {
-        return (int) Math.round(Math.random() * 7);
     }
 
     /**
@@ -434,14 +431,14 @@ public class Isle {
      * @param nbIncrease
      */
     public void increasePartisans(int nbIncrease) {
-        //TODO gestion algorithme d'ajout
         while (nbIncrease > 0) {
-            int randomIndexFaction = -1;
+            int indexOfFaction = -1;
             do {
-                randomIndexFaction = this.getRandomIndexOfFaction();
-            } while (this.factionList.get(randomIndexFaction).getNbSupporters() == 0
+                //récupération de l'index d'une faction selon la méthode appliquée
+                indexOfFaction = this.indexOfFactionRecuperationMethod.getIndexOfFactionByMethod(this);
+            } while (this.factionList.get(indexOfFaction).getNbSupporters() == 0
                     && this.generateNumberTotalOfPartisans() > 0);
-            this.factionList.get(randomIndexFaction).increaseNbSupporters(1);
+            this.factionList.get(indexOfFaction).increaseNbSupporters(1);
             nbIncrease -= 1;
         }
     }
@@ -452,17 +449,17 @@ public class Isle {
      * @param nbDecrease
      */
     public void decreasePartisans(int nbDecrease) {
-        //TODO gestion algorithme de suppression
         if(nbDecrease < 0) {
             nbDecrease *= -1;
         }
         while (nbDecrease > 0) {
-            int randomIndexFaction = -1;
+            int indexOfFaction = -1;
             do {
-                randomIndexFaction = this.getRandomIndexOfFaction();
-            } while (this.factionList.get(randomIndexFaction).getNbSupporters() == 0
+                //récupération de l'index d'une faction selon la méthode appliquée
+                indexOfFaction = this.indexOfFactionRecuperationMethod.getIndexOfFactionByMethod(this);
+            } while (this.factionList.get(indexOfFaction).getNbSupporters() == 0
                     && this.generateNumberTotalOfPartisans() > 0);
-            this.factionList.get(randomIndexFaction).decreaseNbSupporters(1);
+            this.factionList.get(indexOfFaction).decreaseNbSupporters(1);
             nbDecrease -= 1;
         }
     }
