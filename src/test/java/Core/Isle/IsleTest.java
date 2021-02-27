@@ -186,11 +186,6 @@ public class IsleTest {
     }
 
     @Test
-    public void should_get_random_index_of_faction() {
-        assertTrue((isle.getRandomIndexOfFaction() >= 0 && isle.getRandomIndexOfFaction() <= 7));
-    }
-
-    @Test
     public void should_generate_number_total_of_supporters() {
         for (Faction faction : isle.getFactionList()) {
             faction.increaseNbSupporters(10);

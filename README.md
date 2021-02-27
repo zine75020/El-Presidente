@@ -157,4 +157,6 @@ Des tests unitaires sont ajoutés auprojet pour permettre d’en valider la robu
 
 ## Algorithme de gestion des partisans
 
-L'algorithme peut être changé facilement dans la classe Isle, au niveau de l'attribut TODO
+L'algorithme peut être changé facilement dans la classe Isle, au niveau de l'attribut indexOfFactionRecuperationMethod
+auquel on peut attribuer un algorithme présent dans le package IndexOfFactionRecuperationMethod (héritant de l'interface
+du package)
