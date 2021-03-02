@@ -60,6 +60,7 @@ public class Faction {
      * @param nbRemove
      */
     public void decreaseNbSupporters(int nbRemove) {
+        //si le nombre passé en paramètre est négatif, on le repasse en positif
         if(nbRemove < 0) {
             nbRemove *= -1;
         }
@@ -88,6 +89,7 @@ public class Faction {
      * @param nbRemove
      */
     public void decreasePercentageApproval(int nbRemove) {
+        //si le nombre passé en paramètre est négatif, on le repasse en positif
         if(nbRemove < 0) {
             nbRemove *= -1;
         }

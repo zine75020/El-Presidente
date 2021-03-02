@@ -187,6 +187,7 @@ public class Isle {
      * @param nbRemove
      */
     public void decreaseTreasury(int nbRemove) {
+        //si le nombre passé en paramètre est négatif, on le repasse en positif
         if(nbRemove < 0) {
             nbRemove *= -1;
         }
@@ -211,6 +212,7 @@ public class Isle {
      * @param nbRemove
      */
     public void decreaseFoodUnits(int nbRemove) {
+        //si le nombre passé en paramètre est négatif, on le repasse en positif
         if(nbRemove < 0) {
             nbRemove *= -1;
         }
@@ -331,7 +333,7 @@ public class Isle {
         reviewOfYear.put("Nombre de partisans debut année", nbTotalSupporters);
         //s'il n'y a pas assez de nourriture pour nourrir tous les habitants
         if (this.foodUnits / 4 < nbTotalSupporters) {
-            //on en élimine aléatoirement
+            //élimination de partisans selon la méthode
             while (nbTotalSupporters > 0 && this.foodUnits / 4 < nbTotalSupporters) {
                 //récupération de l'index d'une faction selon la méthode appliquée
                 int indexOfFaction = this.indexOfFactionRecuperationMethod.getIndexOfFactionByMethod(this);
@@ -465,7 +467,6 @@ public class Isle {
         }
     }
 
-    //TODO tests unitaires de toutes les méthodes qui suivent
     /**
      * augmente l'industrie du pourcentage passé en paramètre
      * diminue l'agriculture si l'industrie + l'agriculture dépassent 100% à deux
@@ -488,6 +489,7 @@ public class Isle {
      * @param nbRemove
      */
     public void decreaseIndustry(int nbRemove) {
+        //si le nombre passé en paramètre est négatif, on le repasse en positif
         if(nbRemove < 0) {
             nbRemove *= -1;
         }
@@ -518,6 +520,7 @@ public class Isle {
      * @param nbRemove
      */
     public void decreaseAgriculture(int nbRemove) {
+        //si le nombre passé en paramètre est négatif, on le repasse en positif
         if(nbRemove < 0) {
             nbRemove *= -1;
         }
@@ -526,7 +529,6 @@ public class Isle {
             this.agriculture.setDedicatedPercentage(0);
         }
     }
-    //TODO tests unitaires des fonctions du dessus
 
     /**
      * retourne la faction selon le Faction type passé en paramètre

@@ -38,6 +38,7 @@ public abstract class Activity {
      * @param nbRemove
      */
     public void decreaseDedicatedPercentage(int nbRemove) {
+        //si le nombre passé en paramètre est négatif, on le repasse en positif
         if(nbRemove < 0) {
             nbRemove *= -1;
         }
