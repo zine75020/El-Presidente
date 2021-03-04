@@ -5,7 +5,7 @@ import Core.Isle.Isle;
 /**
  * Méthode permettant d'ajouter/supprimer les partisans dans les factions de façon aléatoire
  */
-public class RandomMethod implements IndexOfFactionRecuperationMethod{
+public class  RandomMethod implements IndexOfFactionRecuperationMethod{
 
     /**
      * nombre aléatoire entre 0 et 7 (car 8 factions)
