@@ -159,4 +159,10 @@ Des tests unitaires sont ajoutés auprojet pour permettre d’en valider la robu
 
 L'algorithme peut être changé facilement dans la classe Isle, au niveau de l'attribut indexOfFactionRecuperationMethod
 auquel on peut attribuer un algorithme présent dans le package IndexOfFactionRecuperationMethod (héritant de l'interface
-du package)
+du package) parmi :
+- RandomRepartitionMethod
+- MostPartisansRepartitionMethod
+- LessPartisansRepartitionMethod
+
+Exemple : private final MostPartisansRepartitionMethod indexOfFactionRecuperationMethod = new MostPartisansRepartitionMethod();
+Il faut changer le type de l'algorithme (après le final et après le new) afin d'appliquer un nouvel algorithme de répartition.

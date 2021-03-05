@@ -1,16 +1,19 @@
 # Change Log
 Toutes les modifications notables apportées à ce projet seront documentées dans ce fichier.
 
-## [Unreleased]
+## [1.0.2] - 2021-03-05
 ### Changed
 - Gestion de l'ajout/suppression des partisans via différents algorithmes
   - récupération de l'id de la Faction où l'ajout/suppression sera effectué selon l'algorithme sélectionné
+    - Aléatoire
+    - Faction avec le plus de partisans
+    - Faction avec le moins de partisans
 
 ## [1.0.1] - 2021-02-21
 ### Added
 - Affichage du bilan lors de la fin d'année
 ### Changed
-- Correction de l'application des effets défaillante
+- Correction de la mise en place des effets défaillante
   - Remise à decreased lorsqu'il fallait réduire
   - Repassage des paramètres en positif s'ils étaient négatifs pour les réductions de valeurs 
     (car enlever un nombre négatif revenait à l'ajouter)

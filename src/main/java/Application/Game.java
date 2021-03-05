@@ -250,7 +250,6 @@ public class Game {
             //on enlève l'événement et on le remet en début de liste
             neutralEvents.remove(currentEvent);
             neutralEvents.add(0, currentEvent);
-            System.out.println("oui");
             System.out.println(neutralEvents.get(0).getChoices());
         } else {
             //si on traite actuellement un related event on le supprime

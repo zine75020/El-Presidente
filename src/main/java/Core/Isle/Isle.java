@@ -6,7 +6,9 @@ import Core.Industry.Industry;
 import Core.Enum.Season;
 import Core.Enum.FactionType;
 import Core.Enum.DifficultyChoice;
-import IndexOfFactionRecuperationMethod.RandomMethod;
+import IndexOfFactionRecuperationMethod.LessPartisansRepartitionMethod;
+import IndexOfFactionRecuperationMethod.MostPartisansRepartitionMethod;
+import IndexOfFactionRecuperationMethod.RandomRepartitionMethod;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -26,9 +28,11 @@ public class Isle {
     /**
      * pour changer la méthode de gestion d'ajout/suppression des partisans, changer le type de
      * indexOfFactionRecuperationMethod à la méthode souhaitée dans le package IndexOfFactionRecuperationMethod
+     * - RandomRepartitionMethod
+     * - MostPartisansRepartitionMethod
+     * - LessPartisansRepartitionMethod
      */
-    //TODO vérifier la logique algorithmique liée à cet attribut à la fin de la création de tous les algos
-    private RandomMethod indexOfFactionRecuperationMethod = new RandomMethod();
+    private final MostPartisansRepartitionMethod indexOfFactionRecuperationMethod = new MostPartisansRepartitionMethod();
 
     public Isle(Industry industry, Agriculture agriculture, Integer treasury,
                 DifficultyChoice difficultyChoice, Integer foodUnits, Integer minSatisfactionPercentage) {
@@ -358,7 +362,6 @@ public class Isle {
             for (int i = 0; i < (int) nbNewSupporters; i += 1) {
                 //récupération de l'index d'une faction selon la méthode appliquée
                 int indexOfFaction = this.indexOfFactionRecuperationMethod.getIndexOfFactionByMethod(this);
-                System.out.println(indexOfFaction);
                 this.factionList.get(indexOfFaction).increaseNbSupporters(1);
             }
             nbTotalSupporters += nbNewSupporters;

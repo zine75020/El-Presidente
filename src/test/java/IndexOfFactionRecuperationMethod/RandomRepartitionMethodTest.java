@@ -8,15 +8,15 @@ import org.junit.Test;
 
 import static org.junit.Assert.assertTrue;
 
-public class RandomMethodTest {
+public class RandomRepartitionMethodTest {
 
-    RandomMethod randomMethod = new RandomMethod();
+    RandomRepartitionMethod randomRepartitionMethod = new RandomRepartitionMethod();
     Isle isle = new Isle(new Industry(10), new Agriculture(20),
             100, DifficultyChoice.normal, 0, 30);
 
     @Test
     public void should_get_random_index_of_faction() {
-        assertTrue((randomMethod.getIndexOfFactionByMethod(isle) >= 0 && randomMethod.getIndexOfFactionByMethod(isle) <= 7));
+        assertTrue((randomRepartitionMethod.getIndexOfFactionByMethod(isle) >= 0 && randomRepartitionMethod.getIndexOfFactionByMethod(isle) <= 7));
     }
 
 }
